@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Simge: bir bandın içinde aynı boyda gidip gelen dalga -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:pathData="M28,40 L80,40"
+        android:strokeWidth="1.5"
+        android:strokeColor="#668B949E"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M28,68 L80,68"
+        android:strokeWidth="1.5"
+        android:strokeColor="#668B949E"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M28,62 L36,46 L44,62 L52,46 L60,62 L68,46 L76,62 L80,54"
+        android:strokeWidth="4.5"
+        android:strokeColor="#FF2EBD85"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>

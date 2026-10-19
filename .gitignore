@@ -1,0 +1,9 @@
+.gradle/
+build/
+local.properties
+*.p12
+!imza/stabilcoin.p12
+*.jks
+*.keystore
+.idea/
+*.iml
