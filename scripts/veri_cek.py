@@ -17,7 +17,7 @@ ADRES = "https://api.mexc.com"
 SABIT = {"USDC", "FDUSD", "TUSD", "DAI", "USDE", "USDD", "PYUSD", "BUSD", "USDP", "USD1",
          "EUR", "EURC", "EURT", "USDS", "RLUSD", "USDQ", "USDR"}
 DILIMLER = {"1m": "1m", "5m": "5m", "15m": "15m", "1h": "60m", "4h": "4h", "1d": "1d"}
-SAYFA = {"1m": 3, "5m": 2, "15m": 2, "1h": 2, "4h": 2, "1d": 2}
+SAYFA = {"1m": 3, "5m": 3, "15m": 2, "1h": 2, "4h": 2, "1d": 2}
 ARALIK_MS = {"1m": 60_000, "5m": 300_000, "15m": 900_000, "1h": 3_600_000, "4h": 14_400_000, "1d": 86_400_000}
 EN_AZ_HACIM = 1_000_000
 
