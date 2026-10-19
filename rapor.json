@@ -1,0 +1,73 @@
+{
+ "baslangic": "2026-10-19T21:47:51Z",
+ "ticker_kod": 200,
+ "hacim_ustu_250000": 143,
+ "hacim_ustu_500000": 80,
+ "hacim_ustu_1000000": 45,
+ "hacim_ustu_2000000": 32,
+ "hacim_ustu_5000000": 14,
+ "hacim_ustu_10000000": 8,
+ "secilen": 45,
+ "denemeler": {
+  "60m_1000": {
+   "kod": 200,
+   "mum": 500,
+   "ornek": ""
+  },
+  "1h_1000": {
+   "kod": 400,
+   "mum": null,
+   "ornek": "{\"msg\":\"Invalid interval.\",\"code\":-1121,\"_extend\":null}"
+  },
+  "1m_1000": {
+   "kod": 200,
+   "mum": 500,
+   "ornek": ""
+  },
+  "1m_1500": {
+   "kod": 200,
+   "mum": 500,
+   "ornek": ""
+  },
+  "1d_1000": {
+   "kod": 200,
+   "mum": 500,
+   "ornek": ""
+  }
+ },
+ "sayfalama": {
+  "sadece_end": {
+   "kod": 200,
+   "mum": 500,
+   "ilk_fark_dk": 500.0,
+   "son_fark_dk": -499.0,
+   "hata": ""
+  },
+  "sadece_start": {
+   "kod": 200,
+   "mum": 500,
+   "ilk_fark_dk": 500.0,
+   "son_fark_dk": -499.0,
+   "hata": ""
+  },
+  "start_end": {
+   "kod": 200,
+   "mum": 500,
+   "ilk_fark_dk": 0.0,
+   "son_fark_dk": 1.0,
+   "hata": ""
+  },
+  "start_end_sn": {
+   "kod": 200,
+   "mum": 0,
+   "ilk_fark_dk": null,
+   "son_fark_dk": null,
+   "hata": ""
+  }
+ },
+ "sure_sn": 21.0,
+ "istek": 270,
+ "hata_sayisi": 0,
+ "hatalar": [],
+ "satir": 300343
+}
