@@ -18,6 +18,7 @@ SABIT = {"USDC", "FDUSD", "TUSD", "DAI", "USDE", "USDD", "PYUSD", "BUSD", "USDP"
          "EUR", "EURC", "EURT", "USDS", "RLUSD", "USDQ", "USDR"}
 DILIMLER = {"1m": "1m", "5m": "5m", "15m": "15m", "1h": "60m", "4h": "4h", "1d": "1d"}
 SAYFA = {"1m": 3, "5m": 2, "15m": 2, "1h": 2, "4h": 2, "1d": 2}
+ARALIK_MS = {"1m": 60_000, "5m": 300_000, "15m": 900_000, "1h": 3_600_000, "4h": 14_400_000, "1d": 86_400_000}
 EN_AZ_HACIM = 1_000_000
 
 
@@ -93,17 +94,32 @@ def main(cikis):
         denemeler[ad] = {"kod": k, "mum": n, "ornek": g[:200] if k != 200 else ""}
     rapor["denemeler"] = denemeler
 
-    # Sayfalama denemesi: endTime ile önceki 500 mum geliyor mu, arada boşluk/çakışma var mı?
+    # Sayfalama denemesi: farklı yazımlarla önceki 500 mum geliyor mu?
     k1, g1 = getir("/api/v3/klines?symbol=BTCUSDT&interval=1m&limit=500")
+    sayfalama = {}
     if k1 == 200:
         p1 = json.loads(g1)
-        k2, g2 = getir(f"/api/v3/klines?symbol=BTCUSDT&interval=1m&limit=500&endTime={p1[0][0] - 1}")
-        p2 = json.loads(g2) if k2 == 200 else []
-        rapor["sayfalama"] = {
-            "kod": k2, "mum": len(p2),
-            "ikinci_son": p2[-1][0] if p2 else None, "birinci_ilk": p1[0][0],
-            "bosluk_ms": (p1[0][0] - p2[-1][0]) if p2 else None,
-        }
+        ilk = p1[0][0]
+        bitis = ilk - 1
+        bas = bitis - 500 * 60_000 + 1
+        for ad, ek in {
+            "sadece_end": f"&endTime={bitis}",
+            "sadece_start": f"&startTime={bas}",
+            "start_end": f"&startTime={bas}&endTime={bitis}",
+            "start_end_sn": f"&startTime={bas // 1000}&endTime={bitis // 1000}",
+        }.items():
+            k2, g2 = getir("/api/v3/klines?symbol=BTCUSDT&interval=1m&limit=500" + ek)
+            try:
+                p2 = json.loads(g2) if k2 == 200 else []
+            except Exception:
+                p2 = []
+            sayfalama[ad] = {
+                "kod": k2, "mum": len(p2),
+                "ilk_fark_dk": ((p2[0][0] - bas) / 60000) if p2 else None,
+                "son_fark_dk": ((ilk - p2[-1][0]) / 60000) if p2 else None,
+                "hata": g2[:120] if k2 != 200 else "",
+            }
+    rapor["sayfalama"] = sayfalama
 
     def is_(parite_dilim):
         s, dilim = parite_dilim
@@ -112,7 +128,8 @@ def main(cikis):
         for _ in range(SAYFA[dilim]):
             yol = f"/api/v3/klines?symbol={s}&interval={DILIMLER[dilim]}&limit=500"
             if bitis is not None:
-                yol += f"&endTime={bitis}"
+                baslangic = bitis - 500 * ARALIK_MS[dilim] + 1
+                yol += f"&startTime={baslangic}&endTime={bitis}"
             k, g = getir(yol)
             if k != 200:
                 return s, dilim, None, f"{k}: {g[:150]}"
