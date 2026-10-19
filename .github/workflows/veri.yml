@@ -1,0 +1,30 @@
+name: Gerçek veri testi
+
+# Sadece elle başlatılır (Actions sekmesinden "Run workflow"). Uygulamayı etkilemez.
+# MEXC'den gerçek mumları çekip "gercek-veri" dalına koyar; hesabın ayarını kontrol etmek için.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  veri:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: MEXC'den veri çek
+        run: python3 scripts/veri_cek.py "$RUNNER_TEMP/veri"
+
+      - name: Veriyi ayrı dala koy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd "$RUNNER_TEMP/veri"
+          git init -q -b gercek-veri
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add -A
+          git commit -q -m "MEXC verisi $(date -u +%FT%TZ)"
+          git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}" gercek-veri

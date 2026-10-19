@@ -344,8 +344,8 @@ private fun YonEtiketi(t: TfSonuc) {
 private fun PuanRozeti(t: TfSonuc) {
     val renk = when {
         !t.uygun -> Renk.kenar
-        t.puan >= 85 -> Renk.yesil
-        t.puan >= 75 -> Renk.sari
+        t.puan >= 75 -> Renk.yesil
+        t.puan >= 67 -> Renk.sari
         else -> Renk.soluk
     }
     Box(

@@ -13,6 +13,7 @@ import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -22,6 +23,7 @@ import kotlinx.coroutines.sync.Semaphore
 import kotlinx.coroutines.sync.withPermit
 import kotlinx.coroutines.withContext
 import java.util.concurrent.ConcurrentHashMap
+import java.util.concurrent.ConcurrentLinkedQueue
 import java.util.concurrent.atomic.AtomicInteger
 
 /** Uygulamanın baktığı zaman dilimleri (simülatördekilerle aynı). */
@@ -98,7 +100,7 @@ class AnaModel(uygulama: Application) : AndroidViewModel(uygulama) {
 
                 val kapi = Semaphore(5)
                 val biten = AtomicInteger(0)
-                val hatali = AtomicInteger(0)
+                val atlanan = ConcurrentLinkedQueue<Pair<String, String>>()
                 coroutineScope {
                     for (p in liste) {
                         for (tf in ZAMAN_DILIMLERI) {
@@ -110,7 +112,7 @@ class AnaModel(uygulama: Application) : AndroidViewModel(uygulama) {
                                     } catch (e: CancellationException) {
                                         throw e
                                     } catch (e: Exception) {
-                                        hatali.incrementAndGet()
+                                        atlanan.add(p.sembol to tf)
                                     }
                                 }
                                 val n = biten.incrementAndGet()
@@ -120,7 +122,28 @@ class AnaModel(uygulama: Application) : AndroidViewModel(uygulama) {
                     }
                 }
 
-                if (toplam > 0 && hatali.get() == toplam) {
+                // MEXC anlık yoğunluk yüzünden bir grafiği vermediyse, sonda tek tek bir kez daha dene.
+                // Böylece hiçbir coin sessizce atlanmaz.
+                var hatali = 0
+                if (atlanan.isNotEmpty() && atlanan.size < toplam) {
+                    withContext(Dispatchers.IO) {
+                        for ((sembol, tf) in atlanan) {
+                            delay(300)
+                            try {
+                                val m = MexcIstemci.mumlar(sembol, tf)
+                                onbellek.compute(sembol) { _, eski -> (eski ?: emptyMap()) + (tf to m) }
+                            } catch (e: CancellationException) {
+                                throw e
+                            } catch (e: Exception) {
+                                hatali++
+                            }
+                        }
+                    }
+                } else {
+                    hatali = atlanan.size
+                }
+
+                if (toplam > 0 && hatali == toplam) {
                     _durum.update {
                         it.copy(yukleniyor = false, hata = "Grafikler indirilemedi. İnternetini kontrol edip tekrar dene.")
                     }
@@ -131,7 +154,7 @@ class AnaModel(uygulama: Application) : AndroidViewModel(uygulama) {
                     it.copy(
                         yukleniyor = false,
                         sonGuncelleme = System.currentTimeMillis(),
-                        eksikGrafik = hatali.get(),
+                        eksikGrafik = hatali,
                     )
                 }
             } catch (e: CancellationException) {

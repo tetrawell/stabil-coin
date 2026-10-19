@@ -38,6 +38,10 @@ data class TfSonuc(
     val sokIndexleri: List<Int>,
     val kapanislar: DoubleArray,
     val neden: String,
+    /** Puanın parçaları (0-100): dalga boylarının benzerliği, ritim, bant içinde kalma. */
+    val duzenPuani: Int = 0,
+    val ritimPuani: Int = 0,
+    val kanalPuani: Int = 0,
 )
 
 /**
@@ -52,11 +56,11 @@ object Analiz {
     /** Bir mumun boyu, mumların ortanca boyunun bu katıysa şok adayıdır. */
     const val IGNE_MUM_KATI = 6.0
 
-    /** ...ve aynı zamanda ortanca dalganın bu katı kadarsa şoktur. */
-    const val IGNE_DALGA_KATI = 0.8
+    /** ...ve aynı zamanda tek başına normal bir dalga boyunu aşıyorsa şoktur. */
+    const val IGNE_DALGA_KATI = 1.0
 
-    /** Bir bacak, ortanca bacağın bu katıysa fiyat kat değiştirmiştir (sıçrama/çöküş). */
-    const val SICRAMA_KATI = 2.5
+    /** Bir bacak, normal bacağın bu katıysa fiyat kat değiştirmiştir (sıçrama/çöküş). */
+    const val SICRAMA_KATI = 3.0
 
     /** Karakteri kanıtlamak için gereken en az tam dalga (bir çıkış + bir iniş). */
     const val EN_AZ_DALGA = 5
@@ -65,7 +69,7 @@ object Analiz {
     const val EN_AZ_CIKIS_ORANI = 0.5
 
     /** Bu puanın altı listede gösterilmez. */
-    const val EN_AZ_PUAN = 65
+    const val EN_AZ_PUAN = 60
 
     /** Dalga eşiği, "en küçük dalga" ayarının bu katlarıyla denenir; coinin kendi doğal dalgası aranır. */
     private val ESIK_KATLARI = doubleArrayOf(1.0, 1.25, 1.5, 2.0, 2.5, 3.0, 4.0, 5.0, 6.0, 8.0, 10.0, 13.0, 16.0)
@@ -119,6 +123,9 @@ object Analiz {
             sokIndexleri = secilen.soklar,
             kapanislar = kapanislar,
             neden = secilen.neden,
+            duzenPuani = (secilen.duzen * 100).roundToInt(),
+            ritimPuani = (secilen.ritim * 100).roundToInt(),
+            kanalPuani = (secilen.kanal * 100).roundToInt(),
         )
     }
 
@@ -132,6 +139,9 @@ object Analiz {
         val pencereBasi: Int,
         val soklar: List<Int>,
         val neden: String,
+        val duzen: Double = 0.0,
+        val ritim: Double = 0.0,
+        val kanal: Double = 0.0,
     )
 
     private fun degerlendir(
@@ -145,26 +155,25 @@ object Analiz {
         var bas = 0
         val soklar = mutableListOf<Int>()
 
-        // 1) Şimdiden geriye: son şoku bul, pencereyi şoktan sonrasına daralt. Birkaç tur tekrarla.
-        var bacaklar = bacaklar(zigzag(m, bas, esik))
-        repeat(6) {
-            if (bacaklar.size < 4) return@repeat
-            val ortancaBacak = ortanca(bacaklar.map { it.boyYuzde })
-            var kesim = bas
-
-            // İğne / dev mum
-            for (i in n - 1 downTo bas) {
+        // 1) Şimdiden geriye: son şoku bul, pencereyi şoktan sonrasına daralt.
+        // Şok, coinin tüm geçmişteki normal dalgasına göre ölçülür ve tek seferde aranır.
+        // (Kestikten sonra ölçüyü yeniden hesaplamak, sakin kısımda normal hareketleri de
+        // şok gibi gösterip pencereyi zincirleme küçültüyordu.)
+        val tumBacaklar = bacaklar(zigzag(m, 0, esik))
+        if (tumBacaklar.size >= 4) {
+            val normalBacak = ortanca(tumBacaklar.map { it.boyYuzde })
+            var kesim = 0
+            for (i in n - 1 downTo 0) {
                 val b = mumBoylari[i]
-                if (b >= IGNE_MUM_KATI * ortancaMum && b >= IGNE_DALGA_KATI * ortancaBacak) {
-                    kesim = max(kesim, i + 1)
+                if (b >= IGNE_MUM_KATI * ortancaMum && b >= IGNE_DALGA_KATI * normalBacak) {
+                    kesim = i + 1
                     soklar.add(i)
                     break
                 }
             }
-            // Kat değiştiren sıçrama veya çöküş
-            for (k in bacaklar.indices.reversed()) {
-                val bc = bacaklar[k]
-                if (bc.boyYuzde >= SICRAMA_KATI * ortancaBacak) {
+            for (k in tumBacaklar.indices.reversed()) {
+                val bc = tumBacaklar[k]
+                if (bc.boyYuzde >= SICRAMA_KATI * normalBacak) {
                     if (bc.sonIndex > kesim) {
                         kesim = bc.sonIndex
                         soklar.add(bc.sonIndex)
@@ -172,10 +181,9 @@ object Analiz {
                     break
                 }
             }
-            if (kesim <= bas) return@repeat
             bas = kesim
-            bacaklar = bacaklar(zigzag(m, bas, esik))
         }
+        val bacaklar = if (bas == 0) tumBacaklar else bacaklar(zigzag(m, bas, esik))
 
         if (bas >= n - 10) {
             return Aday(false, 0, 0.0, 0.0, 0, Yon.YATAY, bas, soklar.distinct(), "Az önce şok oldu")
@@ -208,7 +216,7 @@ object Analiz {
         val bantOrani = bant / max(ortancaBacak, 1e-9)
         val kanal = (1.0 - (bantOrani - 1.5) / 3.5).coerceIn(0.0, 1.0)
 
-        val puan = (100 * (0.45 * duzen + 0.25 * ritim + 0.30 * kanal)).roundToInt()
+        val puan = (100 * (0.55 * duzen + 0.15 * ritim + 0.30 * kanal)).roundToInt()
 
         val ortancaCikis = ortanca(yukari)
         val ortancaInis = ortanca(asagi)
@@ -232,7 +240,10 @@ object Analiz {
         val pencereOrani = (n - bas).toDouble() / n
         val secimPuani = puan + 20.0 * pencereOrani + 3.0 * ln(kat) / ln(2.0)
 
-        return Aday(uygun, puan, secimPuani, ortancaCikis, dalgaSayisi, yon, bas, soklar.distinct(), neden)
+        return Aday(
+            uygun, puan, secimPuani, ortancaCikis, dalgaSayisi, yon, bas, soklar.distinct(), neden,
+            duzen, ritim, kanal,
+        )
     }
 
     /** Fiyat, eşik yüzdesi kadar geri dönünce bir tepe ya da dip onaylanır. Son, onaylanmamış uç eklenmez. */

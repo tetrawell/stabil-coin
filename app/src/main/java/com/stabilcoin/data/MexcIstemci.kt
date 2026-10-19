@@ -6,7 +6,6 @@ import org.json.JSONArray
 import java.io.IOException
 import java.net.HttpURLConnection
 import java.net.URL
-import java.util.concurrent.ConcurrentHashMap
 
 /** MEXC'deki bir USDT paritesi ve son 24 saatlik hacmi (USDT cinsinden). */
 data class Parite(val sembol: String, val hacimUsdt: Double, val sonFiyat: Double)
@@ -25,19 +24,31 @@ object MexcIstemci {
         "EUR", "EURC", "EURT", "USDS", "RLUSD", "USDQ", "USDR",
     )
 
-    /** Uygulamadaki zaman dilimi -> MEXC'nin kullandığı kod(lar). İlk çalışan kod hatırlanır. */
-    private val ARALIK_KODLARI = mapOf(
-        "1m" to listOf("1m"),
-        "5m" to listOf("5m"),
-        "15m" to listOf("15m"),
-        "1h" to listOf("60m", "1h"),
-        "4h" to listOf("4h"),
-        "1d" to listOf("1d"),
+    /** Uygulamadaki zaman dilimi -> MEXC'nin kullandığı kod. (MEXC "1h" kabul etmiyor, "60m" istiyor.) */
+    private val ARALIK_KODU = mapOf(
+        "1m" to "1m",
+        "5m" to "5m",
+        "15m" to "15m",
+        "1h" to "60m",
+        "4h" to "4h",
+        "1d" to "1d",
     )
-    private val calisanKod = ConcurrentHashMap<String, String>()
 
-    @Volatile
-    private var mumLimiti = 1000
+    private val ARALIK_MS = mapOf(
+        "1m" to 60_000L,
+        "5m" to 300_000L,
+        "15m" to 900_000L,
+        "1h" to 3_600_000L,
+        "4h" to 14_400_000L,
+        "1d" to 86_400_000L,
+    )
+
+    /**
+     * MEXC bir istekte en fazla 500 mum veriyor. Kaç sayfa (500'lük) çekileceği:
+     * 1dk ve 5dk'da 1500 mum (25 saat / 5 gün), diğerlerinde 1000 mum.
+     */
+    private val SAYFA_SAYISI = mapOf("1m" to 3, "5m" to 3, "15m" to 2, "1h" to 2, "4h" to 2, "1d" to 2)
+    private const val SAYFA_BOYU = 500
 
     private fun getir(yol: String): String {
         val baglanti = URL(ADRES + yol).openConnection() as HttpURLConnection
@@ -92,32 +103,31 @@ object MexcIstemci {
         return liste.sortedByDescending { it.hacimUsdt }
     }
 
-    /** Bir paritenin, verilen zaman dilimindeki son mumları (eskiden yeniye). */
+    /**
+     * Bir paritenin, verilen zaman dilimindeki son mumları (eskiden yeniye).
+     * Önce en yeni 500 mum gelir; daha eskiler için başlangıç ve bitiş zamanı birlikte verilir
+     * (MEXC sadece bitiş verilince bunu yok sayıp yine en yeni mumları gönderiyor).
+     */
     suspend fun mumlar(sembol: String, zamanDilimi: String): List<Mum> {
-        val kodlar = calisanKod[zamanDilimi]?.let { listOf(it) }
-            ?: ARALIK_KODLARI[zamanDilimi]
-            ?: throw IllegalArgumentException("Bilinmeyen zaman dilimi: $zamanDilimi")
-        var sonHata: Exception? = null
-        for (kod in kodlar) {
-            for (deneme in 0..1) {
-                val limit = mumLimiti
-                try {
-                    val metin = getirTekrarli("/api/v3/klines?symbol=$sembol&interval=$kod&limit=$limit")
-                    calisanKod[zamanDilimi] = kod
-                    return coz(metin)
-                } catch (e: MexcHatasi) {
-                    sonHata = e
-                    val limitSorunu = e.kod == 400 && limit > 500 &&
-                        (e.message?.contains("limit", ignoreCase = true) == true)
-                    if (limitSorunu) {
-                        mumLimiti = 500
-                        continue
-                    }
-                    break
-                }
+        val kod = ARALIK_KODU[zamanDilimi] ?: throw IllegalArgumentException("Bilinmeyen zaman dilimi: $zamanDilimi")
+        val aralik = ARALIK_MS.getValue(zamanDilimi)
+        val sayfa = SAYFA_SAYISI.getValue(zamanDilimi)
+        val hepsi = HashMap<Long, Mum>()
+        var bitis: Long? = null
+        for (k in 0 until sayfa) {
+            var yol = "/api/v3/klines?symbol=$sembol&interval=$kod&limit=$SAYFA_BOYU"
+            val b = bitis
+            if (b != null) {
+                val baslangic = b - SAYFA_BOYU * aralik + 1
+                yol += "&startTime=$baslangic&endTime=$b"
             }
+            val parca = coz(getirTekrarli(yol))
+            if (parca.isEmpty()) break
+            for (m in parca) hepsi[m.zaman] = m
+            bitis = parca.first().zaman - 1
+            if (parca.size < SAYFA_BOYU) break
         }
-        throw sonHata ?: IOException("Mum verisi alınamadı")
+        return hepsi.values.sortedBy { it.zaman }
     }
 
     private fun coz(metin: String): List<Mum> {

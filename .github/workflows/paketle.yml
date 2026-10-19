@@ -3,6 +3,10 @@ name: Paketle
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - "scripts/**"
+      - ".github/workflows/veri.yml"
+      - "README.md"
   workflow_dispatch:
 
 permissions:
