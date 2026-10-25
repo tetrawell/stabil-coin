@@ -40,6 +40,9 @@ jobs:
             echo "::warning::IMZA_SIFRE yok; sadece derleme kontrolü yapılıyor, sürüm yayınlanmayacak."
           fi
 
+      - name: Testler
+        run: gradle :app:testReleaseUnitTest --no-daemon --stacktrace
+
       - name: APK oluştur
         env:
           IMZA_SIFRE: ${{ secrets.IMZA_SIFRE }}

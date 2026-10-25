@@ -42,7 +42,14 @@ data class TfSonuc(
     val duzenPuani: Int = 0,
     val ritimPuani: Int = 0,
     val kanalPuani: Int = 0,
-)
+    /** Sarkaç oranı (bkz. Sarkac): 1'in altı fiyatın geri döndüğünü, üstü bir yöne kaçtığını gösterir. Hesaplanamadıysa null. */
+    val sarkacOrani: Double? = null,
+    /** Bu zaman diliminde coinin BTC ile birlikte hareketi (-1..1). Hesaplanamadıysa null. */
+    val btcBagi: Double? = null,
+) {
+    /** Ekranda görünen sarkaç puanı (100 × (1 − oran)); 40 ve üstü sarkaç. */
+    val sarkacPuani: Int? get() = sarkacOrani?.let { Sarkac.puan(it) }
+}
 
 /**
  * Stabil coin hesabı.

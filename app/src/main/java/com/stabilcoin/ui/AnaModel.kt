@@ -6,6 +6,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.stabilcoin.core.Analiz
 import com.stabilcoin.core.Mum
+import com.stabilcoin.core.Sarkac
 import com.stabilcoin.core.TfSonuc
 import com.stabilcoin.data.MexcIstemci
 import com.stabilcoin.data.Parite
@@ -48,7 +49,15 @@ data class CoinSonuc(
     val sembol: String,
     val hacimUsdt: Double,
     val tfler: List<TfSonuc>,
-)
+    /** 1 dk mumlardan sığlık (alış-satış farkı, hareketsiz mumlar). 1 dk grafik yoksa null. */
+    val siglik: Sarkac.Siglik? = null,
+) {
+    /** Bu zaman dilimi yıldızlı sarkaç mı: sarkaç + BTC'den bağımsız + sığ değil. */
+    fun yildiz(t: TfSonuc): Boolean = Sarkac.yildiz(t.sarkacOrani, t.btcBagi, siglik)
+}
+
+/** Sarkaç oranı ve BTC bağı için kıyas alınan coin. */
+const val KIYAS_SEMBOL = "BTCUSDT"
 
 data class Durum(
     val yukleniyor: Boolean = false,
@@ -95,24 +104,26 @@ class AnaModel(uygulama: Application) : AndroidViewModel(uygulama) {
                 val liste = withContext(Dispatchers.IO) { MexcIstemci.pariteler(ayar.enAzHacimUsdt) }
                 pariteler = liste
                 onbellek.clear()
-                val toplam = liste.size * ZAMAN_DILIMLERI.size
+                // Sarkaç puanındaki "BTC bağı" için BTC grafikleri her zaman indirilir (hacim sınırı ne olursa olsun).
+                val semboller = liste.map { it.sembol }.let { if (KIYAS_SEMBOL in it) it else it + KIYAS_SEMBOL }
+                val toplam = semboller.size * ZAMAN_DILIMLERI.size
                 _durum.update { it.copy(toplam = toplam, coinSayisi = liste.size) }
 
                 val kapi = Semaphore(5)
                 val biten = AtomicInteger(0)
                 val atlanan = ConcurrentLinkedQueue<Pair<String, String>>()
                 coroutineScope {
-                    for (p in liste) {
+                    for (sembol in semboller) {
                         for (tf in ZAMAN_DILIMLERI) {
                             launch(Dispatchers.IO) {
                                 kapi.withPermit {
                                     try {
-                                        val m = MexcIstemci.mumlar(p.sembol, tf)
-                                        onbellek.compute(p.sembol) { _, eski -> (eski ?: emptyMap()) + (tf to m) }
+                                        val m = MexcIstemci.mumlar(sembol, tf)
+                                        onbellek.compute(sembol) { _, eski -> (eski ?: emptyMap()) + (tf to m) }
                                     } catch (e: CancellationException) {
                                         throw e
                                     } catch (e: Exception) {
-                                        atlanan.add(p.sembol to tf)
+                                        atlanan.add(sembol to tf)
                                     }
                                 }
                                 val n = biten.incrementAndGet()
@@ -171,13 +182,20 @@ class AnaModel(uygulama: Application) : AndroidViewModel(uygulama) {
     private suspend fun hesapla() {
         val dalga = _ayarlar.value.enKucukDalgaYuzde
         val liste = pariteler
+        val btc = onbellek[KIYAS_SEMBOL]
         val sonuc = withContext(Dispatchers.Default) {
             liste.mapNotNull { p ->
                 val tfMumlari = onbellek[p.sembol] ?: return@mapNotNull null
                 val tfler = ZAMAN_DILIMLERI.mapNotNull { tf ->
-                    tfMumlari[tf]?.let { Analiz.analiz(tf, it, dalga) }
+                    tfMumlari[tf]?.let { m ->
+                        // Stabil hesabı aynen kalır; sarkaç ölçüleri yanına eklenir (indirilen bütün mumlardan).
+                        Analiz.analiz(tf, m, dalga).copy(
+                            sarkacOrani = Sarkac.oran(DoubleArray(m.size) { m[it].kapanis }),
+                            btcBagi = btc?.get(tf)?.let { Sarkac.btcBagi(m, it) },
+                        )
+                    }
                 }
-                CoinSonuc(p.sembol, p.hacimUsdt, tfler)
+                CoinSonuc(p.sembol, p.hacimUsdt, tfler, tfMumlari["1m"]?.let { Sarkac.siglik(it) })
             }
         }
         _durum.update { it.copy(coinler = sonuc) }

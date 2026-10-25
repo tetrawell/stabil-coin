@@ -65,17 +65,27 @@ import kotlin.math.max
 
 private val TR: Locale = Locale.forLanguageTag("tr-TR")
 
-enum class Siralama(val ad: String) { DALGA("Dalga"), SURE("Süre"), PUAN("Puan") }
+enum class Siralama(val ad: String) { DALGA("Dalga"), SURE("Süre"), PUAN("Puan"), SARKAC("Sarkaç") }
+
+/** Hangi liste: stabil coinler (eski liste) ya da yıldızlı sarkaç coinler. */
+enum class Liste(val ad: String) { STABIL("Stabil"), SARKAC("Sarkaç ★") }
 
 /** Listede gösterilecek bir satır: coin ve hangi zaman dilimiyle listelendiği. */
 data class Satir(val coin: CoinSonuc, val tf: TfSonuc)
 
-fun listele(coinler: List<CoinSonuc>, seciliTf: String?, siralama: Siralama): List<Satir> {
+/** Bir zaman dilimi seçili listeye giriyor mu. */
+fun listedeMi(c: CoinSonuc, t: TfSonuc, liste: Liste): Boolean = when (liste) {
+    Liste.STABIL -> t.uygun
+    Liste.SARKAC -> c.yildiz(t)
+}
+
+fun listele(coinler: List<CoinSonuc>, seciliTf: String?, siralama: Siralama, liste: Liste = Liste.STABIL): List<Satir> {
     val satirlar = coinler.mapNotNull { c ->
         val tf = if (seciliTf != null) {
-            c.tfler.firstOrNull { it.zamanDilimi == seciliTf && it.uygun }
+            c.tfler.firstOrNull { it.zamanDilimi == seciliTf && listedeMi(c, it, liste) }
         } else {
-            c.tfler.filter { it.uygun }.maxByOrNull { it.puan }
+            val uyan = c.tfler.filter { listedeMi(c, it, liste) }
+            if (liste == Liste.SARKAC) uyan.maxByOrNull { it.sarkacPuani ?: -999 } else uyan.maxByOrNull { it.puan }
         }
         tf?.let { Satir(c, it) }
     }
@@ -83,6 +93,7 @@ fun listele(coinler: List<CoinSonuc>, seciliTf: String?, siralama: Siralama): Li
         Siralama.DALGA -> satirlar.sortedByDescending { it.tf.dalgaYuzde }
         Siralama.SURE -> satirlar.sortedByDescending { it.tf.sureMs }
         Siralama.PUAN -> satirlar.sortedByDescending { it.tf.puan }
+        Siralama.SARKAC -> satirlar.sortedByDescending { it.tf.sarkacPuani ?: -999 }
     }
 }
 
@@ -93,13 +104,14 @@ fun AnaEkran(model: AnaModel = viewModel()) {
     val ayarlar by model.ayarlar.collectAsState()
     var seciliTf by rememberSaveable { mutableStateOf<String?>(null) }
     var siralama by rememberSaveable { mutableStateOf(Siralama.DALGA) }
+    var liste by rememberSaveable { mutableStateOf(Liste.STABIL) }
     var ayarAcik by remember { mutableStateOf(false) }
 
-    val satirlar = remember(durum.coinler, seciliTf, siralama) { listele(durum.coinler, seciliTf, siralama) }
-    val tfSayilari = remember(durum.coinler) {
-        ZAMAN_DILIMLERI.associateWith { tf -> durum.coinler.count { c -> c.tfler.any { it.zamanDilimi == tf && it.uygun } } }
+    val satirlar = remember(durum.coinler, seciliTf, siralama, liste) { listele(durum.coinler, seciliTf, siralama, liste) }
+    val tfSayilari = remember(durum.coinler, liste) {
+        ZAMAN_DILIMLERI.associateWith { tf -> durum.coinler.count { c -> c.tfler.any { it.zamanDilimi == tf && listedeMi(c, it, liste) } } }
     }
-    val toplamUygun = remember(durum.coinler) { durum.coinler.count { c -> c.tfler.any { it.uygun } } }
+    val toplamUygun = remember(durum.coinler, liste) { durum.coinler.count { c -> c.tfler.any { listedeMi(c, it, liste) } } }
 
     Scaffold(
         containerColor = Renk.zemin,
@@ -136,6 +148,28 @@ fun AnaEkran(model: AnaModel = viewModel()) {
             }
 
             Row(
+                Modifier.fillMaxWidth().padding(horizontal = 12.dp).padding(top = 6.dp),
+                horizontalArrangement = Arrangement.spacedBy(6.dp),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Text("Liste:", color = Renk.soluk, fontSize = 13.sp)
+                Liste.entries.forEach { l ->
+                    Cip(l.ad, secili = liste == l, kucuk = true) {
+                        liste = l
+                        // Sarkaç listesine geçince en sarkaç olan en üstte olsun; geri dönünce eski sıralama.
+                        siralama = if (l == Liste.SARKAC) Siralama.SARKAC else if (siralama == Siralama.SARKAC) Siralama.DALGA else siralama
+                    }
+                }
+            }
+            if (liste == Liste.SARKAC) {
+                Text(
+                    "★ Sarkaç: fiyatı hep aynı ortalamaya dönen, BTC'den bağımsız hareket eden ve sığ olmayan coinler. " +
+                        "Araştırmada en iyi sonucu 5dk grafikte verdi; kanıtlanmış değil, önce sanal parayla dene.",
+                    color = Renk.soluk, fontSize = 12.sp,
+                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp),
+                )
+            }
+            Row(
                 Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()).padding(horizontal = 12.dp, vertical = 6.dp),
                 horizontalArrangement = Arrangement.spacedBy(6.dp),
             ) {
@@ -164,15 +198,22 @@ fun AnaEkran(model: AnaModel = viewModel()) {
                     baslik = "Coinler taranıyor",
                     metin = "MEXC'deki coinlerin grafikleri indiriliyor. Bu ilk açılışta 20-40 saniye sürebilir.",
                 )
-                satirlar.isEmpty() && !durum.yukleniyor -> MesajKutusu(
-                    baslik = "Şu an uyan coin yok",
-                    metin = "Bu zaman diliminde kurallara uyan coin bulunamadı. Başka bir zaman dilimine bakabilir ya da ayarlardan en küçük dalgayı düşürebilirsin.",
-                )
+                satirlar.isEmpty() && !durum.yukleniyor -> if (liste == Liste.SARKAC) {
+                    MesajKutusu(
+                        baslik = "Şu an sarkaç coin yok",
+                        metin = "Bu zaman diliminde hem sarkaç gibi davranan, hem BTC'den bağımsız, hem de sığ olmayan coin bulunamadı. Başka bir zaman dilimine bakabilir ya da biraz sonra yenileyebilirsin.",
+                    )
+                } else {
+                    MesajKutusu(
+                        baslik = "Şu an uyan coin yok",
+                        metin = "Bu zaman diliminde kurallara uyan coin bulunamadı. Başka bir zaman dilimine bakabilir ya da ayarlardan en küçük dalgayı düşürebilirsin.",
+                    )
+                }
                 else -> LazyColumn(
                     contentPadding = PaddingValues(start = 12.dp, end = 12.dp, top = 6.dp, bottom = 16.dp),
                     verticalArrangement = Arrangement.spacedBy(10.dp),
                 ) {
-                    items(satirlar, key = { it.coin.sembol }) { s -> CoinKarti(s) }
+                    items(satirlar, key = { it.coin.sembol }) { s -> CoinKarti(s, liste) }
                     if (durum.eksikGrafik > 0) {
                         item {
                             Text(
@@ -252,7 +293,7 @@ private fun MesajKutusu(baslik: String, metin: String, dugme: String? = null, on
 }
 
 @Composable
-private fun CoinKarti(s: Satir) {
+private fun CoinKarti(s: Satir, liste: Liste) {
     var gosterilen by remember(s.coin.sembol, s.tf.zamanDilimi) { mutableStateOf(s.tf.zamanDilimi) }
     val t = s.coin.tfler.firstOrNull { it.zamanDilimi == gosterilen } ?: s.tf
     val sekil = RoundedCornerShape(12.dp)
@@ -274,7 +315,7 @@ private fun CoinKarti(s: Satir) {
             }
             YonEtiketi(t)
             Spacer(Modifier.width(10.dp))
-            PuanRozeti(t)
+            if (liste == Liste.SARKAC) SarkacRozeti(t, s.coin.yildiz(t)) else PuanRozeti(t)
         }
 
         Spacer(Modifier.height(8.dp))
@@ -296,6 +337,7 @@ private fun CoinKarti(s: Satir) {
                 color = Renk.soluk, fontSize = 13.sp,
             )
         }
+        SarkacSatiri(s.coin, t)
 
         Spacer(Modifier.height(8.dp))
         Row(
@@ -304,14 +346,56 @@ private fun CoinKarti(s: Satir) {
         ) {
             ZAMAN_DILIMLERI.forEach { tf ->
                 val sonuc = s.coin.tfler.firstOrNull { it.zamanDilimi == tf }
-                TfKutusu(tf, uygun = sonuc?.uygun == true, secili = tf == gosterilen) { gosterilen = tf }
+                TfKutusu(
+                    tf, uygun = sonuc?.uygun == true, secili = tf == gosterilen,
+                    yildiz = sonuc != null && s.coin.yildiz(sonuc),
+                ) { gosterilen = tf }
             }
         }
     }
 }
 
+/** Kartta sarkaç bilgisi: puan, BTC bağı ve sığlık uyarısı. */
 @Composable
-private fun TfKutusu(tf: String, uygun: Boolean, secili: Boolean, onClick: () -> Unit) {
+private fun SarkacSatiri(c: CoinSonuc, t: TfSonuc) {
+    val puan = t.sarkacPuani
+    val sig = c.siglik?.sig == true
+    val metin = buildString {
+        if (c.yildiz(t)) append("★ ")
+        append("Sarkaç ")
+        append(puan?.toString() ?: "?")
+        append(" · BTC bağı ")
+        append(t.btcBagi?.let { sayi(it) } ?: "?")
+    }
+    val renk = when {
+        c.yildiz(t) -> Renk.sari
+        else -> Renk.soluk
+    }
+    Text(metin, color = renk, fontSize = 13.sp, fontWeight = if (c.yildiz(t)) FontWeight.Medium else FontWeight.Normal)
+    if (sig) {
+        Text(
+            "Sığ coin: alış-satış farkı yüksek ya da fiyat çoğu dakika kıpırdamıyor. Sarkaç puanı yanıltıcı olabilir, simülatördeki kâr gerçekleşmez.",
+            color = Renk.kirmizi, fontSize = 12.sp,
+        )
+    }
+}
+
+@Composable
+private fun SarkacRozeti(t: TfSonuc, yildiz: Boolean) {
+    val renk = if (yildiz) Renk.sari else Renk.kenar
+    Box(
+        Modifier.size(40.dp).border(2.dp, renk, CircleShape),
+        contentAlignment = Alignment.Center,
+    ) {
+        Text(
+            t.sarkacPuani?.toString() ?: "?",
+            color = if (yildiz) Renk.yazi else Renk.soluk, fontSize = 15.sp, fontWeight = FontWeight.SemiBold,
+        )
+    }
+}
+
+@Composable
+private fun TfKutusu(tf: String, uygun: Boolean, secili: Boolean, yildiz: Boolean = false, onClick: () -> Unit) {
     val sekil = RoundedCornerShape(6.dp)
     val zemin = if (uygun) Renk.yesil.copy(alpha = 0.18f) else Color.Transparent
     val kenar = when {
@@ -326,7 +410,15 @@ private fun TfKutusu(tf: String, uygun: Boolean, secili: Boolean, onClick: () ->
             .clickable(onClick = onClick)
             .padding(horizontal = 10.dp, vertical = 4.dp),
     ) {
-        Text(tfAdi(tf), color = if (uygun) Renk.yesil else Renk.soluk, fontSize = 12.sp, fontWeight = FontWeight.Medium)
+        Text(
+            if (yildiz) "${tfAdi(tf)} ★" else tfAdi(tf),
+            color = when {
+                uygun -> Renk.yesil
+                yildiz -> Renk.sari
+                else -> Renk.soluk
+            },
+            fontSize = 12.sp, fontWeight = FontWeight.Medium,
+        )
     }
 }
 
