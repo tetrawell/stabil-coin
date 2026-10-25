@@ -1,0 +1,1482 @@
+[
+{
+"sembol": "CTUSDT",
+"aralik": "1m",
+"mum": 35482,
+"ilk": 1790762400000,
+"istek": 74,
+"hata": null
+},
+{
+"sembol": "BTCUSDT",
+"aralik": "1m",
+"mum": 43201,
+"ilk": 1790299260000,
+"istek": 90,
+"hata": null
+},
+{
+"sembol": "DGAIUSDT",
+"aralik": "1m",
+"mum": 43201,
+"ilk": 1790299260000,
+"istek": 90,
+"hata": null
+},
+{
+"sembol": "ZECUSDT",
+"aralik": "1m",
+"mum": 43200,
+"ilk": 1790299260000,
+"istek": 90,
+"hata": null
+},
+{
+"sembol": "IRYSUSDT",
+"aralik": "1m",
+"mum": 43201,
+"ilk": 1790299260000,
+"istek": 90,
+"hata": null
+},
+{
+"sembol": "ENAUSDT",
+"aralik": "1m",
+"mum": 43200,
+"ilk": 1790299260000,
+"istek": 90,
+"hata": null
+},
+{
+"sembol": "MTOUSDT",
+"aralik": "1m",
+"mum": 5242,
+"ilk": 1792576800000,
+"istek": 14,
+"hata": null
+},
+{
+"sembol": "JCTUSDT",
+"aralik": "1m",
+"mum": 43201,
+"ilk": 1790299260000,
+"istek": 90,
+"hata": null
+},
+{
+"sembol": "ETHFIUSDT",
+"aralik": "1m",
+"mum": 43200,
+"ilk": 1790299320000,
+"istek": 90,
+"hata": null
+},
+{
+"sembol": "BDXUSDT",
+"aralik": "1m",
+"mum": 43200,
+"ilk": 1790299320000,
+"istek": 90,
+"hata": null
+},
+{
+"sembol": "MXUSDT",
+"aralik": "1m",
+"mum": 43200,
+"ilk": 1790299320000,
+"istek": 90,
+"hata": null
+},
+{
+"sembol": "WXTUSDT",
+"aralik": "1m",
+"mum": 43200,
+"ilk": 1790299320000,
+"istek": 90,
+"hata": null
+},
+{
+"sembol": "NESUSDT",
+"aralik": "1m",
+"mum": 43200,
+"ilk": 1790299320000,
+"istek": 90,
+"hata": null
+},
+{
+"sembol": "CHOMPUSDT",
+"aralik": "1m",
+"mum": 14002,
+"ilk": 1792051200000,
+"istek": 32,
+"hata": null
+},
+{
+"sembol": "BULLAUSDT",
+"aralik": "1m",
+"mum": 43201,
+"ilk": 1790299320000,
+"istek": 90,
+"hata": null
+},
+{
+"sembol": "STRKUSDT",
+"aralik": "1m",
+"mum": 43201,
+"ilk": 1790299320000,
+"istek": 90,
+"hata": null
+},
+{
+"sembol": "BONKUSDT",
+"aralik": "1m",
+"mum": 43201,
+"ilk": 1790299320000,
+"istek": 90,
+"hata": null
+},
+{
+"sembol": "AKEUSDT",
+"aralik": "1m",
+"mum": 43201,
+"ilk": 1790299320000,
+"istek": 90,
+"hata": null
+},
+{
+"sembol": "ASTERUSDT",
+"aralik": "1m",
+"mum": 43201,
+"ilk": 1790299320000,
+"istek": 90,
+"hata": null
+},
+{
+"sembol": "HYPEUSDT",
+"aralik": "1m",
+"mum": 43201,
+"ilk": 1790299320000,
+"istek": 90,
+"hata": null
+},
+{
+"sembol": "CTUSDT",
+"aralik": "5m",
+"mum": 7097,
+"ilk": 1790762400000,
+"istek": 18,
+"hata": null
+},
+{
+"sembol": "DGAIUSDT",
+"aralik": "5m",
+"mum": 17777,
+"ilk": 1787558400000,
+"istek": 39,
+"hata": null
+},
+{
+"sembol": "ENAUSDT",
+"aralik": "5m",
+"mum": 52000,
+"ilk": 1777291500000,
+"istek": 104,
+"hata": null
+},
+{
+"sembol": "BTCUSDT",
+"aralik": "5m",
+"mum": 52000,
+"ilk": 1777291500000,
+"istek": 104,
+"hata": null
+},
+{
+"sembol": "IRYSUSDT",
+"aralik": "5m",
+"mum": 52000,
+"ilk": 1777291500000,
+"istek": 104,
+"hata": null
+},
+{
+"sembol": "ZECUSDT",
+"aralik": "5m",
+"mum": 52000,
+"ilk": 1777291500000,
+"istek": 104,
+"hata": null
+},
+{
+"sembol": "JCTUSDT",
+"aralik": "5m",
+"mum": 52000,
+"ilk": 1777291500000,
+"istek": 104,
+"hata": null
+},
+{
+"sembol": "MTOUSDT",
+"aralik": "5m",
+"mum": 1049,
+"ilk": 1792576800000,
+"istek": 6,
+"hata": null
+},
+{
+"sembol": "CHOMPUSDT",
+"aralik": "5m",
+"mum": 2801,
+"ilk": 1792051200000,
+"istek": 9,
+"hata": null
+},
+{
+"sembol": "ETHFIUSDT",
+"aralik": "5m",
+"mum": 52000,
+"ilk": 1777291500000,
+"istek": 104,
+"hata": null
+},
+{
+"sembol": "MXUSDT",
+"aralik": "5m",
+"mum": 52000,
+"ilk": 1777291500000,
+"istek": 104,
+"hata": null
+},
+{
+"sembol": "NESUSDT",
+"aralik": "5m",
+"mum": 35297,
+"ilk": 1782302400000,
+"istek": 74,
+"hata": null
+},
+{
+"sembol": "BDXUSDT",
+"aralik": "5m",
+"mum": 52000,
+"ilk": 1777291500000,
+"istek": 104,
+"hata": null
+},
+{
+"sembol": "WXTUSDT",
+"aralik": "5m",
+"mum": 52000,
+"ilk": 1777291500000,
+"istek": 104,
+"hata": null
+},
+{
+"sembol": "BULLAUSDT",
+"aralik": "5m",
+"mum": 52000,
+"ilk": 1777291500000,
+"istek": 104,
+"hata": null
+},
+{
+"sembol": "STRKUSDT",
+"aralik": "5m",
+"mum": 52000,
+"ilk": 1777291500000,
+"istek": 104,
+"hata": null
+},
+{
+"sembol": "BONKUSDT",
+"aralik": "5m",
+"mum": 52000,
+"ilk": 1777291500000,
+"istek": 104,
+"hata": null
+},
+{
+"sembol": "AKEUSDT",
+"aralik": "5m",
+"mum": 52000,
+"ilk": 1777291500000,
+"istek": 104,
+"hata": null
+},
+{
+"sembol": "DATAUSDT",
+"aralik": "5m",
+"mum": 33881,
+"ilk": 1782727200000,
+"istek": 71,
+"hata": null
+},
+{
+"sembol": "ASTERUSDT",
+"aralik": "5m",
+"mum": 52000,
+"ilk": 1777291500000,
+"istek": 104,
+"hata": null
+},
+{
+"sembol": "HYPEUSDT",
+"aralik": "5m",
+"mum": 52000,
+"ilk": 1777291500000,
+"istek": 104,
+"hata": null
+},
+{
+"sembol": "UNIUSDT",
+"aralik": "5m",
+"mum": 52000,
+"ilk": 1777291500000,
+"istek": 104,
+"hata": null
+},
+{
+"sembol": "MAGMAUSDT",
+"aralik": "5m",
+"mum": 52000,
+"ilk": 1777291500000,
+"istek": 104,
+"hata": null
+},
+{
+"sembol": "VRUSDT",
+"aralik": "5m",
+"mum": 52000,
+"ilk": 1777291500000,
+"istek": 104,
+"hata": null
+},
+{
+"sembol": "JGGLUSDT",
+"aralik": "5m",
+"mum": 52000,
+"ilk": 1777291500000,
+"istek": 104,
+"hata": null
+},
+{
+"sembol": "QNTUSDT",
+"aralik": "5m",
+"mum": 52000,
+"ilk": 1777291500000,
+"istek": 104,
+"hata": null
+},
+{
+"sembol": "ONDOUSDT",
+"aralik": "5m",
+"mum": 52000,
+"ilk": 1777291500000,
+"istek": 104,
+"hata": null
+},
+{
+"sembol": "RTUSDT",
+"aralik": "5m",
+"mum": 738,
+"ilk": 1792670400000,
+"istek": 5,
+"hata": null
+},
+{
+"sembol": "XLMUSDT",
+"aralik": "5m",
+"mum": 52000,
+"ilk": 1777291500000,
+"istek": 104,
+"hata": null
+},
+{
+"sembol": "QUIDUSDT",
+"aralik": "5m",
+"mum": 23478,
+"ilk": 1785848400000,
+"istek": 50,
+"hata": null
+},
+{
+"sembol": "CTUSDT",
+"aralik": "15m",
+"mum": 2366,
+"ilk": 1790762400000,
+"istek": 8,
+"hata": null
+},
+{
+"sembol": "DGAIUSDT",
+"aralik": "15m",
+"mum": 5926,
+"ilk": 1787558400000,
+"istek": 15,
+"hata": null
+},
+{
+"sembol": "ARIAUSDT",
+"aralik": "5m",
+"mum": 52000,
+"ilk": 1777291800000,
+"istek": 104,
+"hata": null
+},
+{
+"sembol": "BTCUSDT",
+"aralik": "15m",
+"mum": 34561,
+"ilk": 1761786900000,
+"istek": 73,
+"hata": null
+},
+{
+"sembol": "ELUSDT",
+"aralik": "5m",
+"mum": 52000,
+"ilk": 1777291800000,
+"istek": 104,
+"hata": null
+},
+{
+"sembol": "JUPUSDT",
+"aralik": "5m",
+"mum": 52000,
+"ilk": 1777291800000,
+"istek": 104,
+"hata": null
+},
+{
+"sembol": "ENAUSDT",
+"aralik": "15m",
+"mum": 34561,
+"ilk": 1761786900000,
+"istek": 73,
+"hata": null
+},
+{
+"sembol": "IRYSUSDT",
+"aralik": "15m",
+"mum": 32026,
+"ilk": 1764068400000,
+"istek": 68,
+"hata": null
+},
+{
+"sembol": "MTOUSDT",
+"aralik": "15m",
+"mum": 350,
+"ilk": 1792576800000,
+"istek": 4,
+"hata": null
+},
+{
+"sembol": "ZECUSDT",
+"aralik": "15m",
+"mum": 34561,
+"ilk": 1761786900000,
+"istek": 73,
+"hata": null
+},
+{
+"sembol": "JCTUSDT",
+"aralik": "15m",
+"mum": 33462,
+"ilk": 1762776000000,
+"istek": 70,
+"hata": null
+},
+{
+"sembol": "ETHFIUSDT",
+"aralik": "15m",
+"mum": 34561,
+"ilk": 1761786900000,
+"istek": 73,
+"hata": null
+},
+{
+"sembol": "MXUSDT",
+"aralik": "15m",
+"mum": 34561,
+"ilk": 1761786900000,
+"istek": 73,
+"hata": null
+},
+{
+"sembol": "CHOMPUSDT",
+"aralik": "15m",
+"mum": 934,
+"ilk": 1792051200000,
+"istek": 5,
+"hata": null
+},
+{
+"sembol": "BDXUSDT",
+"aralik": "15m",
+"mum": 34561,
+"ilk": 1761786900000,
+"istek": 73,
+"hata": null
+},
+{
+"sembol": "NESUSDT",
+"aralik": "15m",
+"mum": 11766,
+"ilk": 1782302400000,
+"istek": 27,
+"hata": null
+},
+{
+"sembol": "WXTUSDT",
+"aralik": "15m",
+"mum": 34561,
+"ilk": 1761786900000,
+"istek": 73,
+"hata": null
+},
+{
+"sembol": "BULLAUSDT",
+"aralik": "15m",
+"mum": 34561,
+"ilk": 1761786900000,
+"istek": 73,
+"hata": null
+},
+{
+"sembol": "STRKUSDT",
+"aralik": "15m",
+"mum": 34561,
+"ilk": 1761786900000,
+"istek": 73,
+"hata": null
+},
+{
+"sembol": "BONKUSDT",
+"aralik": "15m",
+"mum": 34561,
+"ilk": 1761786900000,
+"istek": 73,
+"hata": null
+},
+{
+"sembol": "AKEUSDT",
+"aralik": "15m",
+"mum": 34561,
+"ilk": 1761786900000,
+"istek": 73,
+"hata": null
+},
+{
+"sembol": "ASTERUSDT",
+"aralik": "15m",
+"mum": 34561,
+"ilk": 1761786900000,
+"istek": 73,
+"hata": null
+},
+{
+"sembol": "DATAUSDT",
+"aralik": "15m",
+"mum": 11294,
+"ilk": 1782727200000,
+"istek": 26,
+"hata": null
+},
+{
+"sembol": "HYPEUSDT",
+"aralik": "15m",
+"mum": 34561,
+"ilk": 1761786900000,
+"istek": 73,
+"hata": null
+},
+{
+"sembol": "MAGMAUSDT",
+"aralik": "15m",
+"mum": 30014,
+"ilk": 1765879200000,
+"istek": 64,
+"hata": null
+},
+{
+"sembol": "UNIUSDT",
+"aralik": "15m",
+"mum": 34561,
+"ilk": 1761786900000,
+"istek": 73,
+"hata": null
+},
+{
+"sembol": "JGGLUSDT",
+"aralik": "15m",
+"mum": 29154,
+"ilk": 1766653200000,
+"istek": 62,
+"hata": null
+},
+{
+"sembol": "QNTUSDT",
+"aralik": "15m",
+"mum": 34561,
+"ilk": 1761786900000,
+"istek": 73,
+"hata": null
+},
+{
+"sembol": "QUIDUSDT",
+"aralik": "15m",
+"mum": 7826,
+"ilk": 1785848400000,
+"istek": 19,
+"hata": null
+},
+{
+"sembol": "VRUSDT",
+"aralik": "15m",
+"mum": 34561,
+"ilk": 1761786900000,
+"istek": 73,
+"hata": null
+},
+{
+"sembol": "RTUSDT",
+"aralik": "15m",
+"mum": 246,
+"ilk": 1792670400000,
+"istek": 4,
+"hata": null
+},
+{
+"sembol": "ONDOUSDT",
+"aralik": "15m",
+"mum": 34561,
+"ilk": 1761786900000,
+"istek": 73,
+"hata": null
+},
+{
+"sembol": "BTCUSDT",
+"aralik": "1h",
+"mum": 18000,
+"ilk": 1728093600000,
+"istek": 36,
+"hata": null
+},
+{
+"sembol": "XLMUSDT",
+"aralik": "15m",
+"mum": 34561,
+"ilk": 1761786900000,
+"istek": 73,
+"hata": null
+},
+{
+"sembol": "CTUSDT",
+"aralik": "1h",
+"mum": 592,
+"ilk": 1790762400000,
+"istek": 5,
+"hata": null
+},
+{
+"sembol": "DGAIUSDT",
+"aralik": "1h",
+"mum": 1482,
+"ilk": 1787558400000,
+"istek": 6,
+"hata": null
+},
+{
+"sembol": "ENAUSDT",
+"aralik": "1h",
+"mum": 18000,
+"ilk": 1728093600000,
+"istek": 36,
+"hata": null
+},
+{
+"sembol": "IRYSUSDT",
+"aralik": "1h",
+"mum": 8007,
+"ilk": 1764068400000,
+"istek": 20,
+"hata": null
+},
+{
+"sembol": "ARIAUSDT",
+"aralik": "15m",
+"mum": 34561,
+"ilk": 1761786900000,
+"istek": 73,
+"hata": null
+},
+{
+"sembol": "ELUSDT",
+"aralik": "15m",
+"mum": 34561,
+"ilk": 1761786900000,
+"istek": 73,
+"hata": null
+},
+{
+"sembol": "JUPUSDT",
+"aralik": "15m",
+"mum": 34561,
+"ilk": 1761786900000,
+"istek": 73,
+"hata": null
+},
+{
+"sembol": "JCTUSDT",
+"aralik": "1h",
+"mum": 8366,
+"ilk": 1762776000000,
+"istek": 20,
+"hata": null
+},
+{
+"sembol": "MTOUSDT",
+"aralik": "1h",
+"mum": 88,
+"ilk": 1792576800000,
+"istek": 4,
+"hata": null
+},
+{
+"sembol": "NESUSDT",
+"aralik": "1h",
+"mum": 2942,
+"ilk": 1782302400000,
+"istek": 9,
+"hata": null
+},
+{
+"sembol": "ZECUSDT",
+"aralik": "1h",
+"mum": 18000,
+"ilk": 1728093600000,
+"istek": 36,
+"hata": null
+},
+{
+"sembol": "CHOMPUSDT",
+"aralik": "1h",
+"mum": 234,
+"ilk": 1792051200000,
+"istek": 4,
+"hata": null
+},
+{
+"sembol": "ETHFIUSDT",
+"aralik": "1h",
+"mum": 18000,
+"ilk": 1728093600000,
+"istek": 36,
+"hata": null
+},
+{
+"sembol": "MXUSDT",
+"aralik": "1h",
+"mum": 18000,
+"ilk": 1728093600000,
+"istek": 36,
+"hata": null
+},
+{
+"sembol": "BDXUSDT",
+"aralik": "1h",
+"mum": 18000,
+"ilk": 1728093600000,
+"istek": 36,
+"hata": null
+},
+{
+"sembol": "WXTUSDT",
+"aralik": "1h",
+"mum": 16578,
+"ilk": 1733212800000,
+"istek": 37,
+"hata": null
+},
+{
+"sembol": "BULLAUSDT",
+"aralik": "1h",
+"mum": 12135,
+"ilk": 1749207600000,
+"istek": 28,
+"hata": null
+},
+{
+"sembol": "DATAUSDT",
+"aralik": "1h",
+"mum": 2824,
+"ilk": 1782727200000,
+"istek": 9,
+"hata": null
+},
+{
+"sembol": "STRKUSDT",
+"aralik": "1h",
+"mum": 18000,
+"ilk": 1728093600000,
+"istek": 36,
+"hata": null
+},
+{
+"sembol": "AKEUSDT",
+"aralik": "1h",
+"mum": 10310,
+"ilk": 1755777600000,
+"istek": 24,
+"hata": null
+},
+{
+"sembol": "ASTERUSDT",
+"aralik": "1h",
+"mum": 9623,
+"ilk": 1758250800000,
+"istek": 23,
+"hata": null
+},
+{
+"sembol": "BONKUSDT",
+"aralik": "1h",
+"mum": 18000,
+"ilk": 1728093600000,
+"istek": 36,
+"hata": null
+},
+{
+"sembol": "HYPEUSDT",
+"aralik": "1h",
+"mum": 13916,
+"ilk": 1742796000000,
+"istek": 31,
+"hata": null
+},
+{
+"sembol": "MAGMAUSDT",
+"aralik": "1h",
+"mum": 7504,
+"ilk": 1765879200000,
+"istek": 19,
+"hata": null
+},
+{
+"sembol": "JGGLUSDT",
+"aralik": "1h",
+"mum": 7289,
+"ilk": 1766653200000,
+"istek": 18,
+"hata": null
+},
+{
+"sembol": "UNIUSDT",
+"aralik": "1h",
+"mum": 18000,
+"ilk": 1728093600000,
+"istek": 36,
+"hata": null
+},
+{
+"sembol": "QUIDUSDT",
+"aralik": "1h",
+"mum": 1957,
+"ilk": 1785848400000,
+"istek": 7,
+"hata": null
+},
+{
+"sembol": "QNTUSDT",
+"aralik": "1h",
+"mum": 18000,
+"ilk": 1728093600000,
+"istek": 36,
+"hata": null
+},
+{
+"sembol": "VRUSDT",
+"aralik": "1h",
+"mum": 18000,
+"ilk": 1728093600000,
+"istek": 36,
+"hata": null
+},
+{
+"sembol": "RTUSDT",
+"aralik": "1h",
+"mum": 62,
+"ilk": 1792670400000,
+"istek": 4,
+"hata": null
+},
+{
+"sembol": "ONDOUSDT",
+"aralik": "1h",
+"mum": 18000,
+"ilk": 1728093600000,
+"istek": 36,
+"hata": null
+},
+{
+"sembol": "XLMUSDT",
+"aralik": "1h",
+"mum": 18000,
+"ilk": 1728093600000,
+"istek": 36,
+"hata": null
+},
+{
+"sembol": "ARIAUSDT",
+"aralik": "1h",
+"mum": 10309,
+"ilk": 1755781200000,
+"istek": 24,
+"hata": null
+},
+{
+"sembol": "CTUSDT",
+"aralik": "4h",
+"mum": 149,
+"ilk": 1790755200000,
+"istek": 4,
+"hata": null
+},
+{
+"sembol": "BTCUSDT",
+"aralik": "4h",
+"mum": 9000,
+"ilk": 1663300800000,
+"istek": 18,
+"hata": null
+},
+{
+"sembol": "DGAIUSDT",
+"aralik": "4h",
+"mum": 371,
+"ilk": 1787558400000,
+"istek": 4,
+"hata": null
+},
+{
+"sembol": "IRYSUSDT",
+"aralik": "4h",
+"mum": 2003,
+"ilk": 1764057600000,
+"istek": 8,
+"hata": null
+},
+{
+"sembol": "ENAUSDT",
+"aralik": "4h",
+"mum": 5615,
+"ilk": 1712044800000,
+"istek": 15,
+"hata": null
+},
+{
+"sembol": "JCTUSDT",
+"aralik": "4h",
+"mum": 2092,
+"ilk": 1762776000000,
+"istek": 8,
+"hata": null
+},
+{
+"sembol": "ELUSDT",
+"aralik": "1h",
+"mum": 18000,
+"ilk": 1728093600000,
+"istek": 36,
+"hata": null
+},
+{
+"sembol": "JUPUSDT",
+"aralik": "1h",
+"mum": 18000,
+"ilk": 1728093600000,
+"istek": 36,
+"hata": null
+},
+{
+"sembol": "MTOUSDT",
+"aralik": "4h",
+"mum": 23,
+"ilk": 1792569600000,
+"istek": 4,
+"hata": null
+},
+{
+"sembol": "ZECUSDT",
+"aralik": "4h",
+"mum": 9000,
+"ilk": 1663300800000,
+"istek": 18,
+"hata": null
+},
+{
+"sembol": "NESUSDT",
+"aralik": "4h",
+"mum": 736,
+"ilk": 1782302400000,
+"istek": 5,
+"hata": null
+},
+{
+"sembol": "ETHFIUSDT",
+"aralik": "4h",
+"mum": 5704,
+"ilk": 1710763200000,
+"istek": 15,
+"hata": null
+},
+{
+"sembol": "CHOMPUSDT",
+"aralik": "4h",
+"mum": 59,
+"ilk": 1792051200000,
+"istek": 4,
+"hata": null
+},
+{
+"sembol": "WXTUSDT",
+"aralik": "4h",
+"mum": 4145,
+"ilk": 1733212800000,
+"istek": 12,
+"hata": null
+},
+{
+"sembol": "MXUSDT",
+"aralik": "4h",
+"mum": 9000,
+"ilk": 1663300800000,
+"istek": 18,
+"hata": null
+},
+{
+"sembol": "BDXUSDT",
+"aralik": "4h",
+"mum": 9000,
+"ilk": 1663300800000,
+"istek": 18,
+"hata": null
+},
+{
+"sembol": "BULLAUSDT",
+"aralik": "4h",
+"mum": 3035,
+"ilk": 1749196800000,
+"istek": 10,
+"hata": null
+},
+{
+"sembol": "AKEUSDT",
+"aralik": "4h",
+"mum": 2578,
+"ilk": 1755777600000,
+"istek": 9,
+"hata": null
+},
+{
+"sembol": "ASTERUSDT",
+"aralik": "4h",
+"mum": 2407,
+"ilk": 1758240000000,
+"istek": 8,
+"hata": null
+},
+{
+"sembol": "DATAUSDT",
+"aralik": "4h",
+"mum": 707,
+"ilk": 1782720000000,
+"istek": 5,
+"hata": null
+},
+{
+"sembol": "STRKUSDT",
+"aralik": "4h",
+"mum": 5866,
+"ilk": 1708430400000,
+"istek": 15,
+"hata": null
+},
+{
+"sembol": "HYPEUSDT",
+"aralik": "4h",
+"mum": 3480,
+"ilk": 1742788800000,
+"istek": 10,
+"hata": null
+},
+{
+"sembol": "MAGMAUSDT",
+"aralik": "4h",
+"mum": 1877,
+"ilk": 1765872000000,
+"istek": 7,
+"hata": null
+},
+{
+"sembol": "BONKUSDT",
+"aralik": "4h",
+"mum": 8345,
+"ilk": 1672732800000,
+"istek": 20,
+"hata": null
+},
+{
+"sembol": "JGGLUSDT",
+"aralik": "4h",
+"mum": 1823,
+"ilk": 1766649600000,
+"istek": 7,
+"hata": null
+},
+{
+"sembol": "QUIDUSDT",
+"aralik": "4h",
+"mum": 490,
+"ilk": 1785844800000,
+"istek": 4,
+"hata": null
+},
+{
+"sembol": "VRUSDT",
+"aralik": "4h",
+"mum": 5958,
+"ilk": 1707105600000,
+"istek": 15,
+"hata": null
+},
+{
+"sembol": "UNIUSDT",
+"aralik": "4h",
+"mum": 9000,
+"ilk": 1663300800000,
+"istek": 18,
+"hata": null
+},
+{
+"sembol": "QNTUSDT",
+"aralik": "4h",
+"mum": 9000,
+"ilk": 1663300800000,
+"istek": 18,
+"hata": null
+},
+{
+"sembol": "ARIAUSDT",
+"aralik": "4h",
+"mum": 2578,
+"ilk": 1755777600000,
+"istek": 9,
+"hata": null
+},
+{
+"sembol": "ONDOUSDT",
+"aralik": "4h",
+"mum": 6064,
+"ilk": 1705579200000,
+"istek": 16,
+"hata": null
+},
+{
+"sembol": "RTUSDT",
+"aralik": "4h",
+"mum": 16,
+"ilk": 1792670400000,
+"istek": 4,
+"hata": null
+},
+{
+"sembol": "XLMUSDT",
+"aralik": "4h",
+"mum": 9000,
+"ilk": 1663300800000,
+"istek": 18,
+"hata": null
+},
+{
+"sembol": "CTUSDT",
+"aralik": "1d",
+"mum": 26,
+"ilk": 1790726400000,
+"istek": 4,
+"hata": null
+},
+{
+"sembol": "ENAUSDT",
+"aralik": "1d",
+"mum": 937,
+"ilk": 1712016000000,
+"istek": 5,
+"hata": null
+},
+{
+"sembol": "BTCUSDT",
+"aralik": "1d",
+"mum": 3287,
+"ilk": 1508947200000,
+"istek": 7,
+"hata": null
+},
+{
+"sembol": "DGAIUSDT",
+"aralik": "1d",
+"mum": 63,
+"ilk": 1787529600000,
+"istek": 4,
+"hata": null
+},
+{
+"sembol": "IRYSUSDT",
+"aralik": "1d",
+"mum": 335,
+"ilk": 1764028800000,
+"istek": 4,
+"hata": null
+},
+{
+"sembol": "JUPUSDT",
+"aralik": "4h",
+"mum": 5986,
+"ilk": 1706702400000,
+"istek": 15,
+"hata": null
+},
+{
+"sembol": "JCTUSDT",
+"aralik": "1d",
+"mum": 350,
+"ilk": 1762732800000,
+"istek": 4,
+"hata": null
+},
+{
+"sembol": "ELUSDT",
+"aralik": "4h",
+"mum": 9000,
+"ilk": 1663300800000,
+"istek": 18,
+"hata": null
+},
+{
+"sembol": "ETHFIUSDT",
+"aralik": "1d",
+"mum": 952,
+"ilk": 1710720000000,
+"istek": 5,
+"hata": null
+},
+{
+"sembol": "ZECUSDT",
+"aralik": "1d",
+"mum": 2683,
+"ilk": 1561161600000,
+"istek": 9,
+"hata": null
+},
+{
+"sembol": "MTOUSDT",
+"aralik": "1d",
+"mum": 5,
+"ilk": 1792540800000,
+"istek": 4,
+"hata": null
+},
+{
+"sembol": "MXUSDT",
+"aralik": "1d",
+"mum": 3027,
+"ilk": 1531440000000,
+"istek": 7,
+"hata": null
+},
+{
+"sembol": "NESUSDT",
+"aralik": "1d",
+"mum": 124,
+"ilk": 1782259200000,
+"istek": 4,
+"hata": null
+},
+{
+"sembol": "WXTUSDT",
+"aralik": "1d",
+"mum": 692,
+"ilk": 1733184000000,
+"istek": 5,
+"hata": null
+},
+{
+"sembol": "BDXUSDT",
+"aralik": "1d",
+"mum": 1830,
+"ilk": 1634860800000,
+"istek": 7,
+"hata": null
+},
+{
+"sembol": "CHOMPUSDT",
+"aralik": "1d",
+"mum": 11,
+"ilk": 1792022400000,
+"istek": 4,
+"hata": null
+},
+{
+"sembol": "BULLAUSDT",
+"aralik": "1d",
+"mum": 507,
+"ilk": 1749168000000,
+"istek": 5,
+"hata": null
+},
+{
+"sembol": "STRKUSDT",
+"aralik": "1d",
+"mum": 979,
+"ilk": 1708387200000,
+"istek": 5,
+"hata": null
+},
+{
+"sembol": "AKEUSDT",
+"aralik": "1d",
+"mum": 431,
+"ilk": 1755734400000,
+"istek": 4,
+"hata": null
+},
+{
+"sembol": "ASTERUSDT",
+"aralik": "1d",
+"mum": 402,
+"ilk": 1758240000000,
+"istek": 4,
+"hata": null
+},
+{
+"sembol": "BONKUSDT",
+"aralik": "1d",
+"mum": 1392,
+"ilk": 1672704000000,
+"istek": 6,
+"hata": null
+},
+{
+"sembol": "HYPEUSDT",
+"aralik": "1d",
+"mum": 581,
+"ilk": 1742774400000,
+"istek": 5,
+"hata": null
+},
+{
+"sembol": "DATAUSDT",
+"aralik": "1d",
+"mum": 119,
+"ilk": 1782691200000,
+"istek": 4,
+"hata": null
+},
+{
+"sembol": "MAGMAUSDT",
+"aralik": "1d",
+"mum": 314,
+"ilk": 1765843200000,
+"istek": 4,
+"hata": null
+},
+{
+"sembol": "JGGLUSDT",
+"aralik": "1d",
+"mum": 305,
+"ilk": 1766620800000,
+"istek": 4,
+"hata": null
+},
+{
+"sembol": "VRUSDT",
+"aralik": "1d",
+"mum": 994,
+"ilk": 1707091200000,
+"istek": 5,
+"hata": null
+},
+{
+"sembol": "QNTUSDT",
+"aralik": "1d",
+"mum": 1546,
+"ilk": 1659398400000,
+"istek": 7,
+"hata": null
+},
+{
+"sembol": "UNIUSDT",
+"aralik": "1d",
+"mum": 2230,
+"ilk": 1600300800000,
+"istek": 8,
+"hata": null
+},
+{
+"sembol": "ONDOUSDT",
+"aralik": "1d",
+"mum": 1012,
+"ilk": 1705536000000,
+"istek": 6,
+"hata": null
+},
+{
+"sembol": "QUIDUSDT",
+"aralik": "1d",
+"mum": 83,
+"ilk": 1785801600000,
+"istek": 4,
+"hata": null
+},
+{
+"sembol": "ARIAUSDT",
+"aralik": "1d",
+"mum": 431,
+"ilk": 1755734400000,
+"istek": 4,
+"hata": null
+},
+{
+"sembol": "RTUSDT",
+"aralik": "1d",
+"mum": 4,
+"ilk": 1792627200000,
+"istek": 4,
+"hata": null
+},
+{
+"sembol": "JUPUSDT",
+"aralik": "1d",
+"mum": 999,
+"ilk": 1706659200000,
+"istek": 5,
+"hata": null
+},
+{
+"sembol": "XLMUSDT",
+"aralik": "1d",
+"mum": 2683,
+"ilk": 1561161600000,
+"istek": 9,
+"hata": null
+},
+{
+"sembol": "ELUSDT",
+"aralik": "1d",
+"mum": 1788,
+"ilk": 1638316800000,
+"istek": 7,
+"hata": null
+}
+]
