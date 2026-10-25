@@ -1,7 +1,7 @@
 name: Kontrol
 
 # main dışındaki dallarda: testleri çalıştırır ve uygulamanın derlendiğini kontrol eder.
-# Sürüm yayınlamaz, telefondaki uygulamayı etkilemez.
+# Sürüm yayınlamaz, telefondaki uygulamayı etkilemez. Hatalar, Actions sayfasında not (annotation) olarak da görünür.
 on:
   push:
     branches-ignore: [main, gercek-veri]
@@ -23,15 +23,34 @@ jobs:
           gradle-version: "8.11.1"
 
       - name: Testler
-        run: gradle :app:testDebugUnitTest --no-daemon --stacktrace
-
-      - name: Test özeti
-        if: always()
+        shell: bash
         run: |
-          for f in app/build/test-results/testDebugUnitTest/*.xml; do
-            grep -o '<testsuite [^>]*>' "$f"
-            grep -A3 '<failure' "$f" | head -40 || true
-          done
+          set -o pipefail
+          gradle :app:testDebugUnitTest --no-daemon --stacktrace 2>&1 | tee gradle.log
 
       - name: Derleme kontrolü
-        run: gradle :app:assembleDebug --no-daemon --stacktrace
+        shell: bash
+        run: |
+          set -o pipefail
+          gradle :app:assembleDebug --no-daemon --stacktrace 2>&1 | tee -a gradle.log
+
+      - name: Hata notları
+        if: always()
+        shell: bash
+        run: |
+          kac() { local s="$1"; s="${s//'%'/'%25'}"; s="${s//$'\r'/}"; s="${s//$'\n'/'%0A'}"; printf '%s' "$s"; }
+          if [ -f gradle.log ]; then
+            grep -E '^e: ' gradle.log | head -30 | while IFS= read -r l; do echo "::error title=Derleme::$(kac "$l")"; done
+            grep -A6 'What went wrong' gradle.log | head -14 | tr '\n' ' ' | while IFS= read -r l; do [ -n "$l" ] && echo "::error title=Gradle::$(kac "$l")"; done
+          fi
+          python3 - <<'EOF'
+          import glob, xml.etree.ElementTree as ET
+          def kac(s): return s.replace('%', '%25').replace('\r', '').replace('\n', '%0A')
+          for f in glob.glob('app/build/test-results/**/*.xml', recursive=True):
+              k = ET.parse(f).getroot()
+              print(f"::notice title=Test özeti::{k.get('name')}: {k.get('tests')} test, {k.get('failures')} başarısız, {k.get('errors')} hata")
+              for tc in k.iter('testcase'):
+                  for h in list(tc.findall('failure')) + list(tc.findall('error')):
+                      m = (h.get('message') or '') + ' | ' + (h.text or '')[:600]
+                      print(f"::error title={tc.get('name')}::{kac(m[:900])}")
+          EOF
