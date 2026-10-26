@@ -16,7 +16,7 @@ jobs:
           istek = json.load(open('.github/gecici/istek.json'))
           out = {}
           for s, t in istek:
-              u = f"https://api.mexc.com/api/v3/klines?symbol={s}&interval=1m&startTime={t}&limit=1"
+              u = f"https://api.mexc.com/api/v3/klines?symbol={s}&interval=1m&startTime={t}&endTime={t+60000}&limit=1"
               try:
                   k = json.load(urllib.request.urlopen(u, timeout=20))
                   out[f"{s}|{t}"] = [k[0][0], float(k[0][1])] if k else None
