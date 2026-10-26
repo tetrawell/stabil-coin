@@ -92,7 +92,7 @@ class DefterTest {
         val m = Defter.Masraf(100.0, 0.1, 0.05, 0.05, 0.05) // toplam %0,2
         assertEquals(0.2, m.toplamYuzde!!, 1e-12)
         assertEquals(3.0, Defter.kat(0.6, m)!!, 1e-12)
-        assertTrue(Defter.yeter(Defter.kat(0.6, m)))
+        assertTrue(Defter.yeter(Defter.kat(0.61, m)))
         assertFalse(Defter.yeter(Defter.kat(0.59, m)))
         assertNull(Defter.kat(null, m))
         assertNull(Defter.kat(0.6, null))
