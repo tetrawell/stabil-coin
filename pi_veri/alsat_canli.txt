@@ -1,289 +1,322 @@
 === RUN   TestCanliMexc
-2026/10/26 13:38:22 akış (spot): MEXC: Not Subscribed successfully! [spot@public.aggre.deals.v3.api.pb@100ms@OLMAYANCOINUSDT,spot@public.limit.depth.v3.api.pb@OLMAYANCOINUSDT@20].  Reason： Blocked! 
+2026/10/26 13:47:21 akış (spot): MEXC: Not Subscribed successfully! [spot@public.aggre.deals.v3.api.pb@100ms@OLMAYANCOINUSDT,spot@public.limit.depth.v3.api.pb@OLMAYANCOINUSDT@20].  Reason： Blocked! 
 [ 20 sn] spot: "" vadeli: ""
-   BTCUSDT          dk=120 açık=1 spotCanlı=false vadCanlı=true vadeli="BTC_USDT" kontrat=0.0001 OI=5.423e+04 fon=0.000082 geri="" hata="" büyük=0
-   ETHUSDT          dk=120 açık=1 spotCanlı=false vadCanlı=true vadeli="ETH_USDT" kontrat=0.01 OI=1.064e+06 fon=0.000072 geri="" hata="" büyük=0
-   DOGEUSDT         dk=120 açık=1 spotCanlı=false vadCanlı=true vadeli="DOGE_USDT" kontrat=100 OI=1.127e+09 fon=0.000068 geri="" hata="" büyük=0
-   DOSUSDT          dk=120 açık=1 spotCanlı=false vadCanlı=true vadeli="DOS_USDT" kontrat=1 OI=1.189e+06 fon=0.000050 geri="" hata="" büyük=0
-   XMRUSDT          dk=120 açık=1 spotCanlı=false vadCanlı=true vadeli="XMR_USDT" kontrat=0.01 OI=2.779e+04 fon=0.000100 geri="" hata="" büyük=0
+   BTCUSDT          dk=120 açık=1 spotCanlı=true vadCanlı=true vadeli="BTC_USDT" kontrat=0.0001 OI=5.443e+04 fon=0.000086 geri="" hata="" büyük=0
+   ETHUSDT          dk=120 açık=1 spotCanlı=true vadCanlı=true vadeli="ETH_USDT" kontrat=0.01 OI=1.069e+06 fon=0.000075 geri="" hata="" büyük=0
+   DOGEUSDT         dk=120 açık=1 spotCanlı=true vadCanlı=true vadeli="DOGE_USDT" kontrat=100 OI=1.122e+09 fon=0.000072 geri="" hata="" büyük=0
+   DOSUSDT          dk=120 açık=1 spotCanlı=true vadCanlı=true vadeli="DOS_USDT" kontrat=1 OI=1.174e+06 fon=0.000050 geri="" hata="" büyük=0
+   XMRUSDT          dk=120 açık=1 spotCanlı=true vadCanlı=true vadeli="XMR_USDT" kontrat=0.01 OI=2.767e+04 fon=0.000100 geri="" hata="" büyük=0
    OLMAYANCOINUSDT  dk=0 açık=1 spotCanlı=false vadCanlı=false vadeli="" kontrat=0 OI=0 fon=0.000000 geri="geçmiş alınamadı" hata="" büyük=0
 [ 40 sn] spot: "" vadeli: ""
-   BTCUSDT          dk=120 açık=2 spotCanlı=false vadCanlı=true vadeli="BTC_USDT" kontrat=0.0001 OI=5.431e+04 fon=0.000083 geri="" hata="" büyük=0
-   ETHUSDT          dk=120 açık=2 spotCanlı=false vadCanlı=true vadeli="ETH_USDT" kontrat=0.01 OI=1.065e+06 fon=0.000074 geri="" hata="" büyük=0
-   DOGEUSDT         dk=120 açık=2 spotCanlı=false vadCanlı=true vadeli="DOGE_USDT" kontrat=100 OI=1.123e+09 fon=0.000068 geri="" hata="" büyük=0
-   DOSUSDT          dk=120 açık=2 spotCanlı=false vadCanlı=true vadeli="DOS_USDT" kontrat=1 OI=1.19e+06 fon=0.000050 geri="" hata="" büyük=0
-   XMRUSDT          dk=120 açık=2 spotCanlı=false vadCanlı=true vadeli="XMR_USDT" kontrat=0.01 OI=2.779e+04 fon=0.000100 geri="" hata="" büyük=0
-   OLMAYANCOINUSDT  dk=0 açık=2 spotCanlı=false vadCanlı=false vadeli="" kontrat=0 OI=0 fon=0.000000 geri="geçmiş alınamadı" hata="" büyük=0
+   BTCUSDT          dk=120 açık=1 spotCanlı=true vadCanlı=true vadeli="BTC_USDT" kontrat=0.0001 OI=5.445e+04 fon=0.000086 geri="" hata="" büyük=0
+   ETHUSDT          dk=120 açık=1 spotCanlı=true vadCanlı=true vadeli="ETH_USDT" kontrat=0.01 OI=1.069e+06 fon=0.000075 geri="" hata="" büyük=7
+   DOGEUSDT         dk=120 açık=1 spotCanlı=true vadCanlı=true vadeli="DOGE_USDT" kontrat=100 OI=1.117e+09 fon=0.000072 geri="" hata="" büyük=0
+   DOSUSDT          dk=120 açık=1 spotCanlı=true vadCanlı=true vadeli="DOS_USDT" kontrat=1 OI=1.174e+06 fon=0.000050 geri="" hata="" büyük=0
+   XMRUSDT          dk=120 açık=1 spotCanlı=true vadCanlı=true vadeli="XMR_USDT" kontrat=0.01 OI=2.767e+04 fon=0.000100 geri="" hata="" büyük=0
+   OLMAYANCOINUSDT  dk=0 açık=1 spotCanlı=false vadCanlı=false vadeli="" kontrat=0 OI=0 fon=0.000000 geri="geçmiş alınamadı" hata="" büyük=0
 [ 60 sn] spot: "" vadeli: ""
-   BTCUSDT          dk=121 açık=1 spotCanlı=false vadCanlı=true vadeli="BTC_USDT" kontrat=0.0001 OI=5.436e+04 fon=0.000083 geri="" hata="" büyük=0
-   ETHUSDT          dk=121 açık=1 spotCanlı=false vadCanlı=true vadeli="ETH_USDT" kontrat=0.01 OI=1.065e+06 fon=0.000074 geri="" hata="" büyük=0
-   DOGEUSDT         dk=121 açık=1 spotCanlı=false vadCanlı=true vadeli="DOGE_USDT" kontrat=100 OI=1.12e+09 fon=0.000070 geri="" hata="" büyük=0
-   DOSUSDT          dk=121 açık=1 spotCanlı=false vadCanlı=true vadeli="DOS_USDT" kontrat=1 OI=1.19e+06 fon=0.000050 geri="" hata="" büyük=0
-   XMRUSDT          dk=121 açık=1 spotCanlı=false vadCanlı=true vadeli="XMR_USDT" kontrat=0.01 OI=2.776e+04 fon=0.000100 geri="" hata="" büyük=0
+   BTCUSDT          dk=121 açık=1 spotCanlı=true vadCanlı=true vadeli="BTC_USDT" kontrat=0.0001 OI=5.447e+04 fon=0.000086 geri="" hata="" büyük=0
+   ETHUSDT          dk=121 açık=1 spotCanlı=true vadCanlı=true vadeli="ETH_USDT" kontrat=0.01 OI=1.069e+06 fon=0.000075 geri="" hata="" büyük=15
+   DOGEUSDT         dk=121 açık=1 spotCanlı=true vadCanlı=true vadeli="DOGE_USDT" kontrat=100 OI=1.12e+09 fon=0.000072 geri="" hata="" büyük=0
+   DOSUSDT          dk=121 açık=1 spotCanlı=true vadCanlı=true vadeli="DOS_USDT" kontrat=1 OI=1.105e+06 fon=0.000050 geri="" hata="" büyük=0
+   XMRUSDT          dk=121 açık=1 spotCanlı=true vadCanlı=true vadeli="XMR_USDT" kontrat=0.01 OI=2.767e+04 fon=0.000100 geri="" hata="" büyük=0
    OLMAYANCOINUSDT  dk=1 açık=1 spotCanlı=false vadCanlı=false vadeli="" kontrat=0 OI=0 fon=0.000000 geri="geçmiş alınamadı" hata="" büyük=0
 [ 80 sn] spot: "" vadeli: ""
-   BTCUSDT          dk=121 açık=1 spotCanlı=false vadCanlı=true vadeli="BTC_USDT" kontrat=0.0001 OI=5.439e+04 fon=0.000083 geri="" hata="" büyük=0
-   ETHUSDT          dk=121 açık=1 spotCanlı=false vadCanlı=true vadeli="ETH_USDT" kontrat=0.01 OI=1.064e+06 fon=0.000074 geri="" hata="" büyük=0
-   DOGEUSDT         dk=121 açık=1 spotCanlı=false vadCanlı=true vadeli="DOGE_USDT" kontrat=100 OI=1.122e+09 fon=0.000070 geri="" hata="" büyük=0
-   DOSUSDT          dk=121 açık=1 spotCanlı=false vadCanlı=true vadeli="DOS_USDT" kontrat=1 OI=1.19e+06 fon=0.000050 geri="" hata="" büyük=0
-   XMRUSDT          dk=121 açık=1 spotCanlı=false vadCanlı=true vadeli="XMR_USDT" kontrat=0.01 OI=2.776e+04 fon=0.000100 geri="" hata="" büyük=0
+   BTCUSDT          dk=121 açık=1 spotCanlı=true vadCanlı=true vadeli="BTC_USDT" kontrat=0.0001 OI=5.442e+04 fon=0.000086 geri="" hata="" büyük=0
+   ETHUSDT          dk=121 açık=1 spotCanlı=true vadCanlı=true vadeli="ETH_USDT" kontrat=0.01 OI=1.07e+06 fon=0.000075 geri="" hata="" büyük=15
+   DOGEUSDT         dk=121 açık=1 spotCanlı=true vadCanlı=true vadeli="DOGE_USDT" kontrat=100 OI=1.114e+09 fon=0.000072 geri="" hata="" büyük=0
+   DOSUSDT          dk=121 açık=1 spotCanlı=true vadCanlı=true vadeli="DOS_USDT" kontrat=1 OI=1.104e+06 fon=0.000050 geri="" hata="" büyük=0
+   XMRUSDT          dk=121 açık=1 spotCanlı=true vadCanlı=true vadeli="XMR_USDT" kontrat=0.01 OI=2.767e+04 fon=0.000100 geri="" hata="" büyük=0
    OLMAYANCOINUSDT  dk=1 açık=1 spotCanlı=false vadCanlı=false vadeli="" kontrat=0 OI=0 fon=0.000000 geri="geçmiş alınamadı" hata="" büyük=0
 [100 sn] spot: "" vadeli: ""
-   BTCUSDT          dk=121 açık=2 spotCanlı=false vadCanlı=true vadeli="BTC_USDT" kontrat=0.0001 OI=5.44e+04 fon=0.000083 geri="" hata="" büyük=0
-   ETHUSDT          dk=121 açık=2 spotCanlı=false vadCanlı=true vadeli="ETH_USDT" kontrat=0.01 OI=1.065e+06 fon=0.000074 geri="" hata="" büyük=4
-   DOGEUSDT         dk=121 açık=2 spotCanlı=false vadCanlı=true vadeli="DOGE_USDT" kontrat=100 OI=1.121e+09 fon=0.000070 geri="" hata="" büyük=0
-   DOSUSDT          dk=121 açık=2 spotCanlı=false vadCanlı=true vadeli="DOS_USDT" kontrat=1 OI=1.19e+06 fon=0.000050 geri="" hata="" büyük=0
-   XMRUSDT          dk=121 açık=2 spotCanlı=false vadCanlı=true vadeli="XMR_USDT" kontrat=0.01 OI=2.776e+04 fon=0.000100 geri="" hata="" büyük=0
+   BTCUSDT          dk=121 açık=2 spotCanlı=true vadCanlı=true vadeli="BTC_USDT" kontrat=0.0001 OI=5.443e+04 fon=0.000086 geri="" hata="" büyük=0
+   ETHUSDT          dk=121 açık=2 spotCanlı=true vadCanlı=true vadeli="ETH_USDT" kontrat=0.01 OI=1.069e+06 fon=0.000075 geri="" hata="" büyük=15
+   DOGEUSDT         dk=121 açık=2 spotCanlı=true vadCanlı=true vadeli="DOGE_USDT" kontrat=100 OI=1.114e+09 fon=0.000072 geri="" hata="" büyük=0
+   DOSUSDT          dk=121 açık=2 spotCanlı=true vadCanlı=true vadeli="DOS_USDT" kontrat=1 OI=1.102e+06 fon=0.000050 geri="" hata="" büyük=0
+   XMRUSDT          dk=121 açık=2 spotCanlı=true vadCanlı=true vadeli="XMR_USDT" kontrat=0.01 OI=2.767e+04 fon=0.000100 geri="" hata="" büyük=0
    OLMAYANCOINUSDT  dk=1 açık=2 spotCanlı=false vadCanlı=false vadeli="" kontrat=0 OI=0 fon=0.000000 geri="geçmiş alınamadı" hata="" büyük=0
 [120 sn] spot: "" vadeli: ""
-   BTCUSDT          dk=122 açık=1 spotCanlı=false vadCanlı=true vadeli="BTC_USDT" kontrat=0.0001 OI=5.448e+04 fon=0.000085 geri="" hata="" büyük=0
-   ETHUSDT          dk=122 açık=1 spotCanlı=false vadCanlı=true vadeli="ETH_USDT" kontrat=0.01 OI=1.065e+06 fon=0.000077 geri="" hata="" büyük=4
-   DOGEUSDT         dk=122 açık=1 spotCanlı=false vadCanlı=true vadeli="DOGE_USDT" kontrat=100 OI=1.121e+09 fon=0.000072 geri="" hata="" büyük=0
-   DOSUSDT          dk=122 açık=1 spotCanlı=false vadCanlı=true vadeli="DOS_USDT" kontrat=1 OI=1.19e+06 fon=0.000050 geri="" hata="" büyük=0
-   XMRUSDT          dk=122 açık=1 spotCanlı=false vadCanlı=true vadeli="XMR_USDT" kontrat=0.01 OI=2.776e+04 fon=0.000100 geri="" hata="" büyük=0
+   BTCUSDT          dk=122 açık=1 spotCanlı=true vadCanlı=true vadeli="BTC_USDT" kontrat=0.0001 OI=5.448e+04 fon=0.000086 geri="" hata="" büyük=0
+   ETHUSDT          dk=122 açık=1 spotCanlı=true vadCanlı=true vadeli="ETH_USDT" kontrat=0.01 OI=1.069e+06 fon=0.000075 geri="" hata="" büyük=15
+   DOGEUSDT         dk=122 açık=1 spotCanlı=true vadCanlı=true vadeli="DOGE_USDT" kontrat=100 OI=1.112e+09 fon=0.000071 geri="" hata="" büyük=0
+   DOSUSDT          dk=122 açık=1 spotCanlı=true vadCanlı=true vadeli="DOS_USDT" kontrat=1 OI=1.102e+06 fon=0.000050 geri="" hata="" büyük=0
+   XMRUSDT          dk=122 açık=1 spotCanlı=true vadCanlı=true vadeli="XMR_USDT" kontrat=0.01 OI=2.767e+04 fon=0.000100 geri="" hata="" büyük=0
    OLMAYANCOINUSDT  dk=2 açık=1 spotCanlı=false vadCanlı=false vadeli="" kontrat=0 OI=0 fon=0.000000 geri="geçmiş alınamadı" hata="" büyük=0
 [140 sn] spot: "" vadeli: ""
-   BTCUSDT          dk=122 açık=1 spotCanlı=false vadCanlı=true vadeli="BTC_USDT" kontrat=0.0001 OI=5.45e+04 fon=0.000085 geri="" hata="" büyük=0
-   ETHUSDT          dk=122 açık=1 spotCanlı=false vadCanlı=true vadeli="ETH_USDT" kontrat=0.01 OI=1.066e+06 fon=0.000077 geri="" hata="" büyük=5
-   DOGEUSDT         dk=122 açık=1 spotCanlı=false vadCanlı=true vadeli="DOGE_USDT" kontrat=100 OI=1.117e+09 fon=0.000072 geri="" hata="" büyük=2
-   DOSUSDT          dk=122 açık=1 spotCanlı=false vadCanlı=true vadeli="DOS_USDT" kontrat=1 OI=1.19e+06 fon=0.000050 geri="" hata="" büyük=0
-   XMRUSDT          dk=122 açık=1 spotCanlı=false vadCanlı=true vadeli="XMR_USDT" kontrat=0.01 OI=2.776e+04 fon=0.000100 geri="" hata="" büyük=0
+   BTCUSDT          dk=122 açık=1 spotCanlı=true vadCanlı=true vadeli="BTC_USDT" kontrat=0.0001 OI=5.455e+04 fon=0.000086 geri="" hata="" büyük=0
+   ETHUSDT          dk=122 açık=1 spotCanlı=true vadCanlı=true vadeli="ETH_USDT" kontrat=0.01 OI=1.069e+06 fon=0.000075 geri="" hata="" büyük=15
+   DOGEUSDT         dk=122 açık=1 spotCanlı=true vadCanlı=true vadeli="DOGE_USDT" kontrat=100 OI=1.112e+09 fon=0.000071 geri="" hata="" büyük=0
+   DOSUSDT          dk=122 açık=1 spotCanlı=true vadCanlı=true vadeli="DOS_USDT" kontrat=1 OI=1.106e+06 fon=0.000050 geri="" hata="" büyük=1
+   XMRUSDT          dk=122 açık=1 spotCanlı=true vadCanlı=true vadeli="XMR_USDT" kontrat=0.01 OI=2.767e+04 fon=0.000100 geri="" hata="" büyük=0
    OLMAYANCOINUSDT  dk=2 açık=1 spotCanlı=false vadCanlı=false vadeli="" kontrat=0 OI=0 fon=0.000000 geri="geçmiş alınamadı" hata="" büyük=0
 [160 sn] spot: "" vadeli: ""
-   BTCUSDT          dk=122 açık=2 spotCanlı=false vadCanlı=true vadeli="BTC_USDT" kontrat=0.0001 OI=5.447e+04 fon=0.000085 geri="" hata="" büyük=0
-   ETHUSDT          dk=122 açık=2 spotCanlı=false vadCanlı=true vadeli="ETH_USDT" kontrat=0.01 OI=1.066e+06 fon=0.000077 geri="" hata="" büyük=5
-   DOGEUSDT         dk=122 açık=2 spotCanlı=false vadCanlı=true vadeli="DOGE_USDT" kontrat=100 OI=1.114e+09 fon=0.000072 geri="" hata="" büyük=2
-   DOSUSDT          dk=122 açık=2 spotCanlı=false vadCanlı=true vadeli="DOS_USDT" kontrat=1 OI=1.19e+06 fon=0.000050 geri="" hata="" büyük=0
-   XMRUSDT          dk=122 açık=2 spotCanlı=false vadCanlı=true vadeli="XMR_USDT" kontrat=0.01 OI=2.776e+04 fon=0.000100 geri="" hata="" büyük=0
+   BTCUSDT          dk=122 açık=2 spotCanlı=true vadCanlı=true vadeli="BTC_USDT" kontrat=0.0001 OI=5.459e+04 fon=0.000086 geri="" hata="" büyük=3
+   ETHUSDT          dk=122 açık=2 spotCanlı=true vadCanlı=true vadeli="ETH_USDT" kontrat=0.01 OI=1.07e+06 fon=0.000075 geri="" hata="" büyük=15
+   DOGEUSDT         dk=122 açık=2 spotCanlı=true vadCanlı=true vadeli="DOGE_USDT" kontrat=100 OI=1.112e+09 fon=0.000071 geri="" hata="" büyük=3
+   DOSUSDT          dk=122 açık=2 spotCanlı=true vadCanlı=true vadeli="DOS_USDT" kontrat=1 OI=1.106e+06 fon=0.000050 geri="" hata="" büyük=1
+   XMRUSDT          dk=122 açık=2 spotCanlı=true vadCanlı=true vadeli="XMR_USDT" kontrat=0.01 OI=2.767e+04 fon=0.000100 geri="" hata="" büyük=0
    OLMAYANCOINUSDT  dk=2 açık=2 spotCanlı=false vadCanlı=false vadeli="" kontrat=0 OI=0 fon=0.000000 geri="geçmiş alınamadı" hata="" büyük=0
 [180 sn] spot: "" vadeli: ""
-   BTCUSDT          dk=123 açık=1 spotCanlı=false vadCanlı=true vadeli="BTC_USDT" kontrat=0.0001 OI=5.447e+04 fon=0.000085 geri="" hata="" büyük=1
-   ETHUSDT          dk=123 açık=1 spotCanlı=false vadCanlı=true vadeli="ETH_USDT" kontrat=0.01 OI=1.066e+06 fon=0.000077 geri="" hata="" büyük=5
-   DOGEUSDT         dk=123 açık=1 spotCanlı=false vadCanlı=true vadeli="DOGE_USDT" kontrat=100 OI=1.113e+09 fon=0.000072 geri="" hata="" büyük=6
-   DOSUSDT          dk=123 açık=1 spotCanlı=false vadCanlı=true vadeli="DOS_USDT" kontrat=1 OI=1.19e+06 fon=0.000050 geri="" hata="" büyük=0
-   XMRUSDT          dk=123 açık=1 spotCanlı=false vadCanlı=true vadeli="XMR_USDT" kontrat=0.01 OI=2.776e+04 fon=0.000100 geri="" hata="" büyük=0
+   BTCUSDT          dk=123 açık=1 spotCanlı=true vadCanlı=true vadeli="BTC_USDT" kontrat=0.0001 OI=5.462e+04 fon=0.000086 geri="" hata="" büyük=3
+   ETHUSDT          dk=123 açık=1 spotCanlı=true vadCanlı=true vadeli="ETH_USDT" kontrat=0.01 OI=1.071e+06 fon=0.000074 geri="" hata="" büyük=15
+   DOGEUSDT         dk=123 açık=1 spotCanlı=true vadCanlı=true vadeli="DOGE_USDT" kontrat=100 OI=1.116e+09 fon=0.000072 geri="" hata="" büyük=11
+   DOSUSDT          dk=123 açık=1 spotCanlı=true vadCanlı=true vadeli="DOS_USDT" kontrat=1 OI=1.106e+06 fon=0.000050 geri="" hata="" büyük=2
+   XMRUSDT          dk=123 açık=1 spotCanlı=true vadCanlı=true vadeli="XMR_USDT" kontrat=0.01 OI=2.767e+04 fon=0.000100 geri="" hata="" büyük=0
    OLMAYANCOINUSDT  dk=3 açık=1 spotCanlı=false vadCanlı=false vadeli="" kontrat=0 OI=0 fon=0.000000 geri="geçmiş alınamadı" hata="" büyük=0
 [200 sn] spot: "" vadeli: ""
-   BTCUSDT          dk=123 açık=1 spotCanlı=false vadCanlı=true vadeli="BTC_USDT" kontrat=0.0001 OI=5.449e+04 fon=0.000085 geri="" hata="" büyük=1
-   ETHUSDT          dk=123 açık=1 spotCanlı=false vadCanlı=true vadeli="ETH_USDT" kontrat=0.01 OI=1.066e+06 fon=0.000077 geri="" hata="" büyük=5
-   DOGEUSDT         dk=123 açık=1 spotCanlı=false vadCanlı=true vadeli="DOGE_USDT" kontrat=100 OI=1.122e+09 fon=0.000072 geri="" hata="" büyük=6
-   DOSUSDT          dk=123 açık=1 spotCanlı=false vadCanlı=true vadeli="DOS_USDT" kontrat=1 OI=1.19e+06 fon=0.000050 geri="" hata="" büyük=0
-   XMRUSDT          dk=123 açık=1 spotCanlı=false vadCanlı=true vadeli="XMR_USDT" kontrat=0.01 OI=2.776e+04 fon=0.000100 geri="" hata="" büyük=0
+   BTCUSDT          dk=123 açık=1 spotCanlı=true vadCanlı=true vadeli="BTC_USDT" kontrat=0.0001 OI=5.448e+04 fon=0.000086 geri="" hata="" büyük=3
+   ETHUSDT          dk=123 açık=1 spotCanlı=true vadCanlı=true vadeli="ETH_USDT" kontrat=0.01 OI=1.071e+06 fon=0.000074 geri="" hata="" büyük=17
+   DOGEUSDT         dk=123 açık=1 spotCanlı=true vadCanlı=true vadeli="DOGE_USDT" kontrat=100 OI=1.117e+09 fon=0.000072 geri="" hata="" büyük=11
+   DOSUSDT          dk=123 açık=1 spotCanlı=true vadCanlı=true vadeli="DOS_USDT" kontrat=1 OI=1.119e+06 fon=0.000050 geri="" hata="" büyük=4
+   XMRUSDT          dk=123 açık=1 spotCanlı=true vadCanlı=true vadeli="XMR_USDT" kontrat=0.01 OI=2.767e+04 fon=0.000100 geri="" hata="" büyük=0
    OLMAYANCOINUSDT  dk=3 açık=1 spotCanlı=false vadCanlı=false vadeli="" kontrat=0 OI=0 fon=0.000000 geri="geçmiş alınamadı" hata="" büyük=0
 [220 sn] spot: "" vadeli: ""
-   BTCUSDT          dk=123 açık=2 spotCanlı=false vadCanlı=true vadeli="BTC_USDT" kontrat=0.0001 OI=5.45e+04 fon=0.000085 geri="" hata="" büyük=1
-   ETHUSDT          dk=123 açık=2 spotCanlı=false vadCanlı=true vadeli="ETH_USDT" kontrat=0.01 OI=1.066e+06 fon=0.000077 geri="" hata="" büyük=5
-   DOGEUSDT         dk=123 açık=2 spotCanlı=false vadCanlı=true vadeli="DOGE_USDT" kontrat=100 OI=1.114e+09 fon=0.000072 geri="" hata="" büyük=6
-   DOSUSDT          dk=123 açık=2 spotCanlı=false vadCanlı=true vadeli="DOS_USDT" kontrat=1 OI=1.19e+06 fon=0.000050 geri="" hata="" büyük=0
-   XMRUSDT          dk=123 açık=2 spotCanlı=false vadCanlı=true vadeli="XMR_USDT" kontrat=0.01 OI=2.772e+04 fon=0.000100 geri="" hata="" büyük=0
+   BTCUSDT          dk=123 açık=2 spotCanlı=true vadCanlı=true vadeli="BTC_USDT" kontrat=0.0001 OI=5.453e+04 fon=0.000086 geri="" hata="" büyük=3
+   ETHUSDT          dk=123 açık=2 spotCanlı=true vadCanlı=true vadeli="ETH_USDT" kontrat=0.01 OI=1.07e+06 fon=0.000074 geri="" hata="" büyük=17
+   DOGEUSDT         dk=123 açık=2 spotCanlı=true vadCanlı=true vadeli="DOGE_USDT" kontrat=100 OI=1.116e+09 fon=0.000072 geri="" hata="" büyük=11
+   DOSUSDT          dk=123 açık=2 spotCanlı=true vadCanlı=true vadeli="DOS_USDT" kontrat=1 OI=1.119e+06 fon=0.000050 geri="" hata="" büyük=5
+   XMRUSDT          dk=123 açık=2 spotCanlı=true vadCanlı=true vadeli="XMR_USDT" kontrat=0.01 OI=2.767e+04 fon=0.000100 geri="" hata="" büyük=0
    OLMAYANCOINUSDT  dk=3 açık=2 spotCanlı=false vadCanlı=false vadeli="" kontrat=0 OI=0 fon=0.000000 geri="geçmiş alınamadı" hata="" büyük=0
 [240 sn] spot: "" vadeli: ""
-   BTCUSDT          dk=124 açık=1 spotCanlı=false vadCanlı=true vadeli="BTC_USDT" kontrat=0.0001 OI=5.447e+04 fon=0.000085 geri="" hata="" büyük=1
-   ETHUSDT          dk=124 açık=1 spotCanlı=false vadCanlı=true vadeli="ETH_USDT" kontrat=0.01 OI=1.067e+06 fon=0.000077 geri="" hata="" büyük=5
-   DOGEUSDT         dk=124 açık=1 spotCanlı=false vadCanlı=true vadeli="DOGE_USDT" kontrat=100 OI=1.115e+09 fon=0.000072 geri="" hata="" büyük=6
-   DOSUSDT          dk=124 açık=1 spotCanlı=false vadCanlı=true vadeli="DOS_USDT" kontrat=1 OI=1.19e+06 fon=0.000050 geri="" hata="" büyük=0
-   XMRUSDT          dk=124 açık=1 spotCanlı=false vadCanlı=true vadeli="XMR_USDT" kontrat=0.01 OI=2.772e+04 fon=0.000100 geri="" hata="" büyük=0
+   BTCUSDT          dk=124 açık=1 spotCanlı=true vadCanlı=true vadeli="BTC_USDT" kontrat=0.0001 OI=5.449e+04 fon=0.000086 geri="" hata="" büyük=3
+   ETHUSDT          dk=124 açık=1 spotCanlı=true vadCanlı=true vadeli="ETH_USDT" kontrat=0.01 OI=1.071e+06 fon=0.000074 geri="" hata="" büyük=17
+   DOGEUSDT         dk=124 açık=1 spotCanlı=true vadCanlı=true vadeli="DOGE_USDT" kontrat=100 OI=1.116e+09 fon=0.000072 geri="" hata="" büyük=11
+   DOSUSDT          dk=124 açık=1 spotCanlı=true vadCanlı=true vadeli="DOS_USDT" kontrat=1 OI=1.119e+06 fon=0.000050 geri="" hata="" büyük=5
+   XMRUSDT          dk=124 açık=1 spotCanlı=true vadCanlı=true vadeli="XMR_USDT" kontrat=0.01 OI=2.767e+04 fon=0.000100 geri="" hata="" büyük=0
    OLMAYANCOINUSDT  dk=4 açık=1 spotCanlı=false vadCanlı=false vadeli="" kontrat=0 OI=0 fon=0.000000 geri="geçmiş alınamadı" hata="" büyük=0
 [260 sn] spot: "" vadeli: ""
-   BTCUSDT          dk=124 açık=1 spotCanlı=false vadCanlı=true vadeli="BTC_USDT" kontrat=0.0001 OI=5.447e+04 fon=0.000085 geri="" hata="" büyük=5
-   ETHUSDT          dk=124 açık=1 spotCanlı=false vadCanlı=true vadeli="ETH_USDT" kontrat=0.01 OI=1.067e+06 fon=0.000077 geri="" hata="" büyük=7
-   DOGEUSDT         dk=124 açık=1 spotCanlı=false vadCanlı=true vadeli="DOGE_USDT" kontrat=100 OI=1.115e+09 fon=0.000072 geri="" hata="" büyük=7
-   DOSUSDT          dk=124 açık=1 spotCanlı=false vadCanlı=true vadeli="DOS_USDT" kontrat=1 OI=1.189e+06 fon=0.000050 geri="" hata="" büyük=0
-   XMRUSDT          dk=124 açık=1 spotCanlı=false vadCanlı=true vadeli="XMR_USDT" kontrat=0.01 OI=2.772e+04 fon=0.000100 geri="" hata="" büyük=0
+   BTCUSDT          dk=124 açık=1 spotCanlı=true vadCanlı=true vadeli="BTC_USDT" kontrat=0.0001 OI=5.45e+04 fon=0.000086 geri="" hata="" büyük=3
+   ETHUSDT          dk=124 açık=1 spotCanlı=true vadCanlı=true vadeli="ETH_USDT" kontrat=0.01 OI=1.071e+06 fon=0.000074 geri="" hata="" büyük=19
+   DOGEUSDT         dk=124 açık=1 spotCanlı=true vadCanlı=true vadeli="DOGE_USDT" kontrat=100 OI=1.117e+09 fon=0.000072 geri="" hata="" büyük=11
+   DOSUSDT          dk=124 açık=1 spotCanlı=true vadCanlı=true vadeli="DOS_USDT" kontrat=1 OI=1.119e+06 fon=0.000050 geri="" hata="" büyük=5
+   XMRUSDT          dk=124 açık=1 spotCanlı=true vadCanlı=true vadeli="XMR_USDT" kontrat=0.01 OI=2.767e+04 fon=0.000100 geri="" hata="" büyük=0
    OLMAYANCOINUSDT  dk=4 açık=1 spotCanlı=false vadCanlı=false vadeli="" kontrat=0 OI=0 fon=0.000000 geri="geçmiş alınamadı" hata="" büyük=0
 
 === dakika çubukları ↔ MEXC 1 dk mumları ===
-BTCUSDT 11:38 geri  hacim biz=0.462717 mexc=0.462717 oran=1.0000 | A 80357.29/80357.28 K 80367.84/80367.84 Y 80367.85/80367.85 D 80357.29/80357.28 | N=145 VV=false vadeliHacim=0 OI=0 DE=0.000
-BTCUSDT 11:39 geri  hacim biz=1.33655 mexc=1.33655 oran=1.0000 | A 80367.85/80367.84 K 80399.98/80399.99 Y 80399.99/80399.99 D 80367.84/80367.84 | N=167 VV=false vadeliHacim=0 OI=0 DE=0.000
-BTCUSDT 11:40 geri  hacim biz=2.66338 mexc=2.66338 oran=1.0000 | A 80399.98/80399.99 K 80396.56/80396.56 Y 80400/80400 D 80388.06/80388.06 | N=169 VV=false vadeliHacim=0 OI=0 DE=0.000
-BTCUSDT 13:35 geri  hacim biz=11.9792 mexc=11.9792 oran=1.0000 | A 79691.02/79708.85 K 79505.62/79505.62 Y 79691.02/79708.85 D 79500/79500 | N=202 VV=false vadeliHacim=0 OI=0 DE=0.000
-BTCUSDT 13:36 geri  hacim biz=20.2995 mexc=20.2995 oran=1.0000 | A 79506.86/79505.62 K 79655.27/79655.27 Y 79655.27/79655.27 D 79485/79485 | N=71 VV=false vadeliHacim=0 OI=0 DE=0.000
-BTCUSDT 13:37 geri  hacim biz=10.9012 mexc=10.9012 oran=1.0000 | A 79659.52/79655.27 K 79899.99/79908.73 Y 79908.73/79908.73 D 79627.97/79627.97 | N=129 VV=false vadeliHacim=0 OI=0 DE=0.000
-BTCUSDT 13:38 eksik hacim biz=0.256576 mexc=2.24098 oran=0.1145 | A 79948.02/79908.73 K 80093.32/80093.32 Y 80096.21/80096.21 D 79948.02/79908.73 | N=131 VV=false vadeliHacim=0 OI=0 DE=0.511
-BTCUSDT 13:39 eksik hacim biz=11.8911 mexc=11.8911 oran=1.0000 | A 80093.32/80093.32 K 79932.26/79932.26 Y 80093.32/80093.32 D 79928.69/79928.69 | N=107 VV=true vadeliHacim=101.1 OI=54401.4 DE=-0.201
-BTCUSDT 13:40 eksik hacim biz=6.24266 mexc=6.24266 oran=1.0000 | A 79940.92/79932.26 K 79818.88/79818.88 Y 79940.92/79940.92 D 79809.21/79809.21 | N=72 VV=true vadeliHacim=103.5 OI=54466.3 DE=-0.132
-BTCUSDT 13:41 eksik hacim biz=6.92559 mexc=6.92559 oran=1.0000 | A 79809.21/79818.88 K 79762.31/79762.31 Y 79826.65/79826.65 D 79729.11/79729.11 | N=120 VV=true vadeliHacim=42.69 OI=54470.9 DE=-0.057
-BTCUSDT ÖZET: canlı dakika 0 (hacim oranı ort NaN, en az +Inf, en çok -Inf) · geri doldurulan 120 (ort 0.9997)
+BTCUSDT 11:47 geri  hacim biz=2.43094 mexc=2.43094 oran=1.0000 | A 80377.11/80377.1 K 80371.48/80371.47 Y 80377.11/80377.11 D 80371.1/80371.1 | N=169 VV=false vadeliHacim=0 OI=0 DE=0.000
+BTCUSDT 11:48 geri  hacim biz=0.726849 mexc=0.726849 oran=1.0000 | A 80371.47/80371.47 K 80343.93/80343.93 Y 80371.48/80371.48 D 80337.54/80337.54 | N=137 VV=false vadeliHacim=0 OI=0 DE=0.000
+BTCUSDT 11:49 geri  hacim biz=0.913035 mexc=0.913035 oran=1.0000 | A 80343.92/80343.93 K 80333.29/80333.29 Y 80344.06/80344.06 D 80329.77/80329.77 | N=140 VV=false vadeliHacim=0 OI=0 DE=0.000
+BTCUSDT 13:44 geri  hacim biz=4.49211 mexc=4.49211 oran=1.0000 | A 79650/79627.49 K 79758.16/79758.16 Y 79810.49/79810.49 D 79650/79627.49 | N=43 VV=false vadeliHacim=0 OI=0 DE=0.000
+BTCUSDT 13:45 geri  hacim biz=3.85457 mexc=3.85457 oran=1.0000 | A 79774.04/79758.16 K 79850/79850 Y 79917.51/79917.51 D 79760.93/79758.16 | N=77 VV=false vadeliHacim=0 OI=0 DE=0.000
+BTCUSDT 13:46 geri  hacim biz=0.0737525 mexc=0.0737525 oran=1.0000 | A 79793.15/79850 K 79814.09/79814.09 Y 79849.99/79850 D 79750.01/79750.01 | N=48 VV=false vadeliHacim=0 OI=0 DE=0.000
+BTCUSDT 13:47 eksik hacim biz=1.48706 mexc=1.8049 oran=0.8239 | A 79763.63/79814.09 K 79614.99/79614.99 Y 79763.64/79814.09 D 79614.99/79614.99 | N=59 VV=false vadeliHacim=0 OI=0 DE=-0.384
+BTCUSDT 13:48 canlı hacim biz=18.5333 mexc=18.5333 oran=1.0000 | A 79617.01/79614.99 K 79786.03/79786.03 Y 79786.03/79786.03 D 79602.11/79602.11 | N=98 VV=true vadeliHacim=67.48 OI=54427.2 DE=0.042
+BTCUSDT 13:49 canlı hacim biz=20.451 mexc=20.451 oran=1.0000 | A 79753.35/79786.03 K 79674.03/79674.03 Y 79753.36/79786.03 D 79674.02/79674.02 | N=136 VV=true vadeliHacim=48.83 OI=54592 DE=-0.176
+BTCUSDT 13:50 canlı hacim biz=7.06204 mexc=7.06204 oran=1.0000 | A 79673.87/79674.03 K 79689.11/79689.11 Y 79735.09/79735.09 D 79652.66/79652.66 | N=145 VV=true vadeliHacim=48.28 OI=54526.6 DE=-0.125
+BTCUSDT ÖZET: canlı dakika 3 (hacim oranı ort 1.0000, en az 1.0000, en çok 1.0000) · geri doldurulan 120 (ort 1.0000)
+BTCUSDT 13:48 yön: websocket alım 13.7687 satış 4.76453 | REST alım 13.7687 satış 4.76453
+BTCUSDT 13:49 yön: websocket alım 12.9278 satış 7.52315 | REST alım 12.9278 satış 7.52315
+BTCUSDT 13:50 yön: websocket alım 3.85611 satış 3.20593 | REST alım 3.85611 satış 3.20593
 
-ETHUSDT 11:38 geri  hacim biz=6.24667 mexc=6.24667 oran=1.0000 | A 2331/2331 K 2331.45/2331.45 Y 2331.75/2331.75 D 2330.99/2330.99 | N=67 VV=false vadeliHacim=0 OI=0 DE=0.000
-ETHUSDT 11:39 geri  hacim biz=29.0249 mexc=29.0249 oran=1.0000 | A 2331.45/2331.45 K 2332.5/2332.5 Y 2332.5/2332.5 D 2331.43/2331.43 | N=78 VV=false vadeliHacim=0 OI=0 DE=0.000
-ETHUSDT 11:40 geri  hacim biz=52.3624 mexc=52.3624 oran=1.0000 | A 2332.49/2332.5 K 2333.31/2333.31 Y 2334.53/2334.53 D 2332.49/2332.49 | N=107 VV=false vadeliHacim=0 OI=0 DE=0.000
-ETHUSDT 13:35 geri  hacim biz=88.4142 mexc=88.4142 oran=1.0000 | A 2305.91/2306 K 2300.43/2300.43 Y 2305.91/2306 D 2300/2300 | N=115 VV=false vadeliHacim=0 OI=0 DE=0.000
-ETHUSDT 13:36 geri  hacim biz=231.651 mexc=231.651 oran=1.0000 | A 2300.29/2300.43 K 2308.24/2308.46 Y 2309.15/2309.15 D 2300/2300 | N=59 VV=false vadeliHacim=0 OI=0 DE=0.000
-ETHUSDT 13:37 geri  hacim biz=134.87 mexc=134.87 oran=1.0000 | A 2308.17/2308.46 K 2314.6/2314.99 Y 2314.99/2314.99 D 2308/2308 | N=90 VV=false vadeliHacim=0 OI=0 DE=0.000
-ETHUSDT 13:38 eksik hacim biz=115.375 mexc=321.047 oran=0.3594 | A 2315.8/2314.99 K 2320.38/2320.38 Y 2320.99/2320.99 D 2314.58/2313.23 | N=134 VV=false vadeliHacim=0 OI=0 DE=0.314
-ETHUSDT 13:39 eksik hacim biz=326.347 mexc=326.347 oran=1.0000 | A 2320.37/2320.38 K 2316.61/2316.61 Y 2320.37/2320.38 D 2315.76/2315.76 | N=338 VV=true vadeliHacim=1121 OI=1.06512e+06 DE=-0.206
-ETHUSDT 13:40 eksik hacim biz=150.206 mexc=150.206 oran=1.0000 | A 2315.64/2316.61 K 2312.26/2312.26 Y 2316.2/2316.61 D 2312/2312 | N=322 VV=true vadeliHacim=1306 OI=1.06637e+06 DE=-0.375
-ETHUSDT 13:41 eksik hacim biz=52.6005 mexc=52.6005 oran=1.0000 | A 2312/2312.26 K 2311.92/2311.92 Y 2313.46/2313.46 D 2309.01/2309.01 | N=355 VV=true vadeliHacim=1177 OI=1.06572e+06 DE=-0.139
-ETHUSDT ÖZET: canlı dakika 0 (hacim oranı ort NaN, en az +Inf, en çok -Inf) · geri doldurulan 120 (ort 1.0000)
+ETHUSDT 11:47 geri  hacim biz=8.28901 mexc=8.28901 oran=1.0000 | A 2330.71/2331.18 K 2330.68/2330.68 Y 2330.81/2331.18 D 2330.54/2330.54 | N=62 VV=false vadeliHacim=0 OI=0 DE=0.000
+ETHUSDT 11:48 geri  hacim biz=32.2941 mexc=32.2941 oran=1.0000 | A 2330.63/2330.68 K 2330/2329.84 Y 2331.21/2331.21 D 2329.84/2329.84 | N=91 VV=false vadeliHacim=0 OI=0 DE=0.000
+ETHUSDT 11:49 geri  hacim biz=42.0872 mexc=42.0872 oran=1.0000 | A 2329.85/2329.84 K 2329.24/2329.24 Y 2330.01/2330.01 D 2328.97/2328.97 | N=86 VV=false vadeliHacim=0 OI=0 DE=0.000
+ETHUSDT 13:44 geri  hacim biz=93.3647 mexc=93.3647 oran=1.0000 | A 2306.49/2306.21 K 2308.36/2308.36 Y 2310/2310 D 2306.28/2306.21 | N=157 VV=false vadeliHacim=0 OI=0 DE=0.000
+ETHUSDT 13:45 geri  hacim biz=89.9347 mexc=89.9347 oran=1.0000 | A 2308.35/2308.36 K 2308/2308 Y 2311.99/2311.99 D 2307.39/2307.39 | N=149 VV=false vadeliHacim=0 OI=0 DE=0.000
+ETHUSDT 13:46 geri  hacim biz=51.8066 mexc=51.8066 oran=1.0000 | A 2307.14/2308 K 2308.27/2308.28 Y 2310.39/2310.39 D 2306.78/2306.78 | N=215 VV=false vadeliHacim=0 OI=0 DE=0.000
+ETHUSDT 13:47 eksik hacim biz=137.034 mexc=151.228 oran=0.9061 | A 2308.12/2308.28 K 2301.06/2301.06 Y 2308.12/2308.54 D 2301.05/2301.05 | N=223 VV=false vadeliHacim=0 OI=0 DE=-0.231
+ETHUSDT 13:48 canlı hacim biz=160.287 mexc=160.287 oran=1.0000 | A 2301.15/2301.06 K 2308.09/2308.09 Y 2308.63/2308.63 D 2300.65/2300.65 | N=363 VV=true vadeliHacim=762.9 OI=1.06941e+06 DE=0.356
+ETHUSDT 13:49 canlı hacim biz=55.7274 mexc=55.7274 oran=1.0000 | A 2307.72/2308.09 K 2304.59/2304.59 Y 2307.72/2308.09 D 2304.4/2304.4 | N=296 VV=true vadeliHacim=358 OI=1.07044e+06 DE=0.095
+ETHUSDT 13:50 canlı hacim biz=106.206 mexc=106.206 oran=1.0000 | A 2304.5/2304.59 K 2304.49/2304.49 Y 2306.75/2306.75 D 2303.18/2303.18 | N=348 VV=true vadeliHacim=1255 OI=1.06989e+06 DE=0.101
+ETHUSDT ÖZET: canlı dakika 3 (hacim oranı ort 1.0000, en az 1.0000, en çok 1.0000) · geri doldurulan 120 (ort 1.0000)
+ETHUSDT 13:48 yön: websocket alım 84.6693 satış 75.6175 | REST alım 84.6693 satış 75.6175
+ETHUSDT 13:49 yön: websocket alım 25.019 satış 30.7084 | REST alım 25.019 satış 30.7084
+ETHUSDT 13:50 yön: websocket alım 41.9333 satış 64.2727 | REST alım 41.9333 satış 64.2727
 
-DOGEUSDT 11:38 geri  hacim biz=18699.7 mexc=18699.7 oran=1.0000 | A 0.07722/0.07721 K 0.07721/0.07721 Y 0.07722/0.07722 D 0.07719/0.07719 | N=21 VV=false vadeliHacim=0 OI=0 DE=0.000
-DOGEUSDT 11:39 geri  hacim biz=20669.5 mexc=20669.5 oran=1.0000 | A 0.0772/0.07721 K 0.07726/0.07726 Y 0.07727/0.07727 D 0.07719/0.07719 | N=27 VV=false vadeliHacim=0 OI=0 DE=0.000
-DOGEUSDT 11:40 geri  hacim biz=53625.9 mexc=53625.9 oran=1.0000 | A 0.07727/0.07726 K 0.07724/0.07724 Y 0.0773/0.0773 D 0.07724/0.07724 | N=33 VV=false vadeliHacim=0 OI=0 DE=0.000
-DOGEUSDT 13:35 geri  hacim biz=177339 mexc=177339 oran=1.0000 | A 0.0768/0.07679 K 0.07663/0.07663 Y 0.0768/0.0768 D 0.0766/0.0766 | N=116 VV=false vadeliHacim=0 OI=0 DE=0.000
-DOGEUSDT 13:36 geri  hacim biz=202293 mexc=202293 oran=1.0000 | A 0.07664/0.07663 K 0.07695/0.07695 Y 0.07696/0.07696 D 0.07662/0.07662 | N=90 VV=false vadeliHacim=0 OI=0 DE=0.000
-DOGEUSDT 13:37 geri  hacim biz=211588 mexc=211588 oran=1.0000 | A 0.07696/0.07695 K 0.07721/0.07721 Y 0.07722/0.07722 D 0.07693/0.07693 | N=99 VV=false vadeliHacim=0 OI=0 DE=0.000
-DOGEUSDT 13:38 eksik hacim biz=102970 mexc=183817 oran=0.5602 | A 0.07723/0.07721 K 0.07735/0.07735 Y 0.07736/0.07736 D 0.07716/0.07712 | N=112 VV=false vadeliHacim=0 OI=0 DE=-0.143
-DOGEUSDT 13:39 eksik hacim biz=104066 mexc=104066 oran=1.0000 | A 0.07736/0.07735 K 0.07725/0.07725 Y 0.07736/0.07736 D 0.07719/0.07719 | N=137 VV=true vadeliHacim=1.489e+06 OI=1.12088e+09 DE=-0.201
-DOGEUSDT 13:40 eksik hacim biz=68407 mexc=68407 oran=1.0000 | A 0.07722/0.07725 K 0.07706/0.07706 Y 0.07723/0.07725 D 0.07704/0.07704 | N=94 VV=true vadeliHacim=2.039e+06 OI=1.11421e+09 DE=-0.209
-DOGEUSDT 13:41 eksik hacim biz=148101 mexc=148101 oran=1.0000 | A 0.07705/0.07706 K 0.07702/0.07702 Y 0.07707/0.07707 D 0.07693/0.07693 | N=107 VV=true vadeliHacim=2.395e+06 OI=1.11409e+09 DE=-0.225
-DOGEUSDT ÖZET: canlı dakika 0 (hacim oranı ort NaN, en az +Inf, en çok -Inf) · geri doldurulan 120 (ort 0.9995)
+DOGEUSDT 11:47 geri  hacim biz=63813.1 mexc=63813.1 oran=1.0000 | A 0.07716/0.07717 K 0.07714/0.07714 Y 0.07717/0.07717 D 0.07714/0.07714 | N=17 VV=false vadeliHacim=0 OI=0 DE=0.000
+DOGEUSDT 11:48 geri  hacim biz=52341.2 mexc=52341.2 oran=1.0000 | A 0.07715/0.07714 K 0.07711/0.07711 Y 0.07715/0.07715 D 0.07709/0.07709 | N=31 VV=false vadeliHacim=0 OI=0 DE=0.000
+DOGEUSDT 11:49 geri  hacim biz=19032.6 mexc=19032.6 oran=1.0000 | A 0.07712/0.07711 K 0.07715/0.07715 Y 0.07715/0.07715 D 0.0771/0.0771 | N=15 VV=false vadeliHacim=0 OI=0 DE=0.000
+DOGEUSDT 13:44 geri  hacim biz=156963 mexc=156963 oran=1.0000 | A 0.07687/0.07685 K 0.07693/0.07693 Y 0.077/0.077 D 0.07687/0.07685 | N=61 VV=false vadeliHacim=0 OI=0 DE=0.000
+DOGEUSDT 13:45 geri  hacim biz=123781 mexc=123781 oran=1.0000 | A 0.07694/0.07693 K 0.07686/0.07686 Y 0.07703/0.07703 D 0.07685/0.07685 | N=91 VV=false vadeliHacim=0 OI=0 DE=0.000
+DOGEUSDT 13:46 geri  hacim biz=101840 mexc=101840 oran=1.0000 | A 0.07684/0.07686 K 0.07687/0.07687 Y 0.07695/0.07695 D 0.07682/0.07682 | N=50 VV=false vadeliHacim=0 OI=0 DE=0.000
+DOGEUSDT 13:47 eksik hacim biz=132900 mexc=169203 oran=0.7854 | A 0.07684/0.07687 K 0.07675/0.07675 Y 0.07685/0.07688 D 0.07673/0.07673 | N=83 VV=false vadeliHacim=0 OI=0 DE=-0.184
+DOGEUSDT 13:48 canlı hacim biz=79735.4 mexc=79735.4 oran=1.0000 | A 0.07673/0.07675 K 0.07694/0.07694 Y 0.07694/0.07694 D 0.07672/0.07672 | N=79 VV=true vadeliHacim=2.479e+06 OI=1.11377e+09 DE=-0.064
+DOGEUSDT 13:49 canlı hacim biz=219581 mexc=219581 oran=1.0000 | A 0.07693/0.07694 K 0.07677/0.07677 Y 0.07693/0.07694 D 0.07677/0.07677 | N=88 VV=true vadeliHacim=9.79e+04 OI=1.11227e+09 DE=-0.114
+DOGEUSDT 13:50 canlı hacim biz=591944 mexc=591944 oran=1.0000 | A 0.07676/0.07677 K 0.07677/0.07677 Y 0.07684/0.07684 D 0.07676/0.07676 | N=94 VV=true vadeliHacim=8.965e+05 OI=1.11639e+09 DE=-0.148
+DOGEUSDT ÖZET: canlı dakika 3 (hacim oranı ort 1.0000, en az 1.0000, en çok 1.0000) · geri doldurulan 120 (ort 1.0000)
+DOGEUSDT 13:48 yön: websocket alım 50890.2 satış 28845.3 | REST alım 50890.2 satış 28845.3
+DOGEUSDT 13:49 yön: websocket alım 32199.4 satış 187382 | REST alım 32199.4 satış 187382
+DOGEUSDT 13:50 yön: websocket alım 186287 satış 405657 | REST alım 186287 satış 405657
 
-DOSUSDT 11:38 geri  hacim biz=1944.75 mexc=1944.75 oran=1.0000 | A 0.25664/0.25727 K 0.25684/0.25684 Y 0.25684/0.25727 D 0.25662/0.25662 | N=6 VV=false vadeliHacim=0 OI=0 DE=0.000
-DOSUSDT 11:39 geri  hacim biz=12670.5 mexc=12670.5 oran=1.0000 | A 0.25655/0.25684 K 0.25696/0.257 Y 0.25706/0.25706 D 0.25642/0.25642 | N=34 VV=false vadeliHacim=0 OI=0 DE=0.000
-DOSUSDT 11:40 geri  hacim biz=17243 mexc=17243 oran=1.0000 | A 0.25699/0.257 K 0.25657/0.25659 Y 0.25708/0.25708 D 0.25642/0.25642 | N=79 VV=false vadeliHacim=0 OI=0 DE=0.000
-DOSUSDT 13:35 geri  hacim biz=1520.17 mexc=1520.17 oran=1.0000 | A 0.25394/0.25403 K 0.25389/0.2539 Y 0.25394/0.25403 D 0.25374/0.25374 | N=12 VV=false vadeliHacim=0 OI=0 DE=0.000
-DOSUSDT 13:36 geri  hacim biz=4315.23 mexc=4315.23 oran=1.0000 | A 0.25389/0.2539 K 0.25383/0.25378 Y 0.25389/0.2539 D 0.25378/0.25378 | N=10 VV=false vadeliHacim=0 OI=0 DE=0.000
-DOSUSDT 13:37 geri  hacim biz=1282.92 mexc=1282.92 oran=1.0000 | A 0.25369/0.25378 K 0.25373/0.25371 Y 0.25384/0.25384 D 0.25369/0.25369 | N=7 VV=false vadeliHacim=0 OI=0 DE=0.000
-DOSUSDT 13:38 eksik hacim biz=3381.68 mexc=6721.82 oran=0.5031 | A 0.25473/0.25371 K 0.25412/0.25412 Y 0.25473/0.25473 D 0.25412/0.25371 | N=18 VV=false vadeliHacim=0 OI=0 DE=0.142
-DOSUSDT 13:39 eksik hacim biz=20646.3 mexc=20646.3 oran=1.0000 | A 0.25413/0.25412 K 0.25389/0.25389 Y 0.25422/0.25422 D 0.25347/0.25347 | N=58 VV=true vadeliHacim=361 OI=1.19028e+06 DE=0.106
-DOSUSDT 13:40 eksik hacim biz=7578.56 mexc=7578.56 oran=1.0000 | A 0.25391/0.25389 K 0.25287/0.25287 Y 0.25393/0.25393 D 0.25283/0.25283 | N=44 VV=true vadeliHacim=347 OI=1.19028e+06 DE=0.060
-DOSUSDT 13:41 eksik hacim biz=3459.95 mexc=3459.95 oran=1.0000 | A 0.25289/0.25287 K 0.25258/0.25258 Y 0.25322/0.25322 D 0.25245/0.25245 | N=33 VV=true vadeliHacim=262 OI=1.19028e+06 DE=0.173
-DOSUSDT ÖZET: canlı dakika 0 (hacim oranı ort NaN, en az +Inf, en çok -Inf) · geri doldurulan 120 (ort 1.0000)
+DOSUSDT 11:47 geri  hacim biz=6465.74 mexc=6465.74 oran=1.0000 | A 0.25791/0.25805 K 0.25894/0.25894 Y 0.25896/0.25896 D 0.25789/0.25789 | N=39 VV=false vadeliHacim=0 OI=0 DE=0.000
+DOSUSDT 11:48 geri  hacim biz=13833.8 mexc=13833.8 oran=1.0000 | A 0.25888/0.25894 K 0.25774/0.25774 Y 0.2589/0.25894 D 0.25774/0.25774 | N=58 VV=false vadeliHacim=0 OI=0 DE=0.000
+DOSUSDT 11:49 geri  hacim biz=6624.35 mexc=6624.35 oran=1.0000 | A 0.25793/0.25774 K 0.25826/0.25825 Y 0.25826/0.25826 D 0.2579/0.25774 | N=12 VV=false vadeliHacim=0 OI=0 DE=0.000
+DOSUSDT 13:44 geri  hacim biz=9543.22 mexc=9543.22 oran=1.0000 | A 0.25191/0.25261 K 0.25143/0.25143 Y 0.25191/0.25261 D 0.25143/0.25143 | N=23 VV=false vadeliHacim=0 OI=0 DE=0.000
+DOSUSDT 13:45 geri  hacim biz=18361.7 mexc=18361.7 oran=1.0000 | A 0.25202/0.25143 K 0.24956/0.24956 Y 0.25212/0.25212 D 0.24912/0.24912 | N=46 VV=false vadeliHacim=0 OI=0 DE=0.000
+DOSUSDT 13:46 geri  hacim biz=36786.9 mexc=36786.9 oran=1.0000 | A 0.25/0.24956 K 0.24916/0.24928 Y 0.25037/0.25037 D 0.24891/0.24891 | N=55 VV=false vadeliHacim=0 OI=0 DE=0.000
+DOSUSDT 13:47 eksik hacim biz=38915.1 mexc=40488.2 oran=0.9611 | A 0.24923/0.24928 K 0.24679/0.24679 Y 0.24923/0.24995 D 0.24679/0.24679 | N=61 VV=false vadeliHacim=0 OI=0 DE=0.252
+DOSUSDT 13:48 canlı hacim biz=41715.4 mexc=41715.4 oran=1.0000 | A 0.24678/0.24679 K 0.25276/0.25276 Y 0.25323/0.25323 D 0.24655/0.24655 | N=124 VV=true vadeliHacim=1.42e+04 OI=1.10194e+06 DE=0.191
+DOSUSDT 13:49 canlı hacim biz=12954.6 mexc=12954.6 oran=1.0000 | A 0.25268/0.25276 K 0.25213/0.25213 Y 0.25287/0.25287 D 0.25183/0.25183 | N=53 VV=true vadeliHacim=1227 OI=1.1062e+06 DE=0.311
+DOSUSDT 13:50 canlı hacim biz=94836 mexc=94836 oran=1.0000 | A 0.25121/0.25213 K 0.25855/0.25855 Y 0.25935/0.25935 D 0.25019/0.25019 | N=308 VV=true vadeliHacim=9207 OI=1.11933e+06 DE=0.081
+DOSUSDT ÖZET: canlı dakika 3 (hacim oranı ort 1.0000, en az 1.0000, en çok 1.0000) · geri doldurulan 120 (ort 1.0000)
+DOSUSDT 13:48 yön: websocket alım 22907.5 satış 18807.8 | REST alım 22907.5 satış 18807.8
+DOSUSDT 13:49 yön: websocket alım 7444.57 satış 5510.04 | REST alım 7444.57 satış 5510.04
+DOSUSDT 13:50 yön: websocket alım 50962.9 satış 43873.1 | REST alım 50962.9 satış 43873.1
 
-XMRUSDT 11:38 geri  hacim biz=0.114 mexc=0.114 oran=1.0000 | A 589.27/589.36 K 589.25/589.25 Y 589.27/589.36 D 589.25/589.25 | N=2 VV=false vadeliHacim=0 OI=0 DE=0.000
-XMRUSDT 11:39 geri  hacim biz=0.09 mexc=0.09 oran=1.0000 | A 589.28/589.25 K 589.51/589.51 Y 589.51/589.51 D 589.28/589.25 | N=2 VV=false vadeliHacim=0 OI=0 DE=0.000
-XMRUSDT 11:40 geri  hacim biz=0.613 mexc=0.613 oran=1.0000 | A 589.61/589.51 K 589.48/589.48 Y 589.61/589.61 D 589.48/589.48 | N=5 VV=false vadeliHacim=0 OI=0 DE=0.000
-XMRUSDT 13:35 geri  hacim biz=0.779 mexc=0.779 oran=1.0000 | A 591.66/591.96 K 591/591 Y 591.68/591.96 D 591/591 | N=6 VV=false vadeliHacim=0 OI=0 DE=0.000
-XMRUSDT 13:36 geri  hacim biz=6.926 mexc=6.926 oran=1.0000 | A 591.07/591 K 591/591 Y 591.07/591.07 D 591/591 | N=4 VV=false vadeliHacim=0 OI=0 DE=0.000
-XMRUSDT 13:37 geri  hacim biz=8.2 mexc=8.2 oran=1.0000 | A 591.43/591 K 594.45/593.98 Y 594.45/594.45 D 591.43/591 | N=19 VV=false vadeliHacim=0 OI=0 DE=0.000
-XMRUSDT 13:38 eksik hacim biz=2.626 mexc=2.626 oran=1.0000 | A 593.23/593.98 K 593.11/593.11 Y 593.23/593.98 D 593.05/593.05 | N=6 VV=false vadeliHacim=0 OI=0 DE=0.199
-XMRUSDT 13:39 eksik hacim biz=2.153 mexc=2.153 oran=1.0000 | A 593.04/593.11 K 592.87/592.87 Y 593.04/593.11 D 592.69/592.69 | N=10 VV=true vadeliHacim=5.96 OI=27756.5 DE=0.048
-XMRUSDT 13:40 eksik hacim biz=0.106 mexc=0.106 oran=1.0000 | A 592.68/592.87 K 591.68/591.68 Y 592.68/592.87 D 591.68/591.68 | N=7 VV=true vadeliHacim=0.14 OI=27756.5 DE=-0.052
-XMRUSDT 13:41 eksik hacim biz=0.181 mexc=0.181 oran=1.0000 | A 592.08/591.68 K 592.1/592.1 Y 592.1/592.1 D 592.08/591.68 | N=3 VV=true vadeliHacim=16.96 OI=27716 DE=0.019
-XMRUSDT ÖZET: canlı dakika 0 (hacim oranı ort NaN, en az +Inf, en çok -Inf) · geri doldurulan 120 (ort 1.0000)
+XMRUSDT 11:47 geri  hacim biz=0.117 mexc=0.117 oran=1.0000 | A 588.8/589.26 K 588.74/588.74 Y 588.8/589.26 D 588.74/588.74 | N=2 VV=false vadeliHacim=0 OI=0 DE=0.000
+XMRUSDT 11:48 geri  hacim biz=0.056 mexc=0.056 oran=1.0000 | A 589.42/588.74 K 589.3/589.3 Y 589.42/589.42 D 589.3/588.74 | N=2 VV=false vadeliHacim=0 OI=0 DE=0.000
+XMRUSDT 11:49 geri  hacim biz=1.109 mexc=1.109 oran=1.0000 | A 589.25/589.3 K 589.2/589.2 Y 589.32/589.32 D 589.2/589.2 | N=4 VV=false vadeliHacim=0 OI=0 DE=0.000
+XMRUSDT 13:44 geri  hacim biz=0.055 mexc=0.055 oran=1.0000 | A 591.81/591.13 K 591.75/591.75 Y 591.81/591.81 D 591.75/591.13 | N=2 VV=false vadeliHacim=0 OI=0 DE=0.000
+XMRUSDT 13:45 geri  hacim biz=7.259 mexc=7.259 oran=1.0000 | A 591.46/591.75 K 591.92/591.92 Y 591.92/591.92 D 591.41/591.41 | N=10 VV=false vadeliHacim=0 OI=0 DE=0.000
+XMRUSDT 13:46 geri  hacim biz=0.495 mexc=0.495 oran=1.0000 | A 591.75/591.92 K 591.76/591.76 Y 591.77/591.92 D 591.75/591.75 | N=5 VV=false vadeliHacim=0 OI=0 DE=0.000
+XMRUSDT 13:47 eksik hacim biz=0.068 mexc=0.068 oran=1.0000 | A 591.74/591.76 K 591.72/591.72 Y 591.74/591.76 D 591.72/591.72 | N=2 VV=false vadeliHacim=0 OI=0 DE=0.247
+XMRUSDT 13:48 canlı hacim biz=0.186 mexc=0.186 oran=1.0000 | A 591.13/591.72 K 591.77/591.77 Y 591.77/591.77 D 591.13/591.13 | N=2 VV=true vadeliHacim=4.47 OI=27671.9 DE=-0.059
+XMRUSDT 13:49 canlı hacim biz=0.618 mexc=0.618 oran=1.0000 | A 592.37/591.77 K 592.99/592.99 Y 592.99/592.99 D 592.37/591.77 | N=6 VV=true vadeliHacim=0.11 OI=27671.8 DE=0.155
+XMRUSDT 13:50 canlı hacim biz=0.257 mexc=0.257 oran=1.0000 | A 592.77/592.99 K 592.3/592.3 Y 592.77/592.99 D 592.3/592.3 | N=5 VV=true vadeliHacim=0.09 OI=27671.8 DE=0.066
+XMRUSDT ÖZET: canlı dakika 3 (hacim oranı ort 1.0000, en az 1.0000, en çok 1.0000) · geri doldurulan 120 (ort 1.0000)
+XMRUSDT 13:48 yön: websocket alım 0.118 satış 0.068 | REST alım 0.118 satış 0.068
+XMRUSDT 13:49 yön: websocket alım 0.618 satış 0 | REST alım 0.618 satış 0
+XMRUSDT 13:50 yön: websocket alım 0 satış 0.257 | REST alım 0 satış 0.257
 
 === açık pozisyon ↔ REST ===
-BTC_USDT REST holdVol=5.44730949e+08 (× kontrat 0.0001 = 54473.1 coin) fon=8.5e-05 fiyat=79771.1 | biz OI=54473.1 fon=8.5e-05
-ETH_USDT REST holdVol=1.06684452e+08 (× kontrat 0.01 = 1.06684e+06 coin) fon=7.7e-05 fiyat=2311.66 | biz OI=1.06684e+06 fon=7.7e-05
-DOGE_USDT REST holdVol=1.1169963e+07 (× kontrat 100 = 1.117e+09 coin) fon=7.2e-05 fiyat=0.07701 | biz OI=1.117e+09 fon=7.2e-05
-DOS_USDT REST holdVol=1.189263e+06 (× kontrat 1 = 1.18926e+06 coin) fon=5e-05 fiyat=0.2536 | biz OI=1.18926e+06 fon=5e-05
+BTC_USDT REST holdVol=5.44963752e+08 (× kontrat 0.0001 = 54496.4 coin) fon=8.6e-05 fiyat=79708.6 | biz OI=54496.4 fon=8.6e-05
+ETH_USDT REST holdVol=1.07090203e+08 (× kontrat 0.01 = 1.0709e+06 coin) fon=7.4e-05 fiyat=2306.08 | biz OI=1.0708e+06 fon=7.4e-05
+DOGE_USDT REST holdVol=1.1167972e+07 (× kontrat 100 = 1.1168e+09 coin) fon=7.2e-05 fiyat=0.07688 | biz OI=1.1168e+09 fon=7.2e-05
+DOS_USDT REST holdVol=1.119333e+06 (× kontrat 1 = 1.11933e+06 coin) fon=5e-05 fiyat=0.2584 | biz OI=1.11933e+06 fon=5e-05
 
 === akış hesabı ===
-BTCUSDT 1m → Red: -5 (eşik +20) · Şu an satış saldırısı var (delta −%56,8); Ana yapı aşağı (son kırılım aşağı); Büyük işlemlerde satış ağır (son 15 dk: 254119 USDT net) | bağlam dip | durum "Bağlanıyor"
-      Yapı             +0  [-25 Ana yapı aşağı (son kırılım aşağı) 10 İndirim bölgesinde (aralıkta 26 seviyesi; 0 dip, 100 tepe) 15 Fiyat boşluğunun içinde (FVG)]
-      Emir akışı       +1  [6 Son mumda alıcılar baskın (delta +%12,5) 20 Satıcılar yoruluyor (her yeni dipte daha az satış) 20 Delta eksiden artıya döndü (alıcılar devreye girdi) -15 Büyük işlemlerde satış ağır (son 15 dk: 254119 USDT net) -30 Şu an satış saldırısı var (delta −%56,8)]
-      CVD             -15  [-15 CVD son 20 mumda düşüyor (net satış payı %83,4)]
+BTCUSDT 1m → Red: +1 (eşik +20) · Ana yapı aşağı (son kırılım aşağı); CVD son 20 mumda düşüyor (net satış payı %3,3) | bağlam dip | durum "Canlı"
+      Yapı            -14  [-25 Ana yapı aşağı (son kırılım aşağı) 11 İndirim bölgesinde (aralıkta 24 seviyesi; 0 dip, 100 tepe)]
+      Emir akışı      +20  [5 Son mumda alıcılar baskın (delta +%9,2) 15 Büyük işlemlerde alım ağır (son 15 dk: 284628 USDT net)]
+      CVD              -3  [-3 CVD son 20 mumda düşüyor (net satış payı %3,3)]
       Açık pozisyon   yok  (Veri toplanıyor (açık pozisyonun geçmişi MEXC'de yok; program açıkken birikir))
-      grafik: 300 mum (125'inde akış), salınım 40, kırılım 17, bölge 9, eşit 5, süpürme 12, işaret 33, büyük 5, satırBp 2
-      footprint (son kapanan mum): 7 satır, POC 79820.49619437274, delta 0.8635, hacim 6.926
-              79820.5  satış      2.696  alım       3.16  false true
-              79804.5  satış    0.06444  alım   0.003335  false false
-              79788.6  satış     0.0686  alım   0.001306  false false
-              79772.6  satış   0.001117  alım    0.00071  false false
-              79756.7  satış    0.07816  alım   0.002484  false false
-              79740.7  satış     0.1225  alım     0.7256  false true
-              79724.8  satış    0.00057  alım  0.0009463  false false
-BTCUSDT 5m → Red: +7 (eşik +20) · Ana yapı aşağı (son kırılım aşağı); Son mumda satıcılar baskın (delta −%72,4); Büyük işlemlerde satış ağır (son 15 dk: 254119 USDT net) | bağlam dip | durum "Bağlanıyor"
-      Yapı            +31  [-25 Ana yapı aşağı (son kırılım aşağı) 6 İndirim bölgesinde (aralıkta 35 seviyesi; 0 dip, 100 tepe) 25 Talep bölgesinde (alıcı order block'u) 25 Stoplar süpürüldü (iç dip altı, 0 mum önce)]
-      Emir akışı       +5  [-15 Son mumda satıcılar baskın (delta −%72,4) 35 Dipte satış emildi (hacim ortalamanın 1,7 katı, delta −%100,0, kapanış mumun üst yarısında) -15 Büyük işlemlerde satış ağır (son 15 dk: 254119 USDT net)]
-      CVD             -15  [-15 CVD son 20 mumda düşüyor (net satış payı %96,6)]
+      grafik: 300 mum (125'inde akış), salınım 41, kırılım 17, bölge 9, eşit 5, süpürme 12, işaret 1, büyük 3, satırBp 2
+      footprint (son kapanan mum): 7 satır, POC 79676.95570380171, delta 0.6502, hacim 7.062
+              79740.7  satış     0.2951  alım    0.06907  false false
+              79724.8  satış     0.6258  alım     0.4233  true true
+              79708.8  satış    0.07146  alım     0.5698  false false
+              79692.9  satış      1.307  alım     0.6889  false false
+                79677  satış     0.4827  alım      2.051  false true
+                79661  satış     0.4239  alım    0.05409  false false
+              79645.1  satış      6e-05  alım          0  false false
+BTCUSDT 5m → Red: +18 (eşik +20) · Ana yapı aşağı (son kırılım aşağı); CVD son 20 mumda düşüyor (net satış payı %7,4) | bağlam dip | durum "Canlı"
+      Yapı            +11  [-25 Ana yapı aşağı (son kırılım aşağı) 11 İndirim bölgesinde (aralıkta 22 seviyesi; 0 dip, 100 tepe) 25 Stoplar süpürüldü (iç dip altı, 2 mum önce)]
+      Emir akışı      +50  [15 Son mumda alıcılar baskın (delta +%34,1) 20 Delta eksiden artıya döndü (alıcılar devreye girdi) 15 Büyük işlemlerde alım ağır (son 15 dk: 284628 USDT net)]
+      CVD              -7  [-7 CVD son 20 mumda düşüyor (net satış payı %7,4)]
       Açık pozisyon   yok  (Veri toplanıyor (açık pozisyonun geçmişi MEXC'de yok; program açıkken birikir))
-BTCUSDT 15m → Red: -45 (eşik +20) · Şu an satış saldırısı var (delta −%74,4); Ana yapı aşağı (son kırılım aşağı); Satıcılar kademe kademe bastırıyor (12 kademe satış dengesizliği) | bağlam dip | durum "Bağlanıyor"
-      Yapı            -10  [-25 Ana yapı aşağı (son kırılım aşağı) -15 İç yapı az önce aşağı kırıldı 5 İndirim bölgesinde (aralıkta 37 seviyesi; 0 dip, 100 tepe) 25 Talep bölgesinde (alıcı order block'u)]
-      Emir akışı      -80  [-15 Son mumda satıcılar baskın (delta −%100,0) -20 Satıcılar kademe kademe bastırıyor (12 kademe satış dengesizliği) -15 Büyük işlemlerde satış ağır (son 15 dk: 254119 USDT net) -30 Şu an satış saldırısı var (delta −%74,4)]
+BTCUSDT 15m → Onay: +22 (eşik +20) · Talep bölgesinde (alıcı order block'u); Stoplar süpürüldü (iç dip altı, 0 mum önce); Şu anki mumda alıcılar devreye girdi | bağlam dip | durum "Canlı"
+      Yapı            +21  [-25 Ana yapı aşağı (son kırılım aşağı) -15 İç yapı az önce aşağı kırıldı 11 İndirim bölgesinde (aralıkta 22 seviyesi; 0 dip, 100 tepe) 25 Talep bölgesinde (alıcı order block'u) 25 Stoplar süpürüldü (iç dip altı, 0 mum önce)]
+      Emir akışı      +23  [-7 Son mumda satıcılar baskın (delta −%14,1) 15 Şu anki mumda alıcılar devreye girdi 15 Büyük işlemlerde alım ağır (son 15 dk: 284628 USDT net)]
       CVD             yok  (Veri toplanıyor: son 21 mumun 7 tanesinde veri var, en az 14 gerekir)
       Açık pozisyon   yok  (Veri toplanıyor (açık pozisyonun geçmişi MEXC'de yok; program açıkken birikir))
-ETHUSDT 1m → Red: +2 (eşik +20) · Ana yapı aşağı (son kırılım aşağı); Büyük işlemlerde satış ağır (son 15 dk: 479130 USDT net); CVD son 20 mumda düşüyor (net satış payı %82,1) | bağlam dip | durum "Bağlanıyor"
-      Yapı            +27  [-25 Ana yapı aşağı (son kırılım aşağı) 20 İç yapı yukarı döndü (CHoCH) 7 İndirim bölgesinde (aralıkta 32 seviyesi; 0 dip, 100 tepe) 25 Stoplar süpürüldü (iç dip altı, 5 mum önce)]
-      Emir akışı       -5  [-10 Son mumda satıcılar baskın (delta −%20,7) 20 Satıcılar yoruluyor (her yeni dipte daha az satış) -15 Büyük işlemlerde satış ağır (son 15 dk: 479130 USDT net)]
-      CVD             -15  [-15 CVD son 20 mumda düşüyor (net satış payı %82,1)]
+ETHUSDT 1m → Red: -13 (eşik +20) · Ana yapı aşağı (son kırılım aşağı); CVD son 20 mumda düşüyor (net satış payı %15,4); Son mumda satıcılar baskın (delta −%21,0) | bağlam dip | durum "Canlı"
+      Yapı            -12  [-25 Ana yapı aşağı (son kırılım aşağı) 13 İndirim bölgesinde (aralıkta 19 seviyesi; 0 dip, 100 tepe)]
+      Emir akışı      -11  [-11 Son mumda satıcılar baskın (delta −%21,0)]
+      CVD             -15  [-15 CVD son 20 mumda düşüyor (net satış payı %15,4)]
       Açık pozisyon   yok  (Veri toplanıyor (açık pozisyonun geçmişi MEXC'de yok; program açıkken birikir))
-      grafik: 300 mum (125'inde akış), salınım 42, kırılım 16, bölge 9, eşit 4, süpürme 21, işaret 76, büyük 7, satırBp 2
-      footprint (son kapanan mum): 11 satır, POC 2311.1781727789075, delta -10.86, hacim 52.6
-              2313.49  satış     0.3899  alım     0.4731  false false
-              2313.03  satış      1.559  alım     0.5484  true false
-              2312.57  satış      1.708  alım      3.498  true false
-               2312.1  satış      5.042  alım      0.999  false false
-              2311.64  satış     0.6376  alım     0.2821  false false
-              2311.18  satış      8.308  alım      3.066  true false
-              2310.72  satış      3.372  alım      2.264  false false
-              2310.25  satış      4.044  alım      3.242  false false
-              2309.79  satış      4.914  alım     0.6063  false false
-              2309.33  satış      1.757  alım      5.878  false true
-              2308.87  satış          0  alım    0.01122  false false
-ETHUSDT 5m → Red: +7 (eşik +20) · Ana yapı aşağı (son kırılım aşağı); Son mumda satıcılar baskın (delta −%79,1); Büyük işlemlerde satış ağır (son 15 dk: 479130 USDT net) | bağlam dip | durum "Bağlanıyor"
-      Yapı            +32  [-25 Ana yapı aşağı (son kırılım aşağı) 7 İndirim bölgesinde (aralıkta 32 seviyesi; 0 dip, 100 tepe) 25 Talep bölgesinde (alıcı order block'u) 25 Stoplar süpürüldü (iç dip altı, 0 mum önce)]
-      Emir akışı       +5  [-15 Son mumda satıcılar baskın (delta −%79,1) 35 Dipte satış emildi (hacim ortalamanın 1,9 katı, delta −%100,0, kapanış mumun üst yarısında) -15 Büyük işlemlerde satış ağır (son 15 dk: 479130 USDT net)]
-      CVD             -15  [-15 CVD son 20 mumda düşüyor (net satış payı %96,1)]
+      grafik: 300 mum (125'inde akış), salınım 41, kırılım 16, bölge 9, eşit 3, süpürme 21, işaret 3, büyük 19, satırBp 2
+      footprint (son kapanan mum): 8 satır, POC 2304.716247923902, delta -22.34, hacim 106.2
+              2306.56  satış      3.305  alım      1.435  false false
+               2306.1  satış      2.593  alım      4.456  false false
+              2305.64  satış      30.94  alım      4.687  true true
+              2305.18  satış      1.028  alım     0.3127  false false
+              2304.72  satış      23.33  alım      27.54  true true
+              2304.26  satış      2.747  alım      2.266  false true
+              2303.79  satış    0.02262  alım     0.7713  false false
+              2303.33  satış     0.3065  alım     0.4706  false false
+ETHUSDT 5m → Onay: +24 (eşik +20) · Dipte satış emildi (hacim ortalamanın 4,1 katı, delta −%31,0, kapanış mumun üst yarısında); Talep bölgesinde (alıcı order block'u); Stoplar süpürüldü (iç dip altı, 2 mum önce) | bağlam dip | durum "Canlı"
+      Yapı            +37  [-25 Ana yapı aşağı (son kırılım aşağı) 12 İndirim bölgesinde (aralıkta 19 seviyesi; 0 dip, 100 tepe) 25 Talep bölgesinde (alıcı order block'u) 25 Stoplar süpürüldü (iç dip altı, 2 mum önce)]
+      Emir akışı      +38  [3 Son mumda alıcılar baskın (delta +%6,9) 35 Dipte satış emildi (hacim ortalamanın 4,1 katı, delta −%31,0, kapanış mumun üst yarısında)]
+      CVD              -4  [-4 CVD son 20 mumda düşüyor (net satış payı %4,2)]
       Açık pozisyon   yok  (Veri toplanıyor (açık pozisyonun geçmişi MEXC'de yok; program açıkken birikir))
-ETHUSDT 15m → Red: -36 (eşik +20) · Şu an satış saldırısı var (delta −%72,1); Ana yapı aşağı (son kırılım aşağı); Satıcılar kademe kademe bastırıyor (10 kademe satış dengesizliği) | bağlam dip | durum "Bağlanıyor"
-      Yapı             +8  [-25 Ana yapı aşağı (son kırılım aşağı) 8 İndirim bölgesinde (aralıkta 29 seviyesi; 0 dip, 100 tepe) 25 Talep bölgesinde (alıcı order block'u)]
-      Emir akışı      -80  [-15 Son mumda satıcılar baskın (delta −%100,0) -20 Satıcılar kademe kademe bastırıyor (10 kademe satış dengesizliği) -15 Büyük işlemlerde satış ağır (son 15 dk: 479130 USDT net) -30 Şu an satış saldırısı var (delta −%72,1)]
+ETHUSDT 15m → Red: +14 (eşik +20) · Ana yapı aşağı (son kırılım aşağı); Son mumda satıcılar baskın (delta −%20,2) | bağlam dip | durum "Canlı"
+      Yapı            +37  [-25 Ana yapı aşağı (son kırılım aşağı) 12 İndirim bölgesinde (aralıkta 19 seviyesi; 0 dip, 100 tepe) 25 Talep bölgesinde (alıcı order block'u) 25 Stoplar süpürüldü (iç dip altı, 0 mum önce)]
+      Emir akışı      -10  [-10 Son mumda satıcılar baskın (delta −%20,2)]
       CVD             yok  (Veri toplanıyor: son 21 mumun 7 tanesinde veri var, en az 14 gerekir)
       Açık pozisyon   yok  (Veri toplanıyor (açık pozisyonun geçmişi MEXC'de yok; program açıkken birikir))
-DOGEUSDT 1m → Red: +3 (eşik +20) · Ana yapı aşağı (son kırılım aşağı); CVD son 20 mumda düşüyor (net satış payı %82,9) | bağlam dip | durum "Bağlanıyor"
-      Yapı            +11  [-25 Ana yapı aşağı (son kırılım aşağı) 20 İç yapı yukarı döndü (CHoCH) 1 İndirim bölgesinde (aralıkta 48 seviyesi; 0 dip, 100 tepe) 15 Fiyat boşluğunun içinde (FVG)]
-      Emir akışı      +12  [12 Son mumda alıcılar baskın (delta +%24,9)]
-      CVD             -15  [-15 CVD son 20 mumda düşüyor (net satış payı %82,9)]
+DOGEUSDT 1m → Red: -13 (eşik +20) · Ana yapı aşağı (son kırılım aşağı); Son mumda satıcılar baskın (delta −%37,1); Büyük işlemlerde satış ağır (son 15 dk: 26185 USDT net) | bağlam dip | durum "Canlı"
+      Yapı             +5  [-25 Ana yapı aşağı (son kırılım aşağı) 5 İndirim bölgesinde (aralıkta 36 seviyesi; 0 dip, 100 tepe) 25 Talep bölgesinde (alıcı order block'u)]
+      Emir akışı      -30  [-15 Son mumda satıcılar baskın (delta −%37,1) -15 Büyük işlemlerde satış ağır (son 15 dk: 26185 USDT net)]
+      CVD             -14  [-14 CVD son 20 mumda düşüyor (net satış payı %13,8)]
       Açık pozisyon   yok  (Veri toplanıyor (açık pozisyonun geçmişi MEXC'de yok; program açıkken birikir))
-      grafik: 300 mum (125'inde akış), salınım 44, kırılım 17, bölge 10, eşit 3, süpürme 19, işaret 78, büyük 7, satırBp 2
-      footprint (son kapanan mum): 10 satır, POC 0.07704452134003374, delta 3.687e+04, hacim 1.481e+05
-            0.0770753  satış      575.3  alım      764.1  false false
-            0.0770599  satış       1147  alım      497.3  false false
-            0.0770445  satış  3.978e+04  alım  6.353e+04  true true
-            0.0770291  satış          0  alım      230.5  false false
-            0.0770137  satış       7379  alım       8736  true true
-            0.0769983  satış      866.5  alım       1202  false false
-            0.0769829  satış       4624  alım  1.507e+04  true true
-            0.0769675  satış        513  alım       2081  false false
-            0.0769521  satış      238.1  alım      197.9  false false
-            0.0769367  satış      494.4  alım      173.5  false false
-DOGEUSDT 5m → Red: -3 (eşik +20) · Satıcılar kademe kademe bastırıyor (6 kademe satış dengesizliği); Son mumda satıcılar baskın (delta −%69,0); CVD son 20 mumda düşüyor (net satış payı %96,7) | bağlam dip | durum "Bağlanıyor"
-      Yapı            +40  [25 Ana yapı yukarı (son kırılım yukarı) -10 Pahalı bölgede (aralıkta 75 seviyesi; 0 dip, 100 tepe) 25 Stoplar süpürüldü (iç dip altı, 7 mum önce)]
-      Emir akışı      -35  [-15 Son mumda satıcılar baskın (delta −%69,0) -20 Satıcılar kademe kademe bastırıyor (6 kademe satış dengesizliği)]
-      CVD             -15  [-15 CVD son 20 mumda düşüyor (net satış payı %96,7)]
+      grafik: 300 mum (125'inde akış), salınım 43, kırılım 16, bölge 10, eşit 3, süpürme 19, işaret 4, büyük 11, satırBp 3
+      footprint (son kapanan mum): 5 satır, POC 0.07679838520700616, delta -2.194e+05, hacim 5.919e+05
+            0.0768445  satış       1656  alım       3267  false false
+            0.0768214  satış  2.356e+05  alım  1.061e+04  true false
+            0.0767984  satış  1.631e+05  alım  1.693e+05  true true
+            0.0767754  satış       4791  alım       2232  false false
+            0.0767523  satış      601.6  alım      867.3  false false
+DOGEUSDT 5m → Red: +0 (eşik +20) · Büyük işlemlerde satış ağır (son 15 dk: 26185 USDT net); Son mumda satıcılar baskın (delta −%9,9); CVD son 20 mumda düşüyor (net satış payı %3,3) | bağlam dip | durum "Canlı"
+      Yapı            +23  [25 Ana yapı yukarı (son kırılım yukarı) -2 Pahalı bölgede (aralıkta 56 seviyesi; 0 dip, 100 tepe)]
+      Emir akışı      -20  [-5 Son mumda satıcılar baskın (delta −%9,9) -15 Büyük işlemlerde satış ağır (son 15 dk: 26185 USDT net)]
+      CVD              -3  [-3 CVD son 20 mumda düşüyor (net satış payı %3,3)]
       Açık pozisyon   yok  (Veri toplanıyor (açık pozisyonun geçmişi MEXC'de yok; program açıkken birikir))
-DOGEUSDT 15m → Red: -13 (eşik +20) · Şu an satış saldırısı var (delta −%71,4); Ana yapı aşağı (son kırılım aşağı); Satıcılar kademe kademe bastırıyor (9 kademe satış dengesizliği) | bağlam yatay | durum "Bağlanıyor"
-      Yapı             +4  [-25 Ana yapı aşağı (son kırılım aşağı) 10 İç yapı yukarı kırıldı (BOS) -6 Pahalı bölgede (aralıkta 65 seviyesi; 0 dip, 100 tepe) 25 Talep bölgesinde (alıcı order block'u)]
-      Emir akışı      -30  [-15 Son mumda satıcılar baskın (delta −%100,0) 35 Dipte satış emildi (hacim ortalamanın 2,7 katı, delta −%100,0, kapanış mumun üst yarısında) -20 Satıcılar kademe kademe bastırıyor (9 kademe satış dengesizliği) -30 Şu an satış saldırısı var (delta −%71,4)]
+DOGEUSDT 15m → Red: +6 (eşik +20) · Ana yapı aşağı (son kırılım aşağı); Büyük işlemlerde satış ağır (son 15 dk: 26185 USDT net); Son mumda satıcılar baskın (delta −%11,8) | bağlam dip | durum "Canlı"
+      Yapı            +33  [-25 Ana yapı aşağı (son kırılım aşağı) 10 İç yapı yukarı kırıldı (BOS) -2 Pahalı bölgede (aralıkta 55 seviyesi; 0 dip, 100 tepe) 25 Talep bölgesinde (alıcı order block'u) 25 Stoplar süpürüldü (iç dip altı, 0 mum önce)]
+      Emir akışı      -21  [-6 Son mumda satıcılar baskın (delta −%11,8) -15 Büyük işlemlerde satış ağır (son 15 dk: 26185 USDT net)]
       CVD             yok  (Veri toplanıyor: son 21 mumun 7 tanesinde veri var, en az 14 gerekir)
       Açık pozisyon   yok  (Veri toplanıyor (açık pozisyonun geçmişi MEXC'de yok; program açıkken birikir))
-DOSUSDT 1m → Red: +3 (eşik +20) · Şu an satış saldırısı var (delta −%70,9); Ana yapı aşağı (son kırılım aşağı); CVD son 20 mumda düşüyor (net satış payı %71,9) | bağlam dip | durum "Bağlanıyor"
-      Yapı            +35  [-25 Ana yapı aşağı (son kırılım aşağı) 20 İç yapı yukarı döndü (CHoCH) 15 İndirim bölgesinde (aralıkta 14 seviyesi; 0 dip, 100 tepe) 25 Stoplar süpürüldü (iç dip altı, 0 mum önce)]
-      Emir akışı      -11  [-1 Son mumda satıcılar baskın (delta −%1,3) 20 Satıcılar yoruluyor (her yeni dipte daha az satış) -30 Şu an satış saldırısı var (delta −%70,9)]
-      CVD             -15  [-15 CVD son 20 mumda düşüyor (net satış payı %71,9)]
+DOSUSDT 1m → Red: +0 (eşik +20) · Ana yapı aşağı (son kırılım aşağı); Arz bölgesinin içinde (satıcı order block'u); Tepedeki stoplar süpürülüp geri düştü | bağlam yatay | durum "Canlı"
+      Yapı            -31  [-25 Ana yapı aşağı (son kırılım aşağı) -6 Pahalı bölgede (aralıkta 66 seviyesi; 0 dip, 100 tepe) 15 Fiyat boşluğunun içinde (FVG) -20 Arz bölgesinin içinde (satıcı order block'u) 25 Stoplar süpürüldü (iç dip altı, 9 mum önce) -20 Tepedeki stoplar süpürülüp geri düştü]
+      Emir akışı      +19  [4 Son mumda alıcılar baskın (delta +%7,5) 15 Büyük işlemlerde alım ağır (son 15 dk: 1827 USDT net)]
+      CVD             +13  [13 CVD son 20 mumda yükseliyor (net alım payı %6,3)]
       Açık pozisyon   yok  (Veri toplanıyor (açık pozisyonun geçmişi MEXC'de yok; program açıkken birikir))
-      grafik: 300 mum (125'inde akış), salınım 49, kırılım 23, bölge 11, eşit 2, süpürme 19, işaret 82, büyük 0, satırBp 3
-      footprint (son kapanan mum): 10 satır, POC 0.2525284950375823, delta -43.71, hacim 3460
-             0.253211  satış      52.54  alım          0  false false
-             0.253135  satış      171.8  alım      100.1  true false
-             0.253059  satış      38.53  alım        144  false true
-             0.252983  satış      28.64  alım      43.47  false false
-             0.252908  satış      252.4  alım          0  true false
-             0.252832  satış          0  alım      213.2  false true
-             0.252756  satış          0  alım      94.22  false true
-             0.252604  satış      833.8  alım      195.5  true false
-             0.252528  satış      374.1  alım      907.9  false true
-             0.252453  satış          0  alım       9.68  false false
-DOSUSDT 5m → Red: +18 (eşik +20) · İç yapı az önce aşağı kırıldı; CVD son 20 mumda düşüyor (net satış payı %97,7); Son mumda satıcılar baskın (delta −%14,9) | bağlam dip | durum "Bağlanıyor"
-      Yapı            +77  [25 Ana yapı yukarı (son kırılım yukarı) -15 İç yapı az önce aşağı kırıldı 17 İndirim bölgesinde (aralıkta 8 seviyesi; 0 dip, 100 tepe) 25 Talep bölgesinde (alıcı order block'u) 25 Stoplar süpürüldü (iç dip altı, 2 mum önce)]
-      Emir akışı       -7  [-7 Son mumda satıcılar baskın (delta −%14,9)]
-      CVD             -15  [-15 CVD son 20 mumda düşüyor (net satış payı %97,7)]
+      grafik: 300 mum (125'inde akış), salınım 46, kırılım 23, bölge 11, eşit 2, süpürme 18, işaret 1, büyük 5, satırBp 10
+      footprint (son kapanan mum): 33 satır, POC 0.25835198910862184, delta 7090, hacim 9.484e+04
+             0.259387  satış          0  alım        190  false false
+             0.259128  satış       1018  alım      994.8  false false
+             0.258869  satış       1523  alım       3521  false false
+              0.25861  satış       3415  alım       7024  false false
+             0.258352  satış       8626  alım       6586  false true
+             0.258094  satış          0  alım      47.02  false false
+             0.257836  satış       1031  alım       1508  false false
+             0.257578  satış       3382  alım       1740  false false
+             0.257321  satış      275.5  alım       1932  false true
+             0.257064  satış          0  alım       4470  false false
+             0.256807  satış       3560  alım       3653  false true
+              0.25655  satış          0  alım      136.8  false false
+             0.256294  satış          0  alım      196.5  false false
+             0.256037  satış          0  alım      245.9  false false
+             0.255781  satış       1284  alım       2180  false true
+             0.255526  satış      113.5  alım       8.99  false false
+              0.25527  satış       4030  alım       1830  true false
+             0.255015  satış       2409  alım       3147  false false
+              0.25476  satış       1209  alım      48.52  false false
+             0.254506  satış       1331  alım       3217  false true
+             0.254251  satış          0  alım       1296  false false
+             0.253997  satış          0  alım      16.87  false false
+             0.253743  satış          0  alım      954.3  false false
+             0.253237  satış          0  alım      246.3  false false
+             0.252983  satış          0  alım      23.04  false false
+             0.252731  satış          0  alım       2654  false true
+             0.252478  satış          0  alım        105  false false
+              0.25147  satış          0  alım      131.9  false false
+             0.251219  satış       5023  alım          0  true false
+             0.250968  satış       2503  alım          0  true false
+             0.250717  satış      160.6  alım          0  false false
+             0.250466  satış          0  alım      689.3  false false
+             0.250216  satış       2978  alım       2171  true false
+DOSUSDT 5m → Red: +6 (eşik +20) · Ana yapı aşağı (son kırılım aşağı); Arz bölgesinin içinde (satıcı order block'u); İç yapı az önce aşağı kırıldı | bağlam dip | durum "Canlı"
+      Yapı             +0  [-25 Ana yapı aşağı (son kırılım aşağı) -15 İç yapı az önce aşağı kırıldı 10 İndirim bölgesinde (aralıkta 25 seviyesi; 0 dip, 100 tepe) 25 Talep bölgesinde (alıcı order block'u) -20 Arz bölgesinin içinde (satıcı order block'u) 25 Stoplar süpürüldü (iç dip altı, 0 mum önce)]
+      Emir akışı      +16  [1 Son mumda alıcılar baskın (delta +%2,7) 15 Büyük işlemlerde alım ağır (son 15 dk: 1827 USDT net)]
+      CVD              +3  [3 CVD son 20 mumda yükseliyor (net alım payı %2,6)]
       Açık pozisyon   yok  (Veri toplanıyor (açık pozisyonun geçmişi MEXC'de yok; program açıkken birikir))
-DOSUSDT 15m → Onay: +31 (eşik +20) · Ana yapı yukarı (son kırılım yukarı); Talep bölgesinde (alıcı order block'u); Stoplar süpürüldü (iç dip altı, 0 mum önce) | bağlam dip | durum "Bağlanıyor"
-      Yapı            +77  [25 Ana yapı yukarı (son kırılım yukarı) 2 İndirim bölgesinde (aralıkta 46 seviyesi; 0 dip, 100 tepe) 25 Talep bölgesinde (alıcı order block'u) 25 Stoplar süpürüldü (iç dip altı, 0 mum önce)]
-      Emir akışı      -15  [-15 Son mumda satıcılar baskın (delta −%100,0) 20 Satıcılar yoruluyor (her yeni dipte daha az satış) -20 Satıcılar kademe kademe bastırıyor (11 kademe satış dengesizliği)]
+DOSUSDT 15m → Onay: +35 (eşik +20) · Ana yapı yukarı (son kırılım yukarı); Stoplar süpürüldü (iç dip altı, 1 mum önce); Delta eksiden artıya döndü (alıcılar devreye girdi) | bağlam dip | durum "Canlı"
+      Yapı            +29  [25 Ana yapı yukarı (son kırılım yukarı) -15 İç yapı az önce aşağı kırıldı -1 Pahalı bölgede (aralıkta 52 seviyesi; 0 dip, 100 tepe) 15 Fiyat boşluğunun içinde (FVG) -20 Arz bölgesinin içinde (satıcı order block'u) 25 Stoplar süpürüldü (iç dip altı, 1 mum önce)]
+      Emir akışı      +41  [6 Son mumda alıcılar baskın (delta +%12,5) 20 Delta eksiden artıya döndü (alıcılar devreye girdi) 15 Büyük işlemlerde alım ağır (son 15 dk: 1827 USDT net)]
       CVD             yok  (Veri toplanıyor: son 21 mumun 7 tanesinde veri var, en az 14 gerekir)
       Açık pozisyon   yok  (Veri toplanıyor (açık pozisyonun geçmişi MEXC'de yok; program açıkken birikir))
-XMRUSDT 1m → Red: +8 (eşik +20) · Fiyat yeni tepe yaptı ama CVD yapmadı (alıcılar zayıf); CVD son 20 mumda düşüyor (net satış payı %83,2); Pahalı bölgede (aralıkta 64 seviyesi; 0 dip, 100 tepe) | bağlam yatay | durum "Bağlanıyor"
-      Yapı            +55  [25 Ana yapı yukarı (son kırılım yukarı) 20 İç yapı yukarı döndü (CHoCH) -5 Pahalı bölgede (aralıkta 64 seviyesi; 0 dip, 100 tepe) 15 Fiyat boşluğunun içinde (FVG)]
-      Emir akışı      +35  [15 Son mumda alıcılar baskın (delta +%100,0) 20 Delta eksiden artıya döndü (alıcılar devreye girdi)]
-      CVD             -65  [-30 CVD son 20 mumda düşüyor (net satış payı %83,2) -35 Fiyat yeni tepe yaptı ama CVD yapmadı (alıcılar zayıf)]
+XMRUSDT 1m → Onay: +21 (eşik +20) · CVD son 20 mumda yükseliyor (net alım payı %56,3); Ana yapı yukarı (son kırılım yukarı); Fiyat boşluğunun içinde (FVG) | bağlam yatay | durum "Canlı"
+      Yapı            +32  [25 Ana yapı yukarı (son kırılım yukarı) -8 Pahalı bölgede (aralıkta 69 seviyesi; 0 dip, 100 tepe) 15 Fiyat boşluğunun içinde (FVG)]
+      Emir akışı       +0  [-15 Son mumda satıcılar baskın (delta −%100,0) 15 Şu anki mumda alıcılar devreye girdi]
+      CVD             +30  [30 CVD son 20 mumda yükseliyor (net alım payı %56,3)]
       Açık pozisyon   yok  (Veri toplanıyor (açık pozisyonun geçmişi MEXC'de yok; program açıkken birikir))
-      grafik: 300 mum (125'inde akış), salınım 43, kırılım 14, bölge 9, eşit 7, süpürme 18, işaret 13, büyük 0, satırBp 2
-      footprint (son kapanan mum): 1 satır, POC 592.0439103370655, delta 0.181, hacim 0.181
-              592.044  satış          0  alım      0.181  false false
-XMRUSDT 5m → Red: -14 (eşik +20) · CVD son 20 mumda düşüyor (net satış payı %95,8); Ana yapı aşağı (son kırılım aşağı); Son mumda satıcılar baskın (delta −%57,1) | bağlam yatay | durum "Bağlanıyor"
-      Yapı            -32  [-25 Ana yapı aşağı (son kırılım aşağı) -7 Pahalı bölgede (aralıkta 68 seviyesi; 0 dip, 100 tepe)]
-      Emir akışı      +20  [-15 Son mumda satıcılar baskın (delta −%57,1) 35 Dipte satış emildi (hacim ortalamanın 2,7 katı, delta −%100,0, kapanış mumun üst yarısında)]
-      CVD             -30  [-30 CVD son 20 mumda düşüyor (net satış payı %95,8)]
+      grafik: 300 mum (125'inde akış), salınım 40, kırılım 13, bölge 9, eşit 7, süpürme 16, işaret 11, büyük 0, satırBp 1
+      footprint (son kapanan mum): 4 satır, POC 592.3399915015589, delta -0.257, hacim 0.257
+              592.755  satış      0.027  alım          0  false false
+              592.636  satış      0.035  alım          0  true false
+               592.34  satış       0.14  alım          0  true false
+              592.281  satış      0.055  alım          0  true false
+XMRUSDT 5m → Onay: +25 (eşik +20) · Fiyat yeni dip yaptı ama CVD yapmadı (satıcılar zayıflıyor); CVD son 20 mumda yükseliyor (net alım payı %55,2); Delta eksiden artıya döndü (alıcılar devreye girdi) | bağlam yatay | durum "Canlı"
+      Yapı            -31  [-25 Ana yapı aşağı (son kırılım aşağı) -6 Pahalı bölgede (aralıkta 65 seviyesi; 0 dip, 100 tepe)]
+      Emir akışı      +35  [15 Son mumda alıcılar baskın (delta +%45,6) 20 Delta eksiden artıya döndü (alıcılar devreye girdi)]
+      CVD             +70  [30 CVD son 20 mumda yükseliyor (net alım payı %55,2) 40 Fiyat yeni dip yaptı ama CVD yapmadı (satıcılar zayıflıyor)]
       Açık pozisyon   yok  (Veri toplanıyor (açık pozisyonun geçmişi MEXC'de yok; program açıkken birikir))
-XMRUSDT 15m → Red: -55 (eşik +20) · Şu an satış saldırısı var (delta −%65,9); Ana yapı aşağı (son kırılım aşağı); Arz bölgesinin içinde (satıcı order block'u) | bağlam yatay | durum "Bağlanıyor"
-      Yapı            -45  [-25 Ana yapı aşağı (son kırılım aşağı) 20 İç yapı yukarı döndü (CHoCH) -20 Arz bölgesinin içinde (satıcı order block'u) -20 Tepedeki stoplar süpürülüp geri düştü]
-      Emir akışı      -65  [-15 Son mumda satıcılar baskın (delta −%100,0) -20 Satıcılar kademe kademe bastırıyor (5 kademe satış dengesizliği) -30 Şu an satış saldırısı var (delta −%65,9)]
+XMRUSDT 15m → Red: -16 (eşik +20) · Ana yapı aşağı (son kırılım aşağı); Arz bölgesinin içinde (satıcı order block'u); Tepedeki stoplar süpürülüp geri düştü | bağlam yatay | durum "Canlı"
+      Yapı            -46  [-25 Ana yapı aşağı (son kırılım aşağı) 20 İç yapı yukarı döndü (CHoCH) -1 Pahalı bölgede (aralıkta 52 seviyesi; 0 dip, 100 tepe) -20 Arz bölgesinin içinde (satıcı order block'u) -20 Tepedeki stoplar süpürülüp geri düştü]
+      Emir akışı      +15  [15 Son mumda alıcılar baskın (delta +%60,5)]
       CVD             yok  (Veri toplanıyor: son 21 mumun 7 tanesinde veri var, en az 14 gerekir)
       Açık pozisyon   yok  (Veri toplanıyor (açık pozisyonun geçmişi MEXC'de yok; program açıkken birikir))
---- PASS: TestCanliMexc (270.68s)
+--- PASS: TestCanliMexc (271.55s)
 PASS
-ok  	kriptoalsat	270.681s
+ok  	kriptoalsat	271.550s
