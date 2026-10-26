@@ -32,8 +32,8 @@ jobs:
           def mumlar(s, aralik, ms, bas):
               out, t = [], bas
               while t < now:
-                  e = min(now, t + 1000 * ms) - 1
-                  r = get(f'klines?symbol={s}&interval={aralik}&startTime={t}&endTime={e}&limit=1000')
+                  e = min(now, t + 500 * ms) - 1
+                  r = get(f'klines?symbol={s}&interval={aralik}&startTime={t}&endTime={e}&limit=500')
                   if not isinstance(r, list):
                       out.append(['hata', r]); break
                   out += r; t = e + 1; time.sleep(0.12)
@@ -42,7 +42,7 @@ jobs:
               V[s]['k1'] = mumlar(s, '1m', 60000, ist['bas1m'])
               V[s]['k5'] = mumlar(s, '5m', 300000, ist['bas5m'])
               V[s]['t24'] = get(f'ticker/24hr?symbol={s}')
-              V[s]['islemler'] = get(f'trades?symbol={s}&limit=1000')
+              V[s]['islemler'] = get(f'trades?symbol={s}&limit=500')
               print(s, len(V[s]['k1']), len(V[s]['k5']), flush=True)
           for tur in range(4):
               for s in ist['coins']:
