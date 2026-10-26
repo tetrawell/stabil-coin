@@ -1,0 +1,24 @@
+name: Gecici tarama
+# Geçici: bütün coinler için sarkaç ölçüleri ve alış-satış defteri maliyeti (değerlendirme için).
+# Sonucu bu dala (sarkac-puani) koyar. İş bitince bu dosya ve veri silinecek. Uygulamayı etkilemez.
+on:
+  push:
+    branches: [sarkac-puani]
+    paths: [".github/gecici/tarama.py"]
+permissions:
+  contents: write
+jobs:
+  tara:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tarama
+        run: python3 .github/gecici/tarama.py
+      - name: Dala koy
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add pi_veri
+          git commit -q -m "Geçici: tarama sonucu [skip ci]"
+          git push -q origin HEAD:sarkac-puani
