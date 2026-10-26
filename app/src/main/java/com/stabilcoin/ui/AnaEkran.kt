@@ -22,6 +22,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Settings
@@ -56,6 +57,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.stabilcoin.core.Defter
 import com.stabilcoin.core.TfSonuc
 import com.stabilcoin.core.Yon
 import java.text.SimpleDateFormat
@@ -73,28 +75,40 @@ enum class Liste(val ad: String) { STABIL("Stabil"), SARKAC("Sarkaç ★") }
 /** Listede gösterilecek bir satır: coin ve hangi zaman dilimiyle listelendiği. */
 data class Satir(val coin: CoinSonuc, val tf: TfSonuc)
 
-/** Bir zaman dilimi seçili listeye giriyor mu. */
-fun listedeMi(c: CoinSonuc, t: TfSonuc, liste: Liste): Boolean = when (liste) {
+/**
+ * Bir zaman dilimi seçili listeye giriyor mu. Sarkaç listesinde normalde sadece ★ (masrafı karşılayan) coinler;
+ * [yetmeyenler] açıksa salınımı masrafı karşılamayan sarkaç adayları da.
+ */
+fun listedeMi(c: CoinSonuc, t: TfSonuc, liste: Liste, yetmeyenler: Boolean = false): Boolean = when (liste) {
     Liste.STABIL -> t.uygun
-    Liste.SARKAC -> c.yildiz(t)
+    Liste.SARKAC -> if (yetmeyenler) c.sarkacAday(t) else c.yildiz(t)
 }
 
-fun listele(coinler: List<CoinSonuc>, seciliTf: String?, siralama: Siralama, liste: Liste = Liste.STABIL): List<Satir> {
+fun listele(
+    coinler: List<CoinSonuc>,
+    seciliTf: String?,
+    siralama: Siralama,
+    liste: Liste = Liste.STABIL,
+    yetmeyenler: Boolean = false,
+): List<Satir> {
+    // Sarkaç listesinde yıldızlılar her zaman önce gelir.
+    fun sarkacSirasi(c: CoinSonuc, t: TfSonuc): Int = (if (c.yildiz(t)) 1000 else 0) + (t.sarkacPuani ?: -999)
     val satirlar = coinler.mapNotNull { c ->
         val tf = if (seciliTf != null) {
-            c.tfler.firstOrNull { it.zamanDilimi == seciliTf && listedeMi(c, it, liste) }
+            c.tfler.firstOrNull { it.zamanDilimi == seciliTf && listedeMi(c, it, liste, yetmeyenler) }
         } else {
-            val uyan = c.tfler.filter { listedeMi(c, it, liste) }
-            if (liste == Liste.SARKAC) uyan.maxByOrNull { it.sarkacPuani ?: -999 } else uyan.maxByOrNull { it.puan }
+            val uyan = c.tfler.filter { listedeMi(c, it, liste, yetmeyenler) }
+            if (liste == Liste.SARKAC) uyan.maxByOrNull { sarkacSirasi(c, it) } else uyan.maxByOrNull { it.puan }
         }
         tf?.let { Satir(c, it) }
     }
-    return when (siralama) {
+    val sirali = when (siralama) {
         Siralama.DALGA -> satirlar.sortedByDescending { it.tf.dalgaYuzde }
         Siralama.SURE -> satirlar.sortedByDescending { it.tf.sureMs }
         Siralama.PUAN -> satirlar.sortedByDescending { it.tf.puan }
-        Siralama.SARKAC -> satirlar.sortedByDescending { it.tf.sarkacPuani ?: -999 }
+        Siralama.SARKAC -> satirlar.sortedByDescending { sarkacSirasi(it.coin, it.tf) }
     }
+    return if (liste == Liste.SARKAC) sirali.sortedByDescending { it.coin.yildiz(it.tf) } else sirali
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -105,13 +119,20 @@ fun AnaEkran(model: AnaModel = viewModel()) {
     var seciliTf by rememberSaveable { mutableStateOf<String?>(null) }
     var siralama by rememberSaveable { mutableStateOf(Siralama.DALGA) }
     var liste by rememberSaveable { mutableStateOf(Liste.STABIL) }
+    var yetmeyenler by rememberSaveable { mutableStateOf(false) }
     var ayarAcik by remember { mutableStateOf(false) }
 
-    val satirlar = remember(durum.coinler, seciliTf, siralama, liste) { listele(durum.coinler, seciliTf, siralama, liste) }
-    val tfSayilari = remember(durum.coinler, liste) {
-        ZAMAN_DILIMLERI.associateWith { tf -> durum.coinler.count { c -> c.tfler.any { it.zamanDilimi == tf && listedeMi(c, it, liste) } } }
+    val satirlar = remember(durum.coinler, seciliTf, siralama, liste, yetmeyenler) {
+        listele(durum.coinler, seciliTf, siralama, liste, yetmeyenler)
     }
-    val toplamUygun = remember(durum.coinler, liste) { durum.coinler.count { c -> c.tfler.any { listedeMi(c, it, liste) } } }
+    val tfSayilari = remember(durum.coinler, liste, yetmeyenler) {
+        ZAMAN_DILIMLERI.associateWith { tf ->
+            durum.coinler.count { c -> c.tfler.any { it.zamanDilimi == tf && listedeMi(c, it, liste, yetmeyenler) } }
+        }
+    }
+    val toplamUygun = remember(durum.coinler, liste, yetmeyenler) {
+        durum.coinler.count { c -> c.tfler.any { listedeMi(c, it, liste, yetmeyenler) } }
+    }
 
     Scaffold(
         containerColor = Renk.zemin,
@@ -163,11 +184,15 @@ fun AnaEkran(model: AnaModel = viewModel()) {
             }
             if (liste == Liste.SARKAC) {
                 Text(
-                    "★ Sarkaç: fiyatı hep aynı ortalamaya dönen, BTC'den bağımsız hareket eden ve sığ olmayan coinler. " +
-                        "Araştırmada en iyi sonucu 5dk grafikte verdi; kanıtlanmış değil, önce sanal parayla dene.",
+                    "★ Sarkaç: fiyatı hep aynı ortalamaya dönen, BTC'den bağımsız hareket eden, sığ olmayan ve salınımı " +
+                        "${tutarMetni(ayarlar.kumbaraUsdt)}'lik alıp satmanın masrafının en az ${sayi(Defter.YETER_KAT)} katı olan coinler. " +
+                        "Kanıtlanmış değil, önce sanal parayla dene.",
                     color = Renk.soluk, fontSize = 12.sp,
                     modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp),
                 )
+                Row(Modifier.padding(horizontal = 12.dp).padding(bottom = 2.dp)) {
+                    Cip("Masrafı karşılamayanları da göster", secili = yetmeyenler, kucuk = true) { yetmeyenler = !yetmeyenler }
+                }
             }
             Row(
                 Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()).padding(horizontal = 12.dp, vertical = 6.dp),
@@ -201,7 +226,11 @@ fun AnaEkran(model: AnaModel = viewModel()) {
                 satirlar.isEmpty() && !durum.yukleniyor -> if (liste == Liste.SARKAC) {
                     MesajKutusu(
                         baslik = "Şu an sarkaç coin yok",
-                        metin = "Bu zaman diliminde hem sarkaç gibi davranan, hem BTC'den bağımsız, hem de sığ olmayan coin bulunamadı. Başka bir zaman dilimine bakabilir ya da biraz sonra yenileyebilirsin.",
+                        metin = if (yetmeyenler) {
+                            "Bu zaman diliminde hem sarkaç gibi davranan, hem BTC'den bağımsız, hem de sığ olmayan coin bulunamadı. Başka bir zaman dilimine bakabilir ya da biraz sonra yenileyebilirsin."
+                        } else {
+                            "Bu zaman diliminde salınımı alıp satma masrafını karşılayan sarkaç coin yok. \"Masrafı karşılamayanları da göster\" ile hepsine bakabilir, başka bir zaman dilimine geçebilir ya da biraz sonra yenileyebilirsin."
+                        },
                     )
                 } else {
                     MesajKutusu(
@@ -218,6 +247,14 @@ fun AnaEkran(model: AnaModel = viewModel()) {
                         item {
                             Text(
                                 "${durum.eksikGrafik} grafik indirilemedi; o zaman dilimleri hesaba katılmadı.",
+                                color = Renk.soluk, fontSize = 12.sp, modifier = Modifier.padding(8.dp),
+                            )
+                        }
+                    }
+                    if (durum.eksikDefter > 0) {
+                        item {
+                            Text(
+                                "${durum.eksikDefter} coinin alış-satış defteri alınamadı; bu coinlerde masraf bilinmiyor, yıldız verilmedi.",
                                 color = Renk.soluk, fontSize = 12.sp, modifier = Modifier.padding(8.dp),
                             )
                         }
@@ -240,7 +277,7 @@ private fun altBaslik(d: Durum, a: Ayarlar): String {
     val hacim = hacimMetni(a.enAzHacimUsdt)
     val zaman = d.sonGuncelleme?.let { SimpleDateFormat("HH:mm", TR).format(Date(it)) }
     return buildString {
-        append("MEXC · hacim ≥ $hacim · dalga ≥ %${sayi(a.enKucukDalgaYuzde)}")
+        append("MEXC · hacim ≥ $hacim · dalga ≥ %${sayi(a.enKucukDalgaYuzde)} · ${tutarMetni(a.kumbaraUsdt)}")
         if (zaman != null) append(" · $zaman")
     }
 }
@@ -256,7 +293,7 @@ private fun YuklemeCubugu(d: Durum) {
             trackColor = Renk.kenar,
         )
         Text(
-            if (d.toplam == 0) "Coin listesi alınıyor…" else "${d.coinSayisi} coin · grafikler: ${d.ilerleme} / ${d.toplam}",
+            if (d.toplam == 0) "Coin listesi alınıyor…" else "${d.coinSayisi} coin · grafik ve defterler: ${d.ilerleme} / ${d.toplam}",
             color = Renk.soluk, fontSize = 12.sp, modifier = Modifier.padding(top = 4.dp),
         )
     }
@@ -338,6 +375,7 @@ private fun CoinKarti(s: Satir, liste: Liste) {
             )
         }
         SarkacSatiri(s.coin, t)
+        DefterSatiri(s.coin, t)
 
         Spacer(Modifier.height(8.dp))
         Row(
@@ -375,6 +413,36 @@ private fun SarkacSatiri(c: CoinSonuc, t: TfSonuc) {
     if (sig) {
         Text(
             "Sığ coin: alış-satış farkı yüksek ya da fiyat çoğu dakika kıpırdamıyor. Sarkaç puanı yanıltıcı olabilir, simülatördeki kâr gerçekleşmez.",
+            color = Renk.kirmizi, fontSize = 12.sp,
+        )
+    }
+}
+
+/** Kartta alıp satma masrafı ve salınımın bunun kaç katı olduğu (gösterilen zaman dilimi için). */
+@Composable
+private fun DefterSatiri(c: CoinSonuc, t: TfSonuc) {
+    val m = c.masraf
+    val toplam = m?.toplamYuzde
+    val kat = c.kat(t)
+    val yeter = Defter.yeter(kat)
+    val metin = when {
+        m == null -> "Alış-satış defteri alınamadı: masraf bilinmiyor"
+        toplam == null -> "Defter ${tutarMetni(m.tutarUsdt)}'lik işleme yetmiyor: alıcı ve satıcı çok az"
+        else -> buildString {
+            append("${tutarMetni(m.tutarUsdt)} alıp satma masrafı %${sayi(toplam)}")
+            append(" · salınım %${t.salinimYuzde?.let { sayi(it) } ?: "?"}")
+            if (kat != null) append(" → ${katMetni(kat)} kat")
+        }
+    }
+    Text(metin, color = if (yeter) Renk.yesil else Renk.soluk, fontSize = 13.sp)
+    if (m != null && !yeter) {
+        Text(
+            if (toplam == null) {
+                "Bu tutarda alıp satarken fiyat çok oynar; kumbara tutarını küçült ya da bu coine girme."
+            } else {
+                "Salınım masrafın ${sayi(Defter.YETER_KAT)} katından az: bu grafikte alıp satmanın masrafı kârı yer " +
+                    "(alış-satış farkı %${sayi(m.farkYuzde)}, komisyon her işlemde %${sayi(m.komisyonYuzde)})."
+            },
             color = Renk.kirmizi, fontSize = 12.sp,
         )
     }
@@ -499,6 +567,8 @@ private fun MiniGrafik(t: TfSonuc) {
 private fun AyarPenceresi(mevcut: Ayarlar, onKapat: () -> Unit, onUygula: (Ayarlar) -> Unit) {
     var hacim by remember { mutableStateOf(mevcut.enAzHacimUsdt) }
     var dalga by remember { mutableStateOf(mevcut.enKucukDalgaYuzde) }
+    var kumbara by remember { mutableStateOf(mevcut.kumbaraUsdt) }
+    val kumbaraSecenekleri = listOf(50.0, 100.0, 200.0, 500.0, 1000.0)
     val hacimSecenekleri = listOf(250_000.0, 500_000.0, 1_000_000.0, 2_000_000.0, 5_000_000.0, 10_000_000.0)
     val dalgaSecenekleri = listOf(0.5, 0.75, 1.0, 1.5, 2.0, 3.0)
 
@@ -507,7 +577,7 @@ private fun AyarPenceresi(mevcut: Ayarlar, onKapat: () -> Unit, onUygula: (Ayarl
         containerColor = Renk.kart,
         title = { Text("Ayarlar", color = Renk.yazi) },
         text = {
-            Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+            Column(Modifier.verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 Text("En az günlük hacim", color = Renk.yazi, fontWeight = FontWeight.Medium)
                 Text("Hacmi bunun altındaki coinlere bakılmaz.", color = Renk.soluk, fontSize = 12.sp)
                 Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
@@ -519,10 +589,16 @@ private fun AyarPenceresi(mevcut: Ayarlar, onKapat: () -> Unit, onUygula: (Ayarl
                 Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                     dalgaSecenekleri.forEach { v -> Cip("%${sayi(v)}", secili = v == dalga, kucuk = true) { dalga = v } }
                 }
+                Spacer(Modifier.height(4.dp))
+                Text("Kumbara tutarı", color = Renk.yazi, fontWeight = FontWeight.Medium)
+                Text("Alıp satma masrafı bu tutara göre hesaplanır: defteri ince coinde büyük tutar daha pahalıdır.", color = Renk.soluk, fontSize = 12.sp)
+                Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                    kumbaraSecenekleri.forEach { v -> Cip(tutarMetni(v), secili = v == kumbara, kucuk = true) { kumbara = v } }
+                }
             }
         },
         confirmButton = {
-            TextButton(onClick = { onUygula(Ayarlar(hacim, dalga)) }) { Text("Uygula", color = Renk.yesil) }
+            TextButton(onClick = { onUygula(Ayarlar(hacim, dalga, kumbara)) }) { Text("Uygula", color = Renk.yesil) }
         },
         dismissButton = {
             TextButton(onClick = onKapat) { Text("Vazgeç", color = Renk.soluk) }
@@ -534,6 +610,10 @@ fun sayi(v: Double): String {
     val s = String.format(TR, "%.2f", v).trimEnd('0').trimEnd(',')
     return s.ifEmpty { "0" }
 }
+
+fun tutarMetni(usdt: Double): String = "${String.format(TR, "%,.0f", usdt)} USDT"
+
+fun katMetni(kat: Double): String = if (kat >= 10) String.format(TR, "%.0f", kat) else String.format(TR, "%.1f", kat)
 
 fun hacimMetni(usdt: Double): String = when {
     usdt >= 1_000_000_000 -> "${sayi(usdt / 1_000_000_000)} Mr$"

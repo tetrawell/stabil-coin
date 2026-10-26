@@ -46,6 +46,8 @@ data class TfSonuc(
     val sarkacOrani: Double? = null,
     /** Bu zaman diliminde coinin BTC ile birlikte hareketi (-1..1). Hesaplanamadıysa null. */
     val btcBagi: Double? = null,
+    /** Salınım (bkz. Defter.salinim): fiyatın 20 mumluk ortalamasından tipik uzaklığı (%). Hesaplanamadıysa null. */
+    val salinimYuzde: Double? = null,
 ) {
     /** Ekranda görünen sarkaç puanı (100 × (1 − oran)); 40 ve üstü sarkaç. */
     val sarkacPuani: Int? get() = sarkacOrani?.let { Sarkac.puan(it) }

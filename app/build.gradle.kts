@@ -66,4 +66,6 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
 
     testImplementation("junit:junit:4.13.2")
+    // Testlerde MEXC cevaplarını gerçekten okuyabilmek için (Android'in kendi org.json'u testte boş bir kalıptır).
+    testImplementation("org.json:json:20240303")
 }

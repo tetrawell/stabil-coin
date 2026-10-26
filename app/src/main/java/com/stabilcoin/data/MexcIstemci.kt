@@ -1,8 +1,11 @@
 package com.stabilcoin.data
 
+import com.stabilcoin.core.Defter
 import com.stabilcoin.core.Mum
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.delay
 import org.json.JSONArray
+import org.json.JSONObject
 import java.io.IOException
 import java.net.HttpURLConnection
 import java.net.URL
@@ -49,6 +52,9 @@ object MexcIstemci {
      */
     private val SAYFA_SAYISI = mapOf("1m" to 3, "5m" to 3, "15m" to 2, "1h" to 2, "4h" to 2, "1d" to 2)
     private const val SAYFA_BOYU = 500
+
+    /** Defterden kaç basamak alınır (her iki taraf). 1.000 USDT'lik işlemin masrafına fazlasıyla yeter. */
+    private const val DEFTER_BASAMAK = 100
 
     private fun getir(yol: String): String {
         val baglanti = URL(ADRES + yol).openConnection() as HttpURLConnection
@@ -128,6 +134,58 @@ object MexcIstemci {
             if (parca.size < SAYFA_BOYU) break
         }
         return hepsi.values.sortedBy { it.zaman }
+    }
+
+    /** Alış-satış defterinin anlık görüntüsü (en iyi 100 basamak). */
+    suspend fun defter(sembol: String): Defter.Kitap = defterCoz(getirTekrarli("/api/v3/depth?symbol=$sembol&limit=$DEFTER_BASAMAK"))
+
+    /**
+     * Coinlerin tek işlem (piyasa emri) komisyonu, % (ör. 0,05). MEXC bunu coin coin farklı alıyor
+     * (Ekim 2026: büyük coinlerde %0,05, küçüklerde %0,08, bazılarında %0,2). Bir seferde 50 coin sorulur.
+     * Sorulamayan coin haritada olmaz (yerine varsayılan kullanılır).
+     */
+    suspend fun komisyonlar(semboller: List<String>): Map<String, Double> {
+        val sonuc = HashMap<String, Double>()
+        for (grup in semboller.distinct().chunked(50)) {
+            try {
+                sonuc.putAll(komisyonCoz(getirTekrarli("/api/v3/exchangeInfo?symbols=" + grup.joinToString(","))))
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                // bu grup bilinmiyor: varsayılan komisyon kullanılacak
+            }
+        }
+        return sonuc
+    }
+
+    internal fun defterCoz(metin: String): Defter.Kitap {
+        val o = JSONObject(metin)
+        fun liste(ad: String): List<Defter.Basamak> {
+            val d = o.optJSONArray(ad) ?: return emptyList()
+            val l = ArrayList<Defter.Basamak>(d.length())
+            for (i in 0 until d.length()) {
+                val b = d.optJSONArray(i) ?: continue
+                val f = b.optString(0).toDoubleOrNull() ?: continue
+                val m = b.optString(1).toDoubleOrNull() ?: continue
+                l.add(Defter.Basamak(f, m))
+            }
+            return l
+        }
+        return Defter.Kitap(
+            alicilar = liste("bids").sortedByDescending { it.fiyat },
+            saticilar = liste("asks").sortedBy { it.fiyat },
+        )
+    }
+
+    internal fun komisyonCoz(metin: String): Map<String, Double> {
+        val d = JSONObject(metin).optJSONArray("symbols") ?: return emptyMap()
+        val sonuc = HashMap<String, Double>()
+        for (i in 0 until d.length()) {
+            val s = d.optJSONObject(i) ?: continue
+            val k = s.optString("takerCommission").toDoubleOrNull() ?: continue
+            if (k >= 0 && k < 0.05) sonuc[s.optString("symbol")] = k * 100
+        }
+        return sonuc
     }
 
     private fun coz(metin: String): List<Mum> {
