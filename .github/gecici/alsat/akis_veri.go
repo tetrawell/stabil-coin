@@ -945,7 +945,16 @@ func (h *akisHat) spotMesaj(op byte, veri []byte) {
 		for _, kanal := range strings.Split(mesaj, ",") {
 			p := strings.Split(kanal, "@")
 			for _, x := range p {
-				if c := AK.coinler[x]; c != nil && h.istiyorMu(x) && c.spotCanli == 0 {
+				if !h.istiyorMu(x) {
+					continue
+				}
+				// onay, dakika döngüsü coini kurmadan gelebilir (açılışta yarış; 26 Ekim canlı denemede yakalandı)
+				c := AK.coinler[x]
+				if c == nil {
+					c = &akisCoin{Sembol: x}
+					AK.coinler[x] = c
+				}
+				if c.spotCanli == 0 {
 					c.spotCanli, c.hata = simdi, ""
 				}
 			}
@@ -962,7 +971,14 @@ func (h *akisHat) spotMesaj(op byte, veri []byte) {
 	defer AK.mu.Unlock()
 	c := AK.coinler[p.Sembol]
 	if c == nil {
-		return
+		if !h.istiyorMu(p.Sembol) {
+			return
+		}
+		c = &akisCoin{Sembol: p.Sembol}
+		AK.coinler[p.Sembol] = c
+	}
+	if c.spotCanli == 0 && h.istiyorMu(p.Sembol) {
+		c.spotCanli = simdi // onay mesajı kaçtıysa: ilk veriden itibaren canlı (o dakika eksik sayılır)
 	}
 	for _, is := range p.Islemler {
 		AK.islemEkle(c, is, false)
@@ -1229,11 +1245,15 @@ func akisAggTrades(sembol string, bas, bit int64, enFazlaIstek int) ([]akisIslem
 			}
 			return nil, 0, err
 		}
+		// DİKKAT: Go'nun json çözücüsü alan adlarını büyük-küçük harfe duyarsız da eşler. MEXC her işlemde hem "m"
+		// (isBuyerMaker) hem "M" (isBestMatch, hep true) yazar ve "M" sonra gelir: "M" için ayrı alan olmasa "m"nin
+		// üstüne yazar ve bütün işlemler satış görünür (26 Ekim canlı denemede yakalandı).
 		var ham []struct {
-			P string `json:"p"`
-			Q string `json:"q"`
-			T int64  `json:"T"`
-			M bool   `json:"m"`
+			P  string `json:"p"`
+			Q  string `json:"q"`
+			T  int64  `json:"T"`
+			M  bool   `json:"m"`
+			EM bool   `json:"M"`
 		}
 		if err := json.Unmarshal(b, &ham); err != nil {
 			return nil, 0, err

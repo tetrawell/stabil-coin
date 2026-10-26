@@ -254,16 +254,27 @@ func TestAkisAggTradesSayfalama(t *testing.T) {
 	akisSifirla(t)
 	// sahte MEXC: saniye çözünürlüğünde, en yeniden eskiye, istekte en çok 1000 işlem ve 1 saat
 	bas := int64(1_800_000_000_000) / 1000 * 1000
-	var tum []map[string]any
+	// MEXC'nin alan sırası (a, f, l, p, q, T, m, M): "M" (isBestMatch) "m"den SONRA gelir. Sıralı olsun diye yapı.
+	type aggIslem struct {
+		A *int   `json:"a"`
+		F *int   `json:"f"`
+		L *int   `json:"l"`
+		P string `json:"p"`
+		Q string `json:"q"`
+		T int64  `json:"T"`
+		M bool   `json:"m"`
+		B bool   `json:"M"`
+	}
+	var tum []aggIslem
 	for s := int64(0); s < 1800; s++ { // 30 dk, her saniye 2 işlem
 		for j := 0; j < 2; j++ {
-			tum = append(tum, map[string]any{"a": nil, "p": fmt.Sprintf("%.2f", 100+float64(s)/100), "q": fmt.Sprintf("%d.5", j+1), "T": (bas + s*1000), "m": j == 1, "M": true})
+			tum = append(tum, aggIslem{P: fmt.Sprintf("%.2f", 100+float64(s)/100), Q: fmt.Sprintf("%d.5", j+1), T: bas + s*1000, M: j == 1, B: true})
 		}
 	}
 	for j := 0; j < 1500; j++ { // tek bir saniyede 1500 işlem (1000 sınırından fazla)
-		tum = append(tum, map[string]any{"a": nil, "p": "200.00", "q": fmt.Sprintf("0.%04d", j+1), "T": bas + 900_000, "m": false, "M": true})
+		tum = append(tum, aggIslem{P: "200.00", Q: fmt.Sprintf("0.%04d", j+1), T: bas + 900_000, M: false, B: true})
 	}
-	sort.SliceStable(tum, func(i, j int) bool { return tum[i]["T"].(int64) > tum[j]["T"].(int64) })
+	sort.SliceStable(tum, func(i, j int) bool { return tum[i].T > tum[j].T })
 	var istek atomic.Int32
 	sunucu := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		istek.Add(1)
@@ -274,9 +285,9 @@ func TestAkisAggTradesSayfalama(t *testing.T) {
 			fmt.Fprint(w, `{"code":-1,"msg":"range too large"}`)
 			return
 		}
-		var out []map[string]any
+		var out []aggIslem
 		for _, x := range tum {
-			if z := x["T"].(int64); z >= st && z <= en {
+			if z := x.T; z >= st && z <= en {
 				out = append(out, x)
 				if len(out) == 1000 {
 					break
@@ -552,4 +563,49 @@ func TestAkisCanliHatlar(t *testing.T) {
 		t.Fatalf("liste değişince bağlantı yeniden kuruldu (spot %d→%d, vadeli %d→%d)", ilkSpotBaglanti, b2, ilkVadBaglanti, v2)
 	}
 	_ = son
+}
+
+// 26 Ekim canlı denemede yakalandı: abonelik onayı, dakika döngüsü coini kurmadan gelince coin hiç "canlı" sayılmıyordu
+// (bütün dakikalar eksik, durum "Bağlanıyor"). Onay coin kurmadan da işlenmeli; onay kaçarsa ilk veri canlı yapmalı.
+func TestAkisSpotOnayYarisi(t *testing.T) {
+	akisSifirla(t)
+	h := &akisHat{tur: "spot", istenen: map[string]bool{"BTCUSDT": true}, sinyal: make(chan struct{}, 1)}
+	h.spotMesaj(wsMetin, []byte(`{"id":0,"code":0,"msg":"spot@public.aggre.deals.v3.api.pb@100ms@BTCUSDT,spot@public.limit.depth.v3.api.pb@BTCUSDT@20"}`))
+	AK.mu.Lock()
+	c := AK.coinler["BTCUSDT"]
+	AK.mu.Unlock()
+	if c == nil || c.spotCanli == 0 {
+		t.Fatalf("coin kurulmadan gelen onay işlenmeli: %+v", c)
+	}
+	h.spotMesaj(wsMetin, []byte(`{"id":0,"code":0,"msg":"spot@public.aggre.deals.v3.api.pb@100ms@ETHUSDT"}`))
+	AK.mu.Lock()
+	_, var_ := AK.coinler["ETHUSDT"]
+	AK.mu.Unlock()
+	if var_ {
+		t.Fatal("istenmeyen coinin onayı coin kurmamalı")
+	}
+	// onay hiç gelmediyse: ilk işlem coini kurar ve canlı yapar, işlem sayılır
+	h2 := &akisHat{tur: "spot", istenen: map[string]bool{"DOGEUSDT": true}, sinyal: make(chan struct{}, 1)}
+	z := akisSimdi()
+	h2.spotMesaj(wsIkili, sahteSpotIslem("DOGEUSDT", z, 0.1, 50, true))
+	AK.mu.Lock()
+	d := AK.coinler["DOGEUSDT"]
+	var al float64
+	if d != nil {
+		for _, a := range d.acik {
+			al += a.d.Al
+		}
+	}
+	AK.mu.Unlock()
+	if d == nil || d.spotCanli == 0 || al != 50 {
+		t.Fatalf("ilk veriyle canlı olmalı ve işlem sayılmalı: %+v al=%v", d, al)
+	}
+	// istenmeyen coinin verisi coin kurmaz
+	h2.spotMesaj(wsIkili, sahteSpotIslem("XRPUSDT", z, 0.5, 5, true))
+	AK.mu.Lock()
+	_, var_ = AK.coinler["XRPUSDT"]
+	AK.mu.Unlock()
+	if var_ {
+		t.Fatal("istenmeyen coinin verisi coin kurmamalı")
+	}
 }

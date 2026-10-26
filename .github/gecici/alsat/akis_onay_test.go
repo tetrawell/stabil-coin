@@ -231,7 +231,7 @@ func TestAkisBekleyipOnay(t *testing.T) {
 	o.sonucAyarla(func(s *akisSonuc) { s.Fiyat, s.Ozet = 1.006, "Onay: +30 (eşik +20) · geldi" })
 	akisBeklemeTuru()
 	x := o.kayit()
-	if x.Karar != "bekleyip-onay" || x.OnayFiyat != 1.006 || x.OnayZ == 0 || x.OnayOzet == "" || o.k.Akis.Bekleme != nil {
+	if x.Karar != "bekleyip-onay" || x.OnayFiyat != 1.006 || x.OnayToplam != 30 || x.Toplam != 5 || x.OnayZ == 0 || x.OnayOzet == "" || o.k.Akis.Bekleme != nil {
 		t.Fatalf("bekleyip onay: %+v", x)
 	}
 	if o.eylemSayisi() != 1 || o.eylemler[0].tur != "al" || o.eylemler[0].motorMum != o.acilis || o.eylemler[0].beklenen != 1.004 {

@@ -81,8 +81,35 @@ func TestCanliMexc(t *testing.T) {
 					s, time.UnixMilli(d.Z).UTC().Format("15:04"), tur, d.Al+d.Sat, x[5], oran, d.A, x[1], d.K, x[4], d.Y, x[2], d.D, x[3], d.N, d.VV, d.VAl+d.VSat, d.OI, d.DE)
 			}
 		}
-		fmt.Printf("%s ÖZET: canlı dakika %d (hacim oranı ort %.4f, en az %.4f, en çok %.4f) · geri doldurulan %d (ort %.4f)\n\n", s,
+		fmt.Printf("%s ÖZET: canlı dakika %d (hacim oranı ort %.4f, en az %.4f, en çok %.4f) · geri doldurulan %d (ort %.4f)\n", s,
 			len(canliOran), ort(canliOran), enAz(canliOran), enCok(canliOran), len(geriOran), ort(geriOran))
+		// alım/satım yönü: canlı (websocket) dakikalar ↔ aynı dakikaların REST aggTrades'i
+		var canlilar []akisDakika
+		for _, d := range dk {
+			if !d.Eksik && !d.Geri && d.N > 0 {
+				canlilar = append(canlilar, d)
+			}
+		}
+		if len(canlilar) > 3 {
+			canlilar = canlilar[len(canlilar)-3:]
+		}
+		for _, d := range canlilar {
+			is, _, err := akisAggTrades(s, d.Z, d.Z+59_999, 10)
+			if err != nil {
+				fmt.Printf("%s aggTrades hatası: %v\n", s, err)
+				continue
+			}
+			var al, sat float64
+			for _, x := range is {
+				if x.Alim {
+					al += x.Adet
+				} else {
+					sat += x.Adet
+				}
+			}
+			fmt.Printf("%s %s yön: websocket alım %.6g satış %.6g | REST alım %.6g satış %.6g\n", s, time.UnixMilli(d.Z).UTC().Format("15:04"), d.Al, d.Sat, al, sat)
+		}
+		fmt.Println()
 	}
 	fmt.Println("=== açık pozisyon ↔ REST ===")
 	for _, s := range []string{"BTC_USDT", "ETH_USDT", "DOGE_USDT", "DOS_USDT"} {

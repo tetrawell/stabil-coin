@@ -3487,7 +3487,7 @@
       if (yl == null) continue;
       const golge = kd.s.startsWith('golge'), onay = kd.s === 'onay' || kd.s === 'golge-onay', red = kd.s === 'red' || kd.s === 'golge-red';
       const renk = onay ? RENK.yukari : red ? RENK.asagi : kd.s === 'bekle' ? RENK.vurgu : RENK.metin3;
-      const s = `${kd.i} ${r.karar === 'hesaplaniyor' ? '' : aoPuan(r.toplam)}`.trim();
+      const s = `${kd.i} ${r.karar === 'hesaplaniyor' ? '' : r.karar === 'bekleyip-onay' && r.onayToplam ? aoPuan(r.toplam) + '→' + aoPuan(r.onayToplam) : aoPuan(r.toplam)}`.trim();
       g.font = "700 10.5px 'JBMono', Consolas, monospace";
       const w = g.measureText(s).width + 10, xs = x(i) - w / 2, ys = yl + 30;
       g.fillStyle = golge ? rgba(RENK.panel, 0.92) : rgba(renk, 0.92);
@@ -3546,7 +3546,7 @@
     } else if (kd.s !== 'gri' && r.karar !== 'hesaplaniyor') sonucH = '<small>işlem sürüyor</small>';
     return `<li class="ao-kayit ${kd.s}" ${tiklanir ? `data-ao-mum="${r.motorMum}"` : ''} title="${esc((r.ozet || '') + (r.not ? ' · ' + r.not : ''))}">
       <time>${saatYaz(r.z)}</time><i>${kd.i}</i><span class="ao-k-ad">${esc(kd.ad)}${r.golge === 'kenarda' ? ' (kenarda)' : ''}</span>
-      <span class="ao-k-puan">${r.karar === 'hesaplaniyor' ? '' : aoPuan(r.toplam)}</span><span class="ao-k-sonuc">${sonucH}</span></li>`;
+      <span class="ao-k-puan">${r.karar === 'hesaplaniyor' ? '' : r.karar === 'bekleyip-onay' && r.onayToplam ? `${aoPuan(r.toplam)}→${aoPuan(r.onayToplam)}` : aoPuan(r.toplam)}</span><span class="ao-k-sonuc">${sonucH}</span></li>`;
   }
   let aoKartImza = '';
   function aoKartCiz() {

@@ -51,6 +51,7 @@ type onayKaydi struct {
 	SonToplam  float64     `json:"sonToplam,omitempty"`
 	OnayZ      int64       `json:"onayZ,omitempty"` // bekleyip onaylandıysa
 	OnayFiyat  float64     `json:"onayFiyat,omitempty"`
+	OnayToplam float64     `json:"onayToplam,omitempty"`
 	OnayOzet   string      `json:"onayOzet,omitempty"`
 	Masraf     float64     `json:"masraf"`               // simülatörün her yön için masrafı (%)
 	Cikis      float64     `json:"cikis,omitempty"`      // motorun satış fiyatı
@@ -352,7 +353,7 @@ func akisBeklemeTuru() {
 			continue
 		}
 		if x != nil {
-			x.Karar, x.OnayZ, x.OnayFiyat, x.OnayOzet = "bekleyip-onay", simdiF().UnixMilli(), h.sonuc.Fiyat, h.sonuc.Ozet
+			x.Karar, x.OnayZ, x.OnayFiyat, x.OnayToplam, x.OnayOzet = "bekleyip-onay", simdiF().UnixMilli(), h.sonuc.Fiyat, h.sonuc.Toplam, h.sonuc.Ozet
 		}
 		k.Akis.Bekleme = nil
 		olayEkle(k, "bilgi", "Akış onayı geldi (bekledikten sonra), alınıyor. "+h.sonuc.Ozet)
