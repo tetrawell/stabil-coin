@@ -1,0 +1,1199 @@
+{
+"spot": [
+{
+"b": "Ci9zcG90QHB1YmxpYy5hZ2dyZS5kZWFscy52My5hcGkucGJAMTAwbXNAQlRDVVNEVBoHQlRDVVNEVDDUtqnBlzTSE8EBCkoKCDgwMzE5LjAyEgowLjAwMDI1MzMyGAIgwbapwZc0Kik3NDMzNzgxNzU2MDEzOTc3NjJYMF83NDMzNzgxNzU2MDEzOTc3NjNYMApKCgg4MDMxOS4wMhIKMC4wMDA1NTk4MRgCIMK2qcGXNCopNzQzMzc4MTc1NjE4MTc0OTc2WDBfNzQzMzc4MTc1NjE4MTc0OTc3WDASJ3Nwb3RAcHVibGljLmFnZ3JlLmRlYWxzLnYzLmFwaS5wYkAxMDBtcw==",
+"bek": {
+"kanal": "spot@public.aggre.deals.v3.api.pb@100ms@BTCUSDT",
+"sembol": "BTCUSDT",
+"zaman": 1793017404244,
+"islemler": [
+[
+1793017404225,
+80319.02,
+0.00025332,
+false
+],
+[
+1793017404226,
+80319.02,
+0.00055981,
+false
+]
+],
+"defter": null
+}
+},
+{
+"b": "CjRzcG90QHB1YmxpYy5hZ2dyZS5ib29rVGlja2VyLnYzLmFwaS5wYkAxMDBtc0BCVENVU0RUGgdCVENVU0RUMNS2qcGXNNoTPwoIODAzMTkuMDESCzE3LjY5MzExOTk5Ggg4MDMxOS4wMiIIMC4wMDEyMTYqCzg0NjIwNDg4NjU4MMa2qcGXNA==",
+"bek": {
+"kanal": "spot@public.aggre.bookTicker.v3.api.pb@100ms@BTCUSDT",
+"sembol": "BTCUSDT",
+"zaman": 1793017404244,
+"islemler": [],
+"defter": null
+}
+},
+{
+"b": "CjRzcG90QHB1YmxpYy5hZ2dyZS5ib29rVGlja2VyLnYzLmFwaS5wYkAxMDBtc0BCVENVU0RUGgdCVENVU0RUMLi3qcGXNNoTPwoIODAzMTkuMDESCzE3LjY5MzExOTk5Ggg4MDMxOS4wMiIIMC4wMDEyMTYqCzg0NjIwNDg4NzgxMPy2qcGXNA==",
+"bek": {
+"kanal": "spot@public.aggre.bookTicker.v3.api.pb@100ms@BTCUSDT",
+"sembol": "BTCUSDT",
+"zaman": 1793017404344,
+"islemler": [],
+"defter": null
+}
+},
+{
+"b": "CixzcG90QHB1YmxpYy5saW1pdC5kZXB0aC52My5hcGkucGJAQlRDVVNEVEAyMBoHQlRDVVNEVDChuKnBlzT6EvgHChYKCDgwMzE5LjAyEgowLjAwMTIxNjAwChYKCDgwMzI2LjkyEgowLjAwMDg3MDAwChYKCDgwMzM1LjA4EgowLjEyMDAwMDAwChYKCDgwMzM1LjUxEgowLjEyMjAwMTIxChYKCDgwMzM1LjUyEgowLjEyMjAwMTIxChYKCDgwMzM5LjgyEgowLjA0ODgwMDQ5ChYKCDgwMzQwLjkyEgowLjA0ODgwMDQ5ChYKCDgwMzQxLjcwEgowLjA0ODgwMDQ5ChYKCDgwMzQyLjQwEgowLjMxODkyMTc4ChYKCDgwMzQyLjc1EgowLjA0ODgwMDQ5ChYKCDgwMzQzLjQwEgowLjA0ODgwMDQ5ChYKCDgwMzQ0LjgxEgowLjMxODkyMTc4ChYKCDgwMzQ2Ljk5EgowLjMxODkyMTc4ChYKCDgwMzQ5LjI0EgowLjAwMTIyMzI5ChYKCDgwMzQ5LjQwEgowLjMxODkyMTc4ChYKCDgwMzUwLjAwEgowLjAwMDE3NDIzChYKCDgwMzUxLjgxEgowLjMxODkyMTc4ChYKCDgwMzUzLjA2EgowLjAxMTIwMDAwChYKCDgwMzUzLjA3EgowLjAxMTIwMDAwChYKCDgwMzUzLjA4EgowLjAxMTIwMDAwEhcKCDgwMzE5LjAxEgsxOS4zMTI0MTI5ORIWCgg4MDMxOS4wMBIKMC4wMDExMzE2MxIWCgg4MDMxOC45ORIKMC4wODk2NDgwMBIWCgg4MDMxOC45OBIKMC4wMDEzMTc3MhIWCgg4MDMxOC45NxIKMC4xNjc4NjkwMBIWCgg4MDMxOC45MRIKMC4xOTUzOTIwMBIWCgg4MDMxOC42MhIKMC4wNDg4MDA0ORIWCgg4MDMxOC4yMBIKMC4zMDY3NDk4ORIWCgg4MDMxNy44ORIKMC4wNDg4MDA0ORIWCgg4MDMxNy44MBIKMC4wMDE5OTIwMBIWCgg4MDMxNy4zNBIKMC4wMDAwNjYwMhIWCgg4MDMxNy4wMhIKMC4yNjkzMTIwMBIWCgg4MDMxNi45MhIKMC4wMDAxMTIwMBIWCgg4MDMxNi44NRIKMC4wNDg4MDA0ORIWCgg4MDMxNi4zOBIKMC4zMDY3NDk4ORIWCgg4MDMxNS44MhIKMC4wNDg4MDA0ORIWCgg4MDMxNS4xMRIKMC4wNDg4MDA0ORIWCgg4MDMxNC4xORIKMC4zMDY3NDk4ORIWCgg4MDMxNC4wNBIKMC4yNDE3MDQwMBIWCgg4MDMxMy43NxIKMC4yNDkzODQwMBohc3BvdEBwdWJsaWMubGltaXQuZGVwdGgudjMuYXBpLnBiIgs4NDYyMDQ4OTU3OCibuKnBlzQ=",
+"bek": {
+"kanal": "spot@public.limit.depth.v3.api.pb@BTCUSDT@20",
+"sembol": "BTCUSDT",
+"zaman": 1793017404449,
+"islemler": [],
+"defter": {
+"satis": [
+[
+80319.02,
+0.001216
+],
+[
+80326.92,
+0.00087
+],
+[
+80335.08,
+0.12
+],
+[
+80335.51,
+0.12200121
+],
+[
+80335.52,
+0.12200121
+],
+[
+80339.82,
+0.04880049
+],
+[
+80340.92,
+0.04880049
+],
+[
+80341.7,
+0.04880049
+],
+[
+80342.4,
+0.31892178
+],
+[
+80342.75,
+0.04880049
+],
+[
+80343.4,
+0.04880049
+],
+[
+80344.81,
+0.31892178
+],
+[
+80346.99,
+0.31892178
+],
+[
+80349.24,
+0.00122329
+],
+[
+80349.4,
+0.31892178
+],
+[
+80350.0,
+0.00017423
+],
+[
+80351.81,
+0.31892178
+],
+[
+80353.06,
+0.0112
+],
+[
+80353.07,
+0.0112
+],
+[
+80353.08,
+0.0112
+]
+],
+"alis": [
+[
+80319.01,
+19.31241299
+],
+[
+80319.0,
+0.00113163
+],
+[
+80318.99,
+0.089648
+],
+[
+80318.98,
+0.00131772
+],
+[
+80318.97,
+0.167869
+],
+[
+80318.91,
+0.195392
+],
+[
+80318.62,
+0.04880049
+],
+[
+80318.2,
+0.30674989
+],
+[
+80317.89,
+0.04880049
+],
+[
+80317.8,
+0.001992
+],
+[
+80317.34,
+6.602e-05
+],
+[
+80317.02,
+0.269312
+],
+[
+80316.92,
+0.000112
+],
+[
+80316.85,
+0.04880049
+],
+[
+80316.38,
+0.30674989
+],
+[
+80315.82,
+0.04880049
+],
+[
+80315.11,
+0.04880049
+],
+[
+80314.19,
+0.30674989
+],
+[
+80314.04,
+0.241704
+],
+[
+80313.77,
+0.249384
+]
+]
+}
+}
+},
+{
+"b": "Ci9zcG90QHB1YmxpYy5hZ2dyZS5kZWFscy52My5hcGkucGJAMTAwbXNAQlRDVVNEVBoHQlRDVVNEVDDIuqnBlzTSE40CCkoKCDgwMzE5LjAxEgowLjA0NjQ3NzkxGAEgtrqpwZc0Kik3NDMzNzgxNzc3MTExMzI2NzRYMF83NDMzNzgxNzc3MTExMzI2NzVYMApKCgg4MDMxOS4wMRIKMC4wNDcxMzIzMhgBILa6qcGXNCopNzQzMzc4MTc3NzExMTMyNjc2WDBfNzQzMzc4MTc3NzExMTMyNjc3WDAKSgoIODAzMTkuMDESCjAuMDA4NTIyMjUYASC3uqnBlzQqKTc0MzM3ODE3NzcxMTEzMjY3OFgwXzc0MzM3ODE3NzcxMTEzMjY3OVgwEidzcG90QHB1YmxpYy5hZ2dyZS5kZWFscy52My5hcGkucGJAMTAwbXM=",
+"bek": {
+"kanal": "spot@public.aggre.deals.v3.api.pb@100ms@BTCUSDT",
+"sembol": "BTCUSDT",
+"zaman": 1793017404744,
+"islemler": [
+[
+1793017404726,
+80319.01,
+0.04647791,
+true
+],
+[
+1793017404726,
+80319.01,
+0.04713232,
+true
+],
+[
+1793017404727,
+80319.01,
+0.00852225,
+true
+]
+],
+"defter": null
+}
+},
+{
+"b": "CixzcG90QHB1YmxpYy5saW1pdC5kZXB0aC52My5hcGkucGJAQlRDVVNEVEAyMBoHQlRDVVNEVDCTvKnBlzT6EvgHChYKCDgwMzE5LjAyEgowLjAwMTIxNjAwChYKCDgwMzI2LjkyEgowLjAwMDg3MDAwChYKCDgwMzM0LjQ5EgowLjEyMjAwMTIxChYKCDgwMzM0LjUwEgowLjEyMjAwMTIxChYKCDgwMzM5LjEwEgowLjA0ODgwMDQ5ChYKCDgwMzM5LjgyEgowLjA0ODgwMDQ5ChYKCDgwMzQwLjc4EgowLjMxODkyMTc4ChYKCDgwMzQwLjkyEgowLjA0ODgwMDQ5ChYKCDgwMzQxLjcwEgowLjA0ODgwMDQ5ChYKCDgwMzQyLjQwEgowLjMxODkyMTc4ChYKCDgwMzQyLjc1EgowLjA0ODgwMDQ5ChYKCDgwMzQ0LjgxEgowLjMxODkyMTc4ChYKCDgwMzQ2Ljk5EgowLjMxODkyMTc4ChYKCDgwMzQ3LjM2EgoyLjA4NzEzNzAwChYKCDgwMzQ3LjM3EgowLjAwMTE3MDk4ChYKCDgwMzQ3LjY0EgowLjAwMTIwMjMzChYKCDgwMzQ4LjcwEgowLjAxODIwMDAwChYKCDgwMzQ4LjcyEgowLjAwMTIyMjg4ChYKCDgwMzQ5LjQwEgowLjMxODkyMTc4ChYKCDgwMzUwLjAwEgowLjAwMDE3NDIzEhcKCDgwMzE5LjAxEgsxOS4zMTI0MTI5ORIWCgg4MDMxOS4wMBIKMC44MDkyODkwMBIWCgg4MDMxOC45ORIKMC4wODk2NDgwMBIWCgg4MDMxOC45OBIKMC4wMDEzMTc3MhIWCgg4MDMxOC45NxIKMC4zNjY4NzMwMBIWCgg4MDMxOC45MRIKMC4xOTUzOTIwMBIWCgg4MDMxOC42NBIKMC4wMDE5OTIwMBIWCgg4MDMxOC42MhIKMC4wNDg4MDA0ORIWCgg4MDMxOC4yMBIKMC4zMDY3NDk4ORIWCgg4MDMxNy44ORIKMC4wNDg4MDA0ORIWCgg4MDMxNy42NxIKMC4wMTQzMjAwMBIWCgg4MDMxNy42NBIKMC4wMDAwNjg2MBIWCgg4MDMxNy4zNBIKMC4wMDAwNjYwMhIWCgg4MDMxNi44NRIKMC4wNDg4MDA0ORIWCgg4MDMxNi4zOBIKMC4zMDY3NDk4ORIWCgg4MDMxNS44MhIKMC4wNDg4MDA0ORIWCgg4MDMxNS4xMRIKMC4wNDg4MDA0ORIWCgg4MDMxNC4xORIKMC4zMDY3NDk4ORIWCgg4MDMxNC4wNBIKMC4yNDE3MDQwMBIWCgg4MDMxMy43NxIKMC4yNDkzODQwMBohc3BvdEBwdWJsaWMubGltaXQuZGVwdGgudjMuYXBpLnBiIgs4NDYyMDQ5MDQ3NyiMvKnBlzQ=",
+"bek": {
+"kanal": "spot@public.limit.depth.v3.api.pb@BTCUSDT@20",
+"sembol": "BTCUSDT",
+"zaman": 1793017404947,
+"islemler": [],
+"defter": {
+"satis": [
+[
+80319.02,
+0.001216
+],
+[
+80326.92,
+0.00087
+],
+[
+80334.49,
+0.12200121
+],
+[
+80334.5,
+0.12200121
+],
+[
+80339.1,
+0.04880049
+],
+[
+80339.82,
+0.04880049
+],
+[
+80340.78,
+0.31892178
+],
+[
+80340.92,
+0.04880049
+],
+[
+80341.7,
+0.04880049
+],
+[
+80342.4,
+0.31892178
+],
+[
+80342.75,
+0.04880049
+],
+[
+80344.81,
+0.31892178
+],
+[
+80346.99,
+0.31892178
+],
+[
+80347.36,
+2.087137
+],
+[
+80347.37,
+0.00117098
+],
+[
+80347.64,
+0.00120233
+],
+[
+80348.7,
+0.0182
+],
+[
+80348.72,
+0.00122288
+],
+[
+80349.4,
+0.31892178
+],
+[
+80350.0,
+0.00017423
+]
+],
+"alis": [
+[
+80319.01,
+19.31241299
+],
+[
+80319.0,
+0.809289
+],
+[
+80318.99,
+0.089648
+],
+[
+80318.98,
+0.00131772
+],
+[
+80318.97,
+0.366873
+],
+[
+80318.91,
+0.195392
+],
+[
+80318.64,
+0.001992
+],
+[
+80318.62,
+0.04880049
+],
+[
+80318.2,
+0.30674989
+],
+[
+80317.89,
+0.04880049
+],
+[
+80317.67,
+0.01432
+],
+[
+80317.64,
+6.86e-05
+],
+[
+80317.34,
+6.602e-05
+],
+[
+80316.85,
+0.04880049
+],
+[
+80316.38,
+0.30674989
+],
+[
+80315.82,
+0.04880049
+],
+[
+80315.11,
+0.04880049
+],
+[
+80314.19,
+0.30674989
+],
+[
+80314.04,
+0.241704
+],
+[
+80313.77,
+0.249384
+]
+]
+}
+}
+},
+{
+"b": "Ci9zcG90QHB1YmxpYy5hZ2dyZS5kZWFscy52My5hcGkucGJAMTAwbXNAQlRDVVNEVBoHQlRDVVNEVDC8vqnBlzTSE40CCkoKCDgwMzE5LjAyEgowLjAwMDA2OTM3GAIgqr6pwZc0Kik3NDMzNzgxNzk4MDgyODQ2NzJYMF83NDMzNzgxNzk4MDgyODQ2NzNYMApKCgg4MDMxOS4wMhIKMC4wMDA1ODI1OBgBIKq+qcGXNCopNzQzMzc4MTc5ODA4Mjg0Njc0WDBfNzQzMzc4MTc5ODA4Mjg0Njc1WDAKSgoIODAzMTkuMDISCjAuMDAwNTkwMzUYASCrvqnBlzQqKTc0MzM3ODE3OTgwODI4NDY3NlgwXzc0MzM3ODE3OTgwODI4NDY3N1gwEidzcG90QHB1YmxpYy5hZ2dyZS5kZWFscy52My5hcGkucGJAMTAwbXM=",
+"bek": {
+"kanal": "spot@public.aggre.deals.v3.api.pb@100ms@BTCUSDT",
+"sembol": "BTCUSDT",
+"zaman": 1793017405244,
+"islemler": [
+[
+1793017405226,
+80319.02,
+6.937e-05,
+false
+],
+[
+1793017405226,
+80319.02,
+0.00058258,
+true
+],
+[
+1793017405227,
+80319.02,
+0.00059035,
+true
+]
+],
+"defter": null
+}
+},
+{
+"b": "Ci9zcG90QHB1YmxpYy5hZ2dyZS5kZWFscy52My5hcGkucGJAMTAwbXNAQlRDVVNEVBoHQlRDVVNEVDCgv6nBlzTSE3oKTwoIODAzMTkuMDISCDAuMDAxMjE2GAEgjr+pwZc0Kik3NDMzNzgxODAxODU3MzUxNjlYMV83NDMzNzgxNjM1MzAxMzM1MDRYMTC28ZieuwISJ3Nwb3RAcHVibGljLmFnZ3JlLmRlYWxzLnYzLmFwaS5wYkAxMDBtcw==",
+"bek": {
+"kanal": "spot@public.aggre.deals.v3.api.pb@100ms@BTCUSDT",
+"sembol": "BTCUSDT",
+"zaman": 1793017405344,
+"islemler": [
+[
+1793017405326,
+80319.02,
+0.001216,
+true
+]
+],
+"defter": null
+}
+},
+{
+"b": "CixzcG90QHB1YmxpYy5saW1pdC5kZXB0aC52My5hcGkucGJAQlRDVVNEVEAyMBoHQlRDVVNEVDCHwKnBlzT6EvgHChYKCDgwMzI2LjkyEgowLjAwMDg3MDAwChYKCDgwMzM3Ljc2EgowLjEyMjAwMTIxChYKCDgwMzM3Ljg0EgowLjEyMjAwMTIxChYKCDgwMzM4LjAwEgowLjEyMjAwMTIxChYKCDgwMzQwLjc3EgowLjE4MDAwMDAwChYKCDgwMzQyLjY3EgowLjA0ODgwMDQ5ChYKCDgwMzQzLjMyEgowLjA0ODgwMDQ5ChYKCDgwMzQzLjk3EgowLjA0ODgwMDQ5ChYKCDgwMzQ0LjYyEgowLjA0ODgwMDQ5ChYKCDgwMzQ1LjI3EgowLjA0ODgwMDQ5ChYKCDgwMzQ2Ljk5EgowLjMxODkyMTc4ChYKCDgwMzQ5LjQwEgowLjMxODkyMTc4ChYKCDgwMzQ5LjY0EgowLjMxNjEyMTAwChYKCDgwMzQ5LjY1EgowLjAwMTE4NzI3ChYKCDgwMzUwLjAwEgowLjAwMDE3NDIzChYKCDgwMzUwLjIzEgowLjAxNDc0MjAwChYKCDgwMzUxLjE2EgowLjAwMTI5Mzc2ChYKCDgwMzUxLjYzEgowLjAwMTIzNjA2ChYKCDgwMzUxLjgxEgowLjMxODkyMTc4ChYKCDgwMzU0LjIyEgowLjMxODkyMTc4EhcKCDgwMzI2LjkxEgsxNi43ODg3NzQ3MhIWCgg4MDMyNi41NhIKMi4zOTcyMzkwMBIWCgg4MDMyNi41NRIKMS4wMTM5NjEwMBIWCgg4MDMyNi4zMxIKMC40MDUxOTcwMBIWCgg4MDMyNi4zMhIKMC4wMDExNTQ1NxIWCgg4MDMyNC41MBIKMC4zMDY3NDk4ORIWCgg4MDMyMy4zMBIKMC4wNDg4MDA0ORIWCgg4MDMyMi42NRIKMC4wNDg4MDA0ORIWCgg4MDMyMi4wORIKMC4zMDY3NDk4ORIWCgg4MDMyMC4yORIKMC4wMDAwNzA3ORIWCgg4MDMxOS43NRIKMC4wMDE1NzYwMBIWCgg4MDMxOS4yNBIKMC4wMDAxMTIwMBIWCgg4MDMxOS4yMxIKMC4wMDAwNzA5NxIWCgg4MDMxOS4wMRIKMC4xMjIwMDEyMRIWCgg4MDMxOC45NxIKMC4yNTEwNTYwMBIWCgg4MDMxOC43NhIKMC4wMTYwMDAwMBIWCgg4MDMxOC42MhIKMC4wNDg4MDA0ORIWCgg4MDMxOC41ORIKMC4yNjkzNjgwMBIWCgg4MDMxOC41NhIKMC4yNjkzMTIwMBIWCgg4MDMxOC40OBIKMC4wOTk4OTYwMBohc3BvdEBwdWJsaWMubGltaXQuZGVwdGgudjMuYXBpLnBiIgs4NDYyMDQ5MTcyOSiAwKnBlzQ=",
+"bek": {
+"kanal": "spot@public.limit.depth.v3.api.pb@BTCUSDT@20",
+"sembol": "BTCUSDT",
+"zaman": 1793017405447,
+"islemler": [],
+"defter": {
+"satis": [
+[
+80326.92,
+0.00087
+],
+[
+80337.76,
+0.12200121
+],
+[
+80337.84,
+0.12200121
+],
+[
+80338.0,
+0.12200121
+],
+[
+80340.77,
+0.18
+],
+[
+80342.67,
+0.04880049
+],
+[
+80343.32,
+0.04880049
+],
+[
+80343.97,
+0.04880049
+],
+[
+80344.62,
+0.04880049
+],
+[
+80345.27,
+0.04880049
+],
+[
+80346.99,
+0.31892178
+],
+[
+80349.4,
+0.31892178
+],
+[
+80349.64,
+0.316121
+],
+[
+80349.65,
+0.00118727
+],
+[
+80350.0,
+0.00017423
+],
+[
+80350.23,
+0.014742
+],
+[
+80351.16,
+0.00129376
+],
+[
+80351.63,
+0.00123606
+],
+[
+80351.81,
+0.31892178
+],
+[
+80354.22,
+0.31892178
+]
+],
+"alis": [
+[
+80326.91,
+16.78877472
+],
+[
+80326.56,
+2.397239
+],
+[
+80326.55,
+1.013961
+],
+[
+80326.33,
+0.405197
+],
+[
+80326.32,
+0.00115457
+],
+[
+80324.5,
+0.30674989
+],
+[
+80323.3,
+0.04880049
+],
+[
+80322.65,
+0.04880049
+],
+[
+80322.09,
+0.30674989
+],
+[
+80320.29,
+7.079e-05
+],
+[
+80319.75,
+0.001576
+],
+[
+80319.24,
+0.000112
+],
+[
+80319.23,
+7.097e-05
+],
+[
+80319.01,
+0.12200121
+],
+[
+80318.97,
+0.251056
+],
+[
+80318.76,
+0.016
+],
+[
+80318.62,
+0.04880049
+],
+[
+80318.59,
+0.269368
+],
+[
+80318.56,
+0.269312
+],
+[
+80318.48,
+0.099896
+]
+]
+}
+}
+},
+{
+"b": "Ci9zcG90QHB1YmxpYy5hZ2dyZS5kZWFscy52My5hcGkucGJAMTAwbXNAQlRDVVNEVBoHQlRDVVNEVDCwwqnBlzTSE6UDCkoKCDgwMzI2LjkxEgowLjAwODE2NjU5GAEgpMKpwZc0Kik3NDMzNzgxODE5MjY0MDgxOTJYMF83NDMzNzgxODE5MjY0MDgxOTNYMApKCgg4MDMyNi45MRIKMC4wMDczNTE0MxgCIKTCqcGXNCopNzQzMzc4MTgxOTI2NDA4MTk0WDBfNzQzMzc4MTgxOTI2NDA4MTk1WDAKSgoIODAzMjYuOTESCjAuMDAyMDUyODUYASCkwqnBlzQqKTc0MzM3ODE4MTkyNjQwODE5NlgwXzc0MzM3ODE4MTkyNjQwODE5N1gwCkoKCDgwMzI2LjkyEgowLjAxMDQ3NjIzGAIgpMKpwZc0Kik3NDMzNzgxODE5MjY0MDgxOThYMF83NDMzNzgxODE5MjY0MDgxOTlYMApKCgg4MDMyNi45MRIKMC4wMTI5MjE3MxgCIKTCqcGXNCopNzQzMzc4MTgxOTI2NDA4MjAwWDBfNzQzMzc4MTgxOTI2NDA4MjAxWDASJ3Nwb3RAcHVibGljLmFnZ3JlLmRlYWxzLnYzLmFwaS5wYkAxMDBtcw==",
+"bek": {
+"kanal": "spot@public.aggre.deals.v3.api.pb@100ms@BTCUSDT",
+"sembol": "BTCUSDT",
+"zaman": 1793017405744,
+"islemler": [
+[
+1793017405732,
+80326.91,
+0.00816659,
+true
+],
+[
+1793017405732,
+80326.91,
+0.00735143,
+false
+],
+[
+1793017405732,
+80326.91,
+0.00205285,
+true
+],
+[
+1793017405732,
+80326.92,
+0.01047623,
+false
+],
+[
+1793017405732,
+80326.91,
+0.01292173,
+false
+]
+],
+"defter": null
+}
+},
+{
+"b": "Ci9zcG90QHB1YmxpYy5hZ2dyZS5kZWFscy52My5hcGkucGJAMTAwbXNAQlRDVVNEVBoHQlRDVVNEVDCIx6nBlzTSE3UKSgoIODAzMjYuOTISCjAuMDAwMTgwMDEYAiDRxqnBlzQqKTc0MzM3ODE4NDI2NjgyOTgyNFgwXzc0MzM3ODE4NDI2NjgyOTgyNVgwEidzcG90QHB1YmxpYy5hZ2dyZS5kZWFscy52My5hcGkucGJAMTAwbXM=",
+"bek": {
+"kanal": "spot@public.aggre.deals.v3.api.pb@100ms@BTCUSDT",
+"sembol": "BTCUSDT",
+"zaman": 1793017406344,
+"islemler": [
+[
+1793017406289,
+80326.92,
+0.00018001,
+false
+]
+],
+"defter": null
+}
+},
+{
+"b": "Ci9zcG90QHB1YmxpYy5hZ2dyZS5kZWFscy52My5hcGkucGJAMTAwbXNAQlRDVVNEVBoHQlRDVVNEVDCYyqnBlzTSE/EDCkoKCDgwMzQwLjcyEgowLjAwOTI1NDk0GAIgh8qpwZc0Kik3NDMzNzgxODYxMDM5MzQ5NzZYMF83NDMzNzgxODYxMDM5MzQ5NzdYMApKCgg4MDM0MC43MhIKMC4wMDg0MDUyOBgCIIfKqcGXNCopNzQzMzc4MTg2MTAzOTM0OTc4WDBfNzQzMzc4MTg2MTAzOTM0OTc5WDAKSgoIODAzNDAuNzISCjAuMDA0MjYzMjEYASCHyqnBlzQqKTc0MzM3ODE4NjEwMzkzNDk4MFgwXzc0MzM3ODE4NjEwMzkzNDk4MVgwCkoKCDgwMzQwLjcyEgowLjAwMjY3MDExGAEgh8qpwZc0Kik3NDMzNzgxODYxMDM5MzQ5ODJYMF83NDMzNzgxODYxMDM5MzQ5ODNYMApKCgg4MDM0MC43MhIKMC4wMDg5MzYzMhgCIIjKqcGXNCopNzQzMzc4MTg2MTAzOTM0OTg0WDBfNzQzMzc4MTg2MTAzOTM0OTg1WDAKSgoIODAzNDAuNzMSCjAuMDA3MjM3MDEYAiCIyqnBlzQqKTc0MzM3ODE4NjEwMzkzNDk4NlgwXzc0MzM3ODE4NjEwMzkzNDk4N1gwEidzcG90QHB1YmxpYy5hZ2dyZS5kZWFscy52My5hcGkucGJAMTAwbXM=",
+"bek": {
+"kanal": "spot@public.aggre.deals.v3.api.pb@100ms@BTCUSDT",
+"sembol": "BTCUSDT",
+"zaman": 1793017406744,
+"islemler": [
+[
+1793017406727,
+80340.72,
+0.00925494,
+false
+],
+[
+1793017406727,
+80340.72,
+0.00840528,
+false
+],
+[
+1793017406727,
+80340.72,
+0.00426321,
+true
+],
+[
+1793017406727,
+80340.72,
+0.00267011,
+true
+],
+[
+1793017406728,
+80340.72,
+0.00893632,
+false
+],
+[
+1793017406728,
+80340.73,
+0.00723701,
+false
+]
+],
+"defter": null
+}
+},
+{
+"b": "Ci9zcG90QHB1YmxpYy5hZ2dyZS5kZWFscy52My5hcGkucGJAMTAwbXNAQlRDVVNEVBoHQlRDVVNEVDCA0qnBlzTSE40CCkoKCDgwMzQwLjcyEgowLjAwMTIwODgyGAIg7tGpwZc0Kik3NDMzNzgxOTAyODU2NTYwNjRYMF83NDMzNzgxOTAyODU2NTYwNjVYMApKCgg4MDM0MC43MhIKMC4wMDE2MzUyMRgBIO7RqcGXNCopNzQzMzc4MTkwMjg1NjU2MDY2WDBfNzQzMzc4MTkwMjg1NjU2MDY3WDAKSgoIODAzNDAuNzISCjAuMDAxMzExMTUYASDw0anBlzQqKTc0MzM3ODE5MDI5ODIzODk3NlgwXzc0MzM3ODE5MDI5ODIzODk3N1gwEidzcG90QHB1YmxpYy5hZ2dyZS5kZWFscy52My5hcGkucGJAMTAwbXM=",
+"bek": {
+"kanal": "spot@public.aggre.deals.v3.api.pb@100ms@BTCUSDT",
+"sembol": "BTCUSDT",
+"zaman": 1793017407744,
+"islemler": [
+[
+1793017407726,
+80340.72,
+0.00120882,
+false
+],
+[
+1793017407726,
+80340.72,
+0.00163521,
+true
+],
+[
+1793017407728,
+80340.72,
+0.00131115,
+true
+]
+],
+"defter": null
+}
+},
+{
+"b": "Ci9zcG90QHB1YmxpYy5hZ2dyZS5kZWFscy52My5hcGkucGJAMTAwbXNARE9TVVNEVBoHRE9TVVNEVDDU5qnBlzTSE8ACCkMKBzAuMjU5OTESBDkuOTkYASCt5qnBlzQqKTc0MzM3ODIwMTI4MzEyMTE1MlgwXzc0MzM3ODIwMTI4MzEyMTE1M1gwCkQKBzAuMjU5ODQSBTI1Ljg0GAEgreapwZc0Kik3NDMzNzgyMDEyODczMTU0NTZYMF83NDMzNzgyMDEyODczMTU0NTdYMApECgcwLjI1OTgxEgUxMy43NRgCIK7mqcGXNCopNzQzMzc4MjAxMjk5ODk4MzY4WDBfNzQzMzc4MjAxMjk5ODk4MzY5WDAKRAoHMC4yNTk4MhIFMTUuMDkYAiCv5qnBlzQqKTc0MzM3ODIwMTI5OTg5ODM3MFgwXzc0MzM3ODIwMTI5OTg5ODM3MVgwEidzcG90QHB1YmxpYy5hZ2dyZS5kZWFscy52My5hcGkucGJAMTAwbXM=",
+"bek": {
+"kanal": "spot@public.aggre.deals.v3.api.pb@100ms@DOSUSDT",
+"sembol": "DOSUSDT",
+"zaman": 1793017410388,
+"islemler": [
+[
+1793017410349,
+0.25991,
+9.99,
+true
+],
+[
+1793017410349,
+0.25984,
+25.84,
+true
+],
+[
+1793017410350,
+0.25981,
+13.75,
+false
+],
+[
+1793017410351,
+0.25982,
+15.09,
+false
+]
+],
+"defter": null
+}
+},
+{
+"b": "Ci9zcG90QHB1YmxpYy5hZ2dyZS5kZWFscy52My5hcGkucGJAMTAwbXNARE9TVVNEVBoHRE9TVVNEVDCk9qnBlzTSE8ACCkQKBzAuMjU5NzgSBTI0LjgyGAIg/fWpwZc0Kik3NDMzNzgyMDk2ODQzMTIwNjRYMF83NDMzNzgyMDk2ODQzMTIwNjVYMApECgcwLjI1OTgzEgUxMy41MhgCIP/1qcGXNCopNzQzMzc4MjA5Njg0MzEyMDY2WDBfNzQzMzc4MjA5Njg0MzEyMDY3WDAKRAoHMC4yNTk3NBIFMTkuMTgYAiD/9anBlzQqKTc0MzM3ODIwOTY4NDMxMjA2OFgwXzc0MzM3ODIwOTY4NDMxMjA2OVgwCkMKBzAuMjU5ODUSBDcuMDUYASD/9anBlzQqKTc0MzM3ODIwOTY4NDMxMjA3MFgwXzc0MzM3ODIwOTY4NDMxMjA3MVgwEidzcG90QHB1YmxpYy5hZ2dyZS5kZWFscy52My5hcGkucGJAMTAwbXM=",
+"bek": {
+"kanal": "spot@public.aggre.deals.v3.api.pb@100ms@DOSUSDT",
+"sembol": "DOSUSDT",
+"zaman": 1793017412388,
+"islemler": [
+[
+1793017412349,
+0.25978,
+24.82,
+false
+],
+[
+1793017412351,
+0.25983,
+13.52,
+false
+],
+[
+1793017412351,
+0.25974,
+19.18,
+false
+],
+[
+1793017412351,
+0.25985,
+7.05,
+true
+]
+],
+"defter": null
+}
+},
+{
+"b": "Ci9zcG90QHB1YmxpYy5hZ2dyZS5kZWFscy52My5hcGkucGJAMTAwbXNARE9TVVNEVBoHRE9TVVNEVDDvp63BlzTSE28KRAoHMC4yNTk3NRIFNjkuNjgYAiDKp63BlzQqKTc0MzM3ODQ0MjQ2Mzk4OTc2MFgwXzc0MzM3ODQ0MjQ2Mzk4OTc2MVgwEidzcG90QHB1YmxpYy5hZ2dyZS5kZWFscy52My5hcGkucGJAMTAwbXM=",
+"bek": {
+"kanal": "spot@public.aggre.deals.v3.api.pb@100ms@DOSUSDT",
+"sembol": "DOSUSDT",
+"zaman": 1793017467887,
+"islemler": [
+[
+1793017467850,
+0.25975,
+69.68,
+false
+]
+],
+"defter": null
+}
+},
+{
+"b": "Ci9zcG90QHB1YmxpYy5hZ2dyZS5kZWFscy52My5hcGkucGJAMTAwbXNARE9TVVNEVBoHRE9TVVNEVDDkq63BlzTSE28KRAoHMC4yNTk3MhIFNjkuMDIYASC+q63BlzQqKTc0MzM3ODQ0NDU2NTMzNjA2NFgwXzc0MzM3ODQ0NDU2NTMzNjA2NVgwEidzcG90QHB1YmxpYy5hZ2dyZS5kZWFscy52My5hcGkucGJAMTAwbXM=",
+"bek": {
+"kanal": "spot@public.aggre.deals.v3.api.pb@100ms@DOSUSDT",
+"sembol": "DOSUSDT",
+"zaman": 1793017468388,
+"islemler": [
+[
+1793017468350,
+0.25972,
+69.02,
+true
+]
+],
+"defter": null
+}
+},
+{
+"b": "Ci9zcG90QHB1YmxpYy5hZ2dyZS5kZWFscy52My5hcGkucGJAMTAwbXNARE9TVVNEVBoHRE9TVVNEVDDg1q3BlzTSE8UCCkUKBzAuMjU5NjgSBjUwNS4xOBgBILnWrcGXNCopNzQzMzc4NDY3NjE3MjMwODQ4WDBfNzQzMzc4NDY3NjE3MjMwODQ5WDAKRQoHMC4yNTk2ORIGNTkwLjE4GAEgudatwZc0Kik3NDMzNzg0Njc2MzQwMDgwNjRYMF83NDMzNzg0Njc2MzQwMDgwNjVYMApFCgcwLjI1OTczEgY4MDcuNDEYAiC51q3BlzQqKTc0MzM3ODQ2NzYzNDAwODA2NlgwXzc0MzM3ODQ2NzYzNDAwODA2N1gwCkUKBzAuMjU5NzQSBjE3NC42MhgCILrWrcGXNCopNzQzMzc4NDY3NjM0MDA4MDY4WDBfNzQzMzc4NDY3NjM0MDA4MDY5WDASJ3Nwb3RAcHVibGljLmFnZ3JlLmRlYWxzLnYzLmFwaS5wYkAxMDBtcw==",
+"bek": {
+"kanal": "spot@public.aggre.deals.v3.api.pb@100ms@DOSUSDT",
+"sembol": "DOSUSDT",
+"zaman": 1793017473888,
+"islemler": [
+[
+1793017473849,
+0.25968,
+505.18,
+true
+],
+[
+1793017473849,
+0.25969,
+590.18,
+true
+],
+[
+1793017473849,
+0.25973,
+807.41,
+false
+],
+[
+1793017473850,
+0.25974,
+174.62,
+false
+]
+],
+"defter": null
+}
+},
+{
+"b": "Ci9zcG90QHB1YmxpYy5hZ2dyZS5kZWFscy52My5hcGkucGJAMTAwbXNARE9TVVNEVBoHRE9TVVNEVDDMsK7BlzTSE/4BCkUKBzAuMjYwMzYSBjgxNi45MhgCIKSwrsGXNCopNzQzMzc4NTE1ODY0MzA5NzYwWDBfNzQzMzc4NTE1ODY0MzA5NzYxWDAKRQoHMC4yNjAzNhIGOTIxLjc0GAEgpbCuwZc0Kik3NDMzNzg1MTU4NjQzMDk3NjJYMF83NDMzNzg1MTU4NjQzMDk3NjNYMApFCgcwLjI2MDM2EgYxMjIuNTMYAiClsK7BlzQqKTc0MzM3ODUxNTg2NDMwOTc2NFgwXzc0MzM3ODUxNTg2NDMwOTc2NVgwEidzcG90QHB1YmxpYy5hZ2dyZS5kZWFscy52My5hcGkucGJAMTAwbXM=",
+"bek": {
+"kanal": "spot@public.aggre.deals.v3.api.pb@100ms@DOSUSDT",
+"sembol": "DOSUSDT",
+"zaman": 1793017485388,
+"islemler": [
+[
+1793017485348,
+0.26036,
+816.92,
+false
+],
+[
+1793017485349,
+0.26036,
+921.74,
+true
+],
+[
+1793017485349,
+0.26036,
+122.53,
+false
+]
+],
+"defter": null
+}
+}
+],
+"vadeli": [
+{
+"t": "{\"channel\":\"rs.sub.ticker\",\"data\":\"success\",\"ts\":1793017403985}",
+"bek": {
+"kanal": "rs.sub.ticker",
+"sembol": "",
+"islemler": [],
+"ticker": null
+}
+},
+{
+"t": "{\"channel\":\"rs.sub.deal\",\"data\":\"success\",\"ts\":1793017403985}",
+"bek": {
+"kanal": "rs.sub.deal",
+"sembol": "",
+"islemler": [],
+"ticker": null
+}
+},
+{
+"t": "{\"channel\":\"rs.sub.ticker\",\"data\":\"success\",\"ts\":1793017403985}",
+"bek": {
+"kanal": "rs.sub.ticker",
+"sembol": "",
+"islemler": [],
+"ticker": null
+}
+},
+{
+"t": "{\"channel\":\"rs.sub.deal\",\"data\":\"success\",\"ts\":1793017403985}",
+"bek": {
+"kanal": "rs.sub.deal",
+"sembol": "",
+"islemler": [],
+"ticker": null
+}
+},
+{
+"t": "{\"symbol\":\"BTC_USDT\",\"data\":[{\"p\":80299.9,\"v\":14,\"T\":1,\"O\":3,\"M\":1,\"t\":1793017404335,\"i\":\"16769689767\",\"cts\":\"1793017404335\"}],\"channel\":\"push.deal\",\"ts\":1793017404335}",
+"bek": {
+"kanal": "push.deal",
+"sembol": "BTC_USDT",
+"islemler": [
+[
+1793017404335,
+80299.9,
+14,
+true
+]
+],
+"ticker": null
+}
+},
+{
+"t": "{\"symbol\":\"DOS_USDT\",\"data\":{\"symbol\":\"DOS_USDT\",\"lastPrice\":0.2599,\"riseFallRate\":-0.0132,\"fairPrice\":0.2597,\"indexPrice\":0.2596,\"volume24\":1924898,\"amount24\":518091.3259,\"maxBidPrice\":0.3115,\"minAskPrice\":0.2076,\"lower24Price\":0.2525,\"high24Price\":0.2926,\"timestamp\":1793017401954,\"bid1\":0.2597,\"ask1\":0.2598,\"holdVol\":1183196,\"riseFallValue\":-0.0035,\"fundingRate\":0.00005,\"zone\":\"UTC+8\",\"riseFallRates\":[-0.0132,0.4382,0.1665,null,null,null],\"riseFallRatesOfTimezone\":[0.0152,-0.0151,-0.0132]},\"channel\":\"push.ticker\",\"ts\":1793017401954}",
+"bek": {
+"kanal": "push.ticker",
+"sembol": "DOS_USDT",
+"islemler": [],
+"ticker": [
+1793017401954,
+0.2599,
+1183196,
+5e-05
+]
+}
+},
+{
+"t": "{\"symbol\":\"BTC_USDT\",\"data\":{\"symbol\":\"BTC_USDT\",\"lastPrice\":80281.7,\"riseFallRate\":-0.0039,\"fairPrice\":80281.6,\"indexPrice\":80313.1,\"volume24\":272131437,\"amount24\":2182319993.14544,\"maxBidPrice\":88344.4,\"minAskPrice\":72281.7,\"lower24Price\":79321.5,\"high24Price\":80921.1,\"timestamp\":1793017401820,\"bid1\":80281.6,\"ask1\":80281.7,\"holdVol\":535741819,\"riseFallValue\":-320.9,\"fundingRate\":0.000083,\"zone\":\"UTC+8\",\"riseFallRates\":[-0.0039,-0.0105,-0.0415,0.2443,0.0560,-0.2789],\"riseFallRatesOfTimezone\":[-0.0032,0.0020,-0.0039]},\"channel\":\"push.ticker\",\"ts\":1793017401820}",
+"bek": {
+"kanal": "push.ticker",
+"sembol": "BTC_USDT",
+"islemler": [],
+"ticker": [
+1793017401820,
+80281.7,
+535741819,
+8.3e-05
+]
+}
+},
+{
+"t": "{\"symbol\":\"BTC_USDT\",\"data\":[{\"p\":80300,\"v\":1,\"T\":1,\"O\":3,\"M\":1,\"t\":1793017404837,\"i\":\"16769689846\",\"cts\":\"1793017404837\"}],\"channel\":\"push.deal\",\"ts\":1793017404837}",
+"bek": {
+"kanal": "push.deal",
+"sembol": "BTC_USDT",
+"islemler": [
+[
+1793017404837,
+80300,
+1,
+true
+]
+],
+"ticker": null
+}
+},
+{
+"t": "{\"symbol\":\"BTC_USDT\",\"data\":[{\"p\":80300,\"v\":1,\"T\":1,\"O\":3,\"M\":1,\"t\":1793017404837,\"i\":\"16769689847\",\"cts\":\"1793017404837\"}],\"channel\":\"push.deal\",\"ts\":1793017404837}",
+"bek": {
+"kanal": "push.deal",
+"sembol": "BTC_USDT",
+"islemler": [
+[
+1793017404837,
+80300,
+1,
+true
+]
+],
+"ticker": null
+}
+},
+{
+"t": "{\"symbol\":\"DOS_USDT\",\"data\":{\"symbol\":\"DOS_USDT\",\"lastPrice\":0.2598,\"riseFallRate\":-0.0136,\"fairPrice\":0.2597,\"indexPrice\":0.2596,\"volume24\":1924967,\"amount24\":518109.2521,\"maxBidPrice\":0.3115,\"minAskPrice\":0.2076,\"lower24Price\":0.2525,\"high24Price\":0.2926,\"timestamp\":1793017404958,\"bid1\":0.2597,\"ask1\":0.2598,\"holdVol\":1183196,\"riseFallValue\":-0.0036,\"fundingRate\":0.00005,\"zone\":\"UTC+8\",\"riseFallRates\":[-0.0136,0.4377,0.1660,null,null,null],\"riseFallRatesOfTimezone\":[0.0148,-0.0155,-0.0136]},\"channel\":\"push.ticker\",\"ts\":1793017404958}",
+"bek": {
+"kanal": "push.ticker",
+"sembol": "DOS_USDT",
+"islemler": [],
+"ticker": [
+1793017404958,
+0.2598,
+1183196,
+5e-05
+]
+}
+},
+{
+"t": "{\"symbol\":\"BTC_USDT\",\"data\":{\"symbol\":\"BTC_USDT\",\"lastPrice\":80299.9,\"riseFallRate\":-0.0037,\"fairPrice\":80299.9,\"indexPrice\":80329.8,\"volume24\":272175779,\"amount24\":2182676056.50031,\"maxBidPrice\":88362.7,\"minAskPrice\":72296.8,\"lower24Price\":79321.5,\"high24Price\":80921.1,\"timestamp\":1793017404826,\"bid1\":80299.9,\"ask1\":80300,\"holdVol\":535551603,\"riseFallValue\":-302.7,\"fundingRate\":0.000083,\"zone\":\"UTC+8\",\"riseFallRates\":[-0.0037,-0.0103,-0.0413,0.2446,0.0562,-0.2787],\"riseFallRatesOfTimezone\":[-0.0030,0.0023,-0.0037]},\"channel\":\"push.ticker\",\"ts\":1793017404826}",
+"bek": {
+"kanal": "push.ticker",
+"sembol": "BTC_USDT",
+"islemler": [],
+"ticker": [
+1793017404826,
+80299.9,
+535551603,
+8.3e-05
+]
+}
+},
+{
+"t": "{\"symbol\":\"DOS_USDT\",\"data\":{\"symbol\":\"DOS_USDT\",\"lastPrice\":0.2598,\"riseFallRate\":-0.0136,\"fairPrice\":0.2596,\"indexPrice\":0.2595,\"volume24\":1924967,\"amount24\":518109.2521,\"maxBidPrice\":0.3114,\"minAskPrice\":0.2076,\"lower24Price\":0.2525,\"high24Price\":0.2926,\"timestamp\":1793017407997,\"bid1\":0.2597,\"ask1\":0.2598,\"holdVol\":1183196,\"riseFallValue\":-0.0036,\"fundingRate\":0.00005,\"zone\":\"UTC+8\",\"riseFallRates\":[-0.0136,0.4377,0.1660,null,null,null],\"riseFallRatesOfTimezone\":[0.0148,-0.0155,-0.0136]},\"channel\":\"push.ticker\",\"ts\":1793017407997}",
+"bek": {
+"kanal": "push.ticker",
+"sembol": "DOS_USDT",
+"islemler": [],
+"ticker": [
+1793017407997,
+0.2598,
+1183196,
+5e-05
+]
+}
+},
+{
+"t": "{\"symbol\":\"BTC_USDT\",\"data\":{\"symbol\":\"BTC_USDT\",\"lastPrice\":80314.2,\"riseFallRate\":-0.0035,\"fairPrice\":80314.1,\"indexPrice\":80344.5,\"volume24\":272205181,\"amount24\":2182912179.07707,\"maxBidPrice\":88378.9,\"minAskPrice\":72310,\"lower24Price\":79321.5,\"high24Price\":80921.1,\"timestamp\":1793017407861,\"bid1\":80314.1,\"ask1\":80314.2,\"holdVol\":535480803,\"riseFallValue\":-288.4,\"fundingRate\":0.000083,\"zone\":\"UTC+8\",\"riseFallRates\":[-0.0035,-0.0101,-0.0411,0.2448,0.0564,-0.2786],\"riseFallRatesOfTimezone\":[-0.0028,0.0024,-0.0035]},\"channel\":\"push.ticker\",\"ts\":1793017407861}",
+"bek": {
+"kanal": "push.ticker",
+"sembol": "BTC_USDT",
+"islemler": [],
+"ticker": [
+1793017407861,
+80314.2,
+535480803,
+8.3e-05
+]
+}
+},
+{
+"t": "{\"symbol\":\"DOS_USDT\",\"data\":[{\"p\":0.2597,\"v\":52,\"T\":2,\"O\":3,\"M\":1,\"t\":1793017414576,\"i\":\"16769691239\",\"cts\":\"1793017414576\"}],\"channel\":\"push.deal\",\"ts\":1793017414576}",
+"bek": {
+"kanal": "push.deal",
+"sembol": "DOS_USDT",
+"islemler": [
+[
+1793017414576,
+0.2597,
+52,
+false
+]
+],
+"ticker": null
+}
+},
+{
+"t": "{\"channel\":\"pong\",\"data\":1793017419470,\"ts\":1793017419470}",
+"bek": {
+"kanal": "pong",
+"sembol": "",
+"islemler": [],
+"ticker": null
+}
+},
+{
+"t": "{\"symbol\":\"DOS_USDT\",\"data\":[{\"p\":0.2596,\"v\":32,\"T\":2,\"O\":3,\"M\":1,\"t\":1793017422578,\"i\":\"16769692328\",\"cts\":\"1793017422578\"}],\"channel\":\"push.deal\",\"ts\":1793017422578}",
+"bek": {
+"kanal": "push.deal",
+"sembol": "DOS_USDT",
+"islemler": [
+[
+1793017422578,
+0.2596,
+32,
+false
+]
+],
+"ticker": null
+}
+},
+{
+"t": "{\"channel\":\"pong\",\"data\":1793017434488,\"ts\":1793017434488}",
+"bek": {
+"kanal": "pong",
+"sembol": "",
+"islemler": [],
+"ticker": null
+}
+},
+{
+"t": "{\"symbol\":\"DOS_USDT\",\"data\":[{\"p\":0.2595,\"v\":36,\"T\":2,\"O\":3,\"M\":1,\"t\":1793017438576,\"i\":\"16769694494\",\"cts\":\"1793017438576\"}],\"channel\":\"push.deal\",\"ts\":1793017438576}",
+"bek": {
+"kanal": "push.deal",
+"sembol": "DOS_USDT",
+"islemler": [
+[
+1793017438576,
+0.2595,
+36,
+false
+]
+],
+"ticker": null
+}
+},
+{
+"t": "{\"channel\":\"pong\",\"data\":1793017449506,\"ts\":1793017449506}",
+"bek": {
+"kanal": "pong",
+"sembol": "",
+"islemler": [],
+"ticker": null
+}
+}
+],
+"metin": [
+"{\"id\":0,\"code\":0,\"msg\":\"spot@public.aggre.deals.v3.api.pb@100ms@BTCUSDT,spot@public.limit.depth.v3.api.pb@BTCUSDT@20,spot@public.aggre.bookTicker.v3.api.pb@100ms@BTCUSDT,spot@public.aggre.deals.v3.api.pb@100ms@DOSUSDT\"}",
+"{\"id\":0,\"code\":0,\"msg\":\"PONG\"}",
+"{\"id\":0,\"code\":0,\"msg\":\"PONG\"}"
+]
+}
