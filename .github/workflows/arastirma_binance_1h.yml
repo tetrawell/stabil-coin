@@ -1,0 +1,32 @@
+name: Arastirma Binance 1h eski yillar (Kripto Al-Sat)
+
+# Geçici araştırma: B planı hipotezleri için Binance spot 1 saatlik mumlar (2019 – Ekim 2024). Telefon uygulamasıyla ilgisi yok.
+on:
+  push:
+    branches: [arastirma-binance]
+    paths: [".github/workflows/arastirma_binance_1h.yml", "arastirma/binance_1h_eski.py"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  topla:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Binance 1 saatlik mumlar
+        run: python3 arastirma/binance_1h_eski.py "$RUNNER_TEMP/veri"
+      - name: Ayrı dala koy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd "$RUNNER_TEMP/veri"
+          du -sh . ; ls 1h | wc -l
+          git init -q -b arastirma-binance-1h
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Binance 1 saatlik eski yıllar $(date -u +%FT%TZ)"
+          git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}" arastirma-binance-1h
