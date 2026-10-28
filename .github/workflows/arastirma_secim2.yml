@@ -1,10 +1,10 @@
-name: Arastirma secim (Kripto Simulator)
+name: Arastirma secim 2 (Kripto Simulator, kullanicinin zinciri)
 
 # Kripto Simülatör: seçenekler grafiğinde hangi seçenek canlıda (görülmemiş sonraki günlerde) daha iyi?
 # Telefon uygulamasıyla ilgisi yok. Sadece bu dala itilince (ya da elle) çalışır.
 on:
   push:
-    branches: [arastirma-secim]
+    branches: [arastirma-secim2]
   workflow_dispatch:
 
 permissions:
@@ -13,12 +13,12 @@ permissions:
 jobs:
   deney:
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: 340
     strategy:
       fail-fast: false
       max-parallel: 20
       matrix:
-        deney: [s1m, s5m, s15m, t5m]
+        deney: [k5m]
         parca: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
     steps:
       - uses: actions/checkout@v4
@@ -57,9 +57,9 @@ jobs:
           for p in "$RUNNER_TEMP"/parcalar/sonuc-*; do cp -r "$p"/. "$RUNNER_TEMP/s/"; done
           cd "$RUNNER_TEMP/s"
           ls | head -100; du -sh .
-          git init -q -b arastirma-secim-sonuc
+          git init -q -b arastirma-secim2-sonuc
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
           git add -A
           git commit -q -m "Seçim araştırması sonuçları $(date -u +%FT%TZ)"
-          git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}" arastirma-secim-sonuc
+          git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}" arastirma-secim2-sonuc

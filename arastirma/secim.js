@@ -22,16 +22,20 @@ const DENEYLER = {
   s15m: { aralik: '15m', N: 1000, canli: 672, adim: 672, pen: 22, coin: 132, sablon: 'sade' },
   t5m: { aralik: '5m', N: 2000, canli: 864, adim: 2592, pen: 18, coin: 132, sablon: 'tepe' },
   kucuk: { aralik: '5m', N: 2000, canli: 864, adim: 2592, pen: 2, coin: 2, sablon: 'sade' },
+  // 28 Ekim (2. tur): kullanıcının zinciri: Stabil Coin'in 5 dk hesabıyla "uygun" ve yönü düşmeyen coin, 5 dk 10.000 mum,
+  // kullanıcının ayarlarındaki kurallar (simülatörün varsayılan stratejisi: tepeden dönüş + vites açık), sadece güvenilir kâr
+  k5m: { aralik: '5m', N: 10000, canli: 864, adim: 1728, pen: 30, coin: 132, sablon: 'kullanici', hedefler: ['guvenilir'], filtre: true },
+  k5mKucuk: { aralik: '5m', N: 10000, canli: 864, adim: 1728, pen: 2, coin: 3, sablon: 'kullanici', hedefler: ['guvenilir'], filtre: false },
 };
 
 function mumOku(veri, aralik, sembol) {
   const s = zlib.gunzipSync(fs.readFileSync(path.join(veri, aralik, sembol + '.csv.gz'))).toString().trim().split('\n');
-  const m = { t: [], o: [], h: [], l: [], c: [], v: [], acikSon: false };
+  const m = { t: [], o: [], h: [], l: [], c: [], v: [], q: [], acikSon: false };
   for (const x of s) {
     const p = x.split(',');
-    m.t.push(+p[0]); m.o.push(+p[1]); m.h.push(+p[2]); m.l.push(+p[3]); m.c.push(+p[4]); m.v.push(+p[5]);
+    m.t.push(+p[0]); m.o.push(+p[1]); m.h.push(+p[2]); m.l.push(+p[3]); m.c.push(+p[4]); m.v.push(+p[5]); m.q.push(+p[6] || 0);
   }
-  for (const k of ['t', 'o', 'h', 'l', 'c', 'v']) m[k].pop(); // son mum kapanmamış olabilir
+  for (const k of ['t', 'o', 'h', 'l', 'c', 'v', 'q']) m[k].pop(); // son mum kapanmamış olabilir
   return m;
 }
 const dilim = (m, a, b) => ({ t: m.t.slice(a, b), o: m.o.slice(a, b), h: m.h.slice(a, b), l: m.l.slice(a, b), c: m.c.slice(a, b), v: m.v.slice(a, b), acikSon: false });
@@ -68,6 +72,11 @@ function baglam() {
 }
 
 function sablon(ctx, ad) {
+  if (ad === 'kullanici') {
+    const k = ctx.VARSAYILAN_STRATEJI();
+    k.para.masraf = 0.125;
+    return JSON.parse(JSON.stringify(k));
+  }
   const s = ctx.VARSAYILAN_STRATEJI();
   s.kurallar.tepedenDonus.acik = ad === 'tepe';
   s.kurallar.fbbAlt.d.vites = false; s.kurallar.fbbAlt.d.seviye = -0.764;
@@ -148,11 +157,27 @@ async function pencere(ctx, m, mDiger, is, D) {
     const a = stabil.analiz(MS[ar], mumlar, 1);
     out.stabil[ar] = { u: a.uygun ? 1 : 0, p: a.puan, d: +(a.dalgaYuzde || 0).toFixed(2), s: Math.round((a.sureMs || 0) / 60000), y: a.yon };
   }
+  // 2. tur: kullanıcının süzgeci (Stabil Coin 5 dk "uygun" ve yönü düşmeyen); süzgeçten geçmeyen pencerede arama yapılmaz
+  if (D.filtre) {
+    const s5 = out.stabil['5m'];
+    if (!s5 || !s5.u || s5.y === 'DUSEN') { out.atlandi = 1; out.sn = 0; return out; }
+  }
+  if (m.q) {
+    // aramanın gördüğü dönemde günlük işlem hacmi (USDT; 5 dk mumların ortancası × günlük mum sayısı)
+    const q = m.q.slice(egBas, is.testBas).filter(x => x > 0).sort((a, b) => a - b);
+    out.hacim = q.length ? Math.round(q[q.length >> 1] * (86400000 / MS[D.aralik])) : 0;
+  }
+  // aramanın gördüğü dönem 10 parçada: her parçanın getirisi (%): "düşüş, yatay ve yükseliş görmüş mü?"
+  out.rejim = [];
+  for (let j = 0; j < 10; j++) {
+    const a = Math.floor(N * j / 10), b = Math.floor(N * (j + 1) / 10) - 1;
+    out.rejim.push(+((mEg.c[b] / mEg.c[a] - 1) * 100).toFixed(2));
+  }
   const s0 = sablon(ctx, D.sablon);
   const ayar = h => ({ butce: 1500, minIslem: 30, hedef: h, sikilastir: true, masrafTaban: 0.125 });
   out.mevcut = { canli: canliOlc(ctx, m, s0, egBas, is.testBas, D) };
   const t0 = Date.now();
-  for (const hedef of ['guvenilir', 'zararli']) {
+  for (const hedef of (D.hedefler || ['guvenilir', 'zararli'])) {
     const b = await ctx.boruHatti(mEg, s0, ayar(hedef), 0, () => {});
     const H = {
       sart: b.arama.islemSartiSaglandi,
