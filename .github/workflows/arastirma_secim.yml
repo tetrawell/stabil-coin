@@ -1,0 +1,65 @@
+name: Arastirma secim (Kripto Simulator)
+
+# Kripto Simülatör: seçenekler grafiğinde hangi seçenek canlıda (görülmemiş sonraki günlerde) daha iyi?
+# Telefon uygulamasıyla ilgisi yok. Sadece bu dala itilince (ya da elle) çalışır.
+on:
+  push:
+    branches: [arastirma-secim]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deney:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        deney: [s1m, s5m, s15m, t5m]
+        parca: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: arastirma-veri-sonuc
+          path: veri
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Deney
+        run: |
+          nproc
+          node arastirma/secim.js ${{ matrix.deney }} ${{ matrix.parca }} 20 veri "$RUNNER_TEMP/sonuc"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: sonuc-${{ matrix.deney }}-${{ matrix.parca }}
+          path: ${{ runner.temp }}/sonuc
+          retention-days: 5
+
+  birlestir:
+    needs: deney
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: ${{ runner.temp }}/parcalar
+      - name: Sonuçları ayrı dala koy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/s"
+          for p in "$RUNNER_TEMP"/parcalar/sonuc-*; do cp -r "$p"/. "$RUNNER_TEMP/s/"; done
+          cd "$RUNNER_TEMP/s"
+          ls | head -100; du -sh .
+          git init -q -b arastirma-secim-sonuc
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Seçim araştırması sonuçları $(date -u +%FT%TZ)"
+          git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}" arastirma-secim-sonuc
