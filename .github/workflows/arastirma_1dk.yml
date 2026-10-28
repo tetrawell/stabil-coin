@@ -1,0 +1,54 @@
+name: Arastirma Binance 1 dk verisi (Kripto Al-Sat)
+
+# Kripto Al-Sat araştırması (geçici): akış çıkışının 1 dakikalık mumlarda yeniden oynatılması için Binance'in herkese
+# açık 1 dk spot ve vadeli mumlarını (Eylül 2026 + 1–26 Ekim 2026) toplar. Telefon uygulamasıyla ilgisi yok.
+# Sonuç "arastirma-1dk-veri" dalına konur.
+on:
+  push:
+    branches: [arastirma-1dk]
+    paths: [".github/workflows/arastirma_1dk.yml", "arastirma/binance_1dk.py"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  topla:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        parca: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Binance 1 dk verisini topla
+        run: python3 arastirma/binance_1dk.py "$RUNNER_TEMP/veri" ${{ matrix.parca }} 11
+      - uses: actions/upload-artifact@v4
+        with:
+          name: veri-${{ matrix.parca }}
+          path: ${{ runner.temp }}/veri
+          retention-days: 3
+
+  birlestir:
+    needs: topla
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: ${{ runner.temp }}/parcalar
+      - name: Veriyi ayrı dala koy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/sonuc"
+          for p in "$RUNNER_TEMP"/parcalar/veri-*; do cp -r "$p"/. "$RUNNER_TEMP/sonuc/"; done
+          cd "$RUNNER_TEMP/sonuc"
+          du -sh . ; du -sh * ; find . -name "*.csv.gz" | wc -l
+          git init -q -b arastirma-1dk-veri
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Binance 1 dk araştırma verisi $(date -u +%FT%TZ)"
+          git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}" arastirma-1dk-veri
